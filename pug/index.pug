@@ -1,0 +1,22 @@
+doctype html
+html
+    include head.pug
+    body
+        header
+            include header.pug
+            
+        div.bodys
+            div.menu-calendar-bar
+                button(onclick="mbclick()").menu-bar 제주국제공항
+                include menu.pug 
+                include calendar.pug 
+
+            div kkkk
+            footer this is footer
+            div#root
+            div#root2
+            nav#k1(aria-label="breadcrumb") 
+                ol.breadcrumb
+                    li.breadcrumb-item.active(aria-current="page") Home
+
+            

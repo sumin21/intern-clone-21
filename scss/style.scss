@@ -1,0 +1,29 @@
+@import "bootstrap/scss/bootstrap";
+@import "header.scss";
+@import "colors.scss";
+@import "menu-calendar-bar.scss";
+@import "bodys.scss";
+@font-face {
+  font-family: 'SpoqaHanSans';
+  src: url('../SpoqaHanSans_subset/Spoqa Han Sans Regular.woff') format('truetype');
+  //font-weight: normal;
+  //font-style: normal;
+}
+
+
+
+body {
+  //width: 90rem;
+  height: 104.188rem;
+  flex-grow: 0;
+  padding: 0 0 2.25rem;
+  background-color: $bg-pc-section;
+}
+
+
+
+
+
+.dangi-rent {
+  font-family: 'SpoqaHanSans';
+}

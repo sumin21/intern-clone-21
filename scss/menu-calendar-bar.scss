@@ -1,0 +1,27 @@
+.menu-calendar-bar{
+    //width: 90rem;
+    height: 5rem;
+    flex-grow: 0;
+    margin: 0 0 1.5rem;
+    padding: 1.8px 28.188rem 0.75rem 5rem;//장소메뉴창 위치조절
+    background-color: $color-white;
+    box-shadow: 0 0 13px 0 $color-grey-6; //그림자 나중에 수정
+}//선 색 color-grey7
+
+.menu-bar{
+    width: 21.938rem;
+    height: 2.375rem;
+    flex-grow: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+    gap: 4px;
+    margin: 20px 1.75rem 0 0;
+    padding: 0.625rem 0.75rem;
+    border-radius: 6px;
+    background-color: $color-white;
+    border-color: $color-grey-7;
+}
+
