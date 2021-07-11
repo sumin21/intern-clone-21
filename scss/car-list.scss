@@ -1,0 +1,16 @@
+.car-list{
+    width: 45.625rem;
+    //height: 10rem;
+    margin: 2rem 4.8rem 0.063rem 0;
+}
+
+.car-list-component{//height:차 or 렌트카업체 길이 따라
+    margin-bottom: 1rem;
+    background-color: $color-white;//렌트카 부분은 color-rentcar
+
+}
+
+//line-height?
+//word-wrap?
+//word-break?
+//-webkit-font-smoothing?

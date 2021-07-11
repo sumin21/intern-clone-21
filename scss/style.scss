@@ -1,8 +1,20 @@
+$danger: #F2F2F2;
+
 @import "bootstrap/scss/bootstrap";
+@import "node_modules/bootstrap/scss/_variables.scss";
 @import "header.scss";
 @import "colors.scss";
 @import "menu-calendar-bar.scss";
 @import "bodys.scss";
+
+@import "filter.scss";
+@import "car-main.scss";
+@import "car-kinds.scss";
+@import "car-list.scss";
+@import "car.scss";
+@import "rent.scss";
+
+
 @font-face {
   font-family: 'SpoqaHanSans';
   src: url('../SpoqaHanSans_subset/Spoqa Han Sans Regular.woff') format('truetype');
@@ -15,15 +27,7 @@
 body {
   //width: 90rem;
   height: 104.188rem;
-  flex-grow: 0;
+  //flex-grow: 0;
   padding: 0 0 2.25rem;
   background-color: $bg-pc-section;
-}
-
-
-
-
-
-.dangi-rent {
-  font-family: 'SpoqaHanSans';
 }

@@ -1,0 +1,24 @@
+.car-kinds{
+    width: 45.625rem;
+    height: 2.8489rem;
+    margin: 0.938rem 4.8rem 0.063rem 0;
+    border-radius: 0.35rem;
+  background-color: $color-white;
+}
+
+.car-kinds-car{//선택된 클래스만 배경:파란색, 텍스트:흰색
+    //border-right: solid 1px $color-grey-7;//선 없넹 ㅎㅎ
+    width: 2.348rem;
+  height: 1.5rem;
+  -webkit-text-stroke: 0 #333333;
+  font-family: 'SpoqaHanSans';
+  font-size: 1rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.8px;
+  text-align: center;
+  color: $color-grey-2;
+  padding: 0.6125rem 0.75rem;
+}

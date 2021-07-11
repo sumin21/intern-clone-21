@@ -1,0 +1,85 @@
+.car-main{
+    width: 45.625rem;
+    height: 1.875rem;
+    margin: 0.063rem 4.8rem 0.063rem 0;
+   
+    
+}
+
+.search-result{
+    font-family: 'SpoqaHanSans';
+    font-size: 1.26rem;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: -1.2px;
+    text-align: left;
+    
+}
+
+.check-box{
+    width: 10.75rem;
+  height: 2rem;
+  
+  align-items: center;
+  margin: 0 0 0 30.5rem;
+  padding: 0.125rem 0.5rem;
+  border-radius: 50px;
+  border: solid 1px $color-grey-7;
+  background-color: $color-white;
+
+}
+.check-box-component{
+    gap: 0.425rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end; //!important;
+  //letter-spacing: -0.03em;
+  align-items: center;
+}
+
+
+
+.car-kinds-list{
+    flex-grow:1;
+}
+
+.popularity{
+    flex-grow:1;
+}
+.price{
+    flex-grow:1;
+}
+
+
+.circle{
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 75px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: $color-grey-5;
+    
+    display: inline-block;
+    margin-right: 0.3rem;
+}
+
+.text{
+    width: 2rem;
+  height: 1.125rem;
+
+  font-family: 'SpoqaHanSans';
+  font-size: 0.75rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.6px;
+  text-align: left;
+  
+
+  color: $color-grey-5;
+  display: inline-block;
+
+}
