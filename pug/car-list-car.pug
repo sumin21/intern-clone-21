@@ -1,20 +1,18 @@
-div.car-list-component.d-flex.flex-row
-    //-차
-    div.car-list-component-car.align-self-stretch.flex-fill
-        div.car
+div.car-list-component.d-flex.flex-column
+    div.rows.d-flex.flex-row
+        //-차
+        div.car-list-component-car.align-self-stretch.col-12.col-lg-5
             div.car-box
                 div.real-car.d-flex.flex-column
                     div.car-picture
                         div.picture
-                        div.discount-box.d-flex.justify-content-center
-                            div.discount 
-                                div.discount-text 3초 가입 시 추가 할인!
+                        div.discount-container.d-flex.justify-content-center.align-items.center
+                            span.discount.badge-soft-primary 3초 가입 시 추가 할인!
                                 
                     div.car-text
                         div.car-text-box.border-danger.border-top
                             div.car-text-kinds-box
-                                span.car-text-kinds
-                                        
+                                div.car-text-kinds.d-inline-flex.align-items-center
                                     div.car-text-kinds-icon
                                     span.car-text-kinds-text 경형
                             div.car-text-name 레이 The New
@@ -43,68 +41,73 @@ div.car-list-component.d-flex.flex-row
                             div.icon
                             span.text 에어컨
             
-            //-span.real-car
-            //-span.white-background
-    //-렌트카 (여러개일수)
-    div.car-list-component-rent.align-self-stretch.flex-fill
-        div.rent.px-3.py-3.px-lg-3
-            div.rent-company.mb-3.d-flex.flex-row.align-itmes-center
-                div.rent-company-name-umo.col-9
-                    //-name 옆에 img 오는듯
-                    div.rent-company-name.d-flex.flex-row.align-items-start
-                        h3.name.mr-1.mb-0 무지개렌트카
-                    div.rent-company-umo.d-flex.flex-row.align-items-center.mt-1
-                        div.check-icon
-                        span.umo.mb-0 유모차/카시트 신청 가능
-                div.rent-company-score-reserve.col-3
-                    div.rent-company-score.d-flex.flex-row.align-items-center.justify-content-end
-                        div.star-icon.mr-1
-                        span.score 4.4
-                    div.rent-company-reserve.mt-1.mb-0 예약수 11200+
-            //-여러개일수
-            div.rent-option-container
-                div.rent-option-box-1
-                    div.rent-option-box.mb-2
-                        //-flex
-                        div.rent-option
-                            div.rent-option-top
-                                div.rent-option-title
-                                    div.rent-option-year-oil
-                                        //-있을수도 없을수도
-                                        div.good
-                                        div.year 2018년식
-                                        //-ㆍ
-                                        div ㆍ
-                                        div.oil 휘발유
-                                    div.rent-option-original-money 111,870원
-                                //-1/2개일수
-                                div.rent-option-text
+                //-span.real-car
+                //-span.white-background
+        //-렌트카 (여러개일수)
+        div.car-list-component-rent.align-self-stretch.col-12.col-lg-7
+            div.rent
+                div.rent-company.mb-3.d-flex.flex-row.align-itmes-center
+                    div.rent-company-name-umo.col-9
+                        //-name 옆에 img 오는듯
+                        div.rent-company-name.d-flex.flex-row.align-items-start
+                            h3.name.mr-1.mb-0 무지개렌트카
+                            div.delivery 
+                        div.rent-company-umo.d-flex.flex-row.align-items-center.mt-1
+                            div.check-icon
+                            span.umo.mb-0 유모차/카시트 신청 가능
+                    div.rent-company-score-reserve.col-3
+                        div.rent-company-score.d-flex.flex-row.align-items-center.justify-content-end
+                            div.star-icon.mr-1
+                            span.score 4.4
+                        div.rent-company-reserve.mt-1.mb-0.text-right 예약수 11200+
+                //-여러개일수
+                div.rent-option-container
+                    div.rent-option-box-1
+                        div.rent-option-box.mb-2
+                            //-flex
+                            div.rent-option
+                                div.rent-option-top
+                                    div.rent-option-title.d-flex.justify-content-between.align-items-center
+                                        div.rent-option-year-oil
+                                            //-있을수도 없을수도
+                                            div.good.mr-1
+                                            span.year.mb-0 2018년식
+                                            //-ㆍ
+                                            span ㆍ
+                                            span.oil.mb-0 휘발유
+                                        div.rent-option-original-money.mb-0.text-right 111,870원
+                                    //-1/2개일수
+                                    div.rent-option-text.d-flex.justify-content-between.align-items-center
                                     
-                                    div.rent-option-safeicon-old
-                                        div.safeicon
-                                        span.old 만 21세 이상
-                                    div.rent-option-discount-money
+                                        div.rent-option-safeicon-old.d-flex.align-items-center
+                                            div.safeicon.mr-1
+                                            span.old.mb-0 만 21세 이상
+                                        div.rent-option-discount-money.d-flex.align-items-center
+                                            //-숫자 + %할인
+                                            span.percent.px-1.mr-1 38% 할인
+        
+                                            div.jacha-include.mr-1
+                                                span.jacha 일반자차
+                                                span.include  포함가
+                                            //-숫자 + 원
+                                            span.discount-result.mb-0.text-right 65,280원
+                                //-2개일 때만 display되게 + 마지막 element는 display:none
+                                hr.line
+                                //-if 2개라면
+                                div.rent-option-text-plus.d-flex.justify-content-between.align-items-center
+                                    div.rent-option-safeicon-old.d-flex.align-items-center
+                                            div.safeicon.mr-1
+                                            span.old.mb-0 만 23세 이상
+                                    div.rent-option-discount-money.d-flex.align-items-center
                                         //-숫자 + %할인
-                                        div.percent 38% 할인
+                                        div.percent.px-1.mr-1 36% 할인
         
-                                        div.jacha-include
-                                            span.jacha 일반자차
-                                            span.include 포함가
+                                        div.jacha-include.mr-1
+                                            span.jacha 완전자차
+                                            span.include  포함가
                                         //-숫자 + 원
-                                        div.discount-result 65,280원
-                            //-2개일 때만 display되게 + 마지막 element는 display:none
-                            hr.line
-                            //-if 2개라면
-                            div.rent-option-text-plus
-                                div.rent-option-safeicon-old
-                                        div.safeicon
-                                        span.old 만 23세 이상
-                                div.rent-option-discount-money
-                                    //-숫자 + %할인
-                                    div.percent 36% 할인
-        
-                                    div.jacha-include
-                                        span.jacha 완전자차
-                                        span.include 포함가
-                                    //-숫자 + 원
-                                    div.discount-result 71,210원
+                                        div.discount-result.mb-0.text-right 71,210원
+    //-마감일때만
+    div.text-center.magam-container
+        div.magam
+            p.magam-text 이외에 7개 업체에서 7대의 차량은 이미 모두 마감되었습니다.                          

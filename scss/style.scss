@@ -13,6 +13,10 @@ $danger: #F2F2F2;
 @import "car-list.scss";
 @import "car.scss";
 @import "rent.scss";
+@import "more-button.scss";
+@import "footer.scss";
+@import "main.scss";
+@import "magam.scss";
 
 
 @font-face {
@@ -26,7 +30,7 @@ $danger: #F2F2F2;
 
 body {
   //width: 90rem;
-  height: 104.188rem;
+  //height: 104.188rem;
   //flex-grow: 0;
   padding: 0 0 2.25rem;
   background-color: $bg-pc-section;

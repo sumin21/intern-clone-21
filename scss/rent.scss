@@ -1,28 +1,43 @@
 
 .car-list-component-rent{
     background-color: $color-rentcar;
-    width: 26.61375rem;
+    //width: 26.61375rem;
     flex-grow:0;
+    padding: 0;
 }
 
 .rent{
     padding: 1rem;
+    border-bottom: 1px solid $color-grey-7;
 }
 
-.rent-company-name .name{
-    font-weight: bold;
-    font-size: 1rem;
-    letter-spacing: -0.05em;
-    word-spacing: 0.01em;
-    text-shadow: 0 0 0.15px $color-car-option-text;
-    line-height: 1.2;
-    word-wrap: break-word;
-    word-break: keep-all;
-    -webkit-font-smoothing: antialiased;
-    font-family: 'SpoqaHanSans';
-    color: $color-rent-name;
-    height: auto;
+.rent-company-name{
+    .name{
+        font-weight: bold;
+        font-size: 1rem;
+        letter-spacing: -0.05em;
+        word-spacing: 0.01em;
+        text-shadow: 0 0 0.15px $color-car-option-text;
+        line-height: 1.2;
+        word-wrap: break-word;
+        word-break: keep-all;
+        -webkit-font-smoothing: antialiased;
+        font-family: 'SpoqaHanSans';
+        color: $color-rent-name;
+        height: auto;
+    }
+    .delivery{
+        width: 4.125rem;
+        height: 1.125rem;
+        background-image: url("../renticon/delivery.png");
+        background-repeat: no-repeat;
+        //margin: auto auto;
+        background-size : contain; //png 비율 알맞게
+        display: inline-block;
+        vertical-align: middle;
+    }
 }
+
 
 .rent-company-name-umo{
     padding: 0;
@@ -100,4 +115,131 @@
 
 .rent-option-box{
     padding: 0.75rem;
+}
+
+.rent-option-box-1{//box-2, 3, 4.....
+    border-radius: 6px;
+  box-shadow: 0 3px 12px 0 rgba(187, 203, 225, 0.5);
+  background-color: $color-white;
+}
+
+.rent-option-year-oil {
+    height: 21.48px;
+    .good{
+        width: 0.75rem;
+        height: 0.75rem;
+        background-image: url("../renticon/good.png");
+        background-repeat: no-repeat;
+        //margin: auto auto;
+        background-size : contain; //png 비율 알맞게
+        display: inline-block;
+        vertical-align: middle;
+    }
+    .year,.oil{
+        font-size: 0.9rem;
+        line-height: 1.5;
+        letter-spacing: -0.5px;
+        word-spacing: 0.01em;
+        word-wrap: break-word;
+        word-break: keep-all;
+        -webkit-font-smoothing: antialiased;
+        font-weight: 700;
+        font-family: 'SpoqaHanSans';
+        color: $color-grey-2;
+        text-shadow: 0 0 1px rgba(0,0,0, 0.2);
+
+
+    }
+
+}
+
+.rent-option-original-money{
+    font-size: 0.84rem;
+    line-height: 1.5;
+    letter-spacing: -0.05em;
+    word-spacing: 0.01em;
+    word-wrap: break-word;
+    word-break: keep-all;
+    -webkit-font-smoothing: antialiased;
+    font-family: 'SpoqaHanSans';
+    color: $color-grey-5;
+    text-decoration: line-through;
+}
+
+.rent-option-safeicon-old{
+    .safeicon{
+        width: 1rem;
+        height: 1rem;
+        background-image: url("../renticon/shield.png");
+        background-repeat: no-repeat;
+        //margin: auto auto;
+        background-size : contain; //png 비율 알맞게
+        display: inline-block;
+        vertical-align: middle
+    }
+    .old{
+        font-size: 0.9rem;
+        line-height: 1.5;
+        letter-spacing: -0.5px;
+        word-spacing: 0.01em;
+        word-wrap: break-word;
+        word-break: keep-all;
+        -webkit-font-smoothing: antialiased;
+        font-family: 'SpoqaHanSans';
+        color: $color-grey-3;
+    }
+}
+
+.rent-option-discount-money{
+    .percent{
+        border-radius: 20px;
+        border: solid 1px $color-primary;
+        color: $color-primary;
+        font-size: 10px;
+        letter-spacing: -0.03em;
+        word-wrap: break-word;
+        word-break: keep-all;
+        -webkit-font-smoothing: antialiased;
+        line-height: 1.5;
+        font-family: 'SpoqaHanSans';
+
+    }
+    .jacha-include{
+        //height: auto;
+        color: $color-grey-4;
+        font-size: 0.9rem;
+        line-height: 1.5;
+        letter-spacing: -0.5px;
+        word-spacing: 0.01em;
+        word-wrap: break-word;
+        word-break: keep-all;
+        -webkit-font-smoothing: antialiased;
+        font-family: 'SpoqaHanSans';
+        
+        .jacha{
+            font-weight: 700;
+            text-shadow: 0 0 1px rgba(0,0,0, 0.2);
+        }
+        .include{
+            text-shadow: 0 0 1px rgba(0,0,0, 0.2);
+
+        }
+    }
+    .discount-result{
+        color: $color-red-dark;
+        font-size: 1rem;
+        line-height: 1.5;
+        letter-spacing: -0.05em;
+        word-spacing: 0.01em;
+        word-wrap: break-word;
+        word-break: keep-all;
+        -webkit-font-smoothing: antialiased;
+        font-family: 'SpoqaHanSans';
+        font-weight: bold;
+    }
+
+}
+
+.line{
+    margin: 12px 0;
 }

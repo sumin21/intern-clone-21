@@ -1,55 +1,50 @@
 .car-main{
-    width: 45.625rem;
-    height: 1.875rem;
-    margin: 0.063rem 4.8rem 0.063rem 0;
-   
-    
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.search-result-container{
+    flex-grow: 1;
+    max-width: 100%;
+    position: relative;
+    padding-right: 15px;
 }
 
 .search-result{
     font-family: 'SpoqaHanSans';
-    font-size: 1.26rem;
     font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: -1.2px;
-    text-align: left;
+    font-size: 1.25rem;
+    letter-spacing: -0.05em;
+    word-spacing: 0.01em;
+    color: #212529;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+    word-wrap: break-word;
+    word-break: keep-all;
+    -webkit-font-smoothing: antialiased;
     
+    text-shadow: 0 0 1px rgba(0,0,0, 0.2);
+
 }
 
 .check-box{
-    width: 10.75rem;
-  height: 2rem;
+    //width: 10.75rem;
+  //height: 2rem;
   
   align-items: center;
-  margin: 0 0 0 30.5rem;
-  padding: 0.125rem 0.5rem;
-  border-radius: 50px;
+  //margin: 0 0 0 30.5rem;
+  padding: 0.3125rem 0.625rem;
+  border-radius: 13px;
   border: solid 1px $color-grey-7;
   background-color: $color-white;
 
 }
 .check-box-component{
-    gap: 0.425rem;
   display: flex;
   flex-direction: row;
   justify-content: flex-end; //!important;
   //letter-spacing: -0.03em;
   align-items: center;
-}
-
-
-
-.car-kinds-list{
-    flex-grow:1;
-}
-
-.popularity{
-    flex-grow:1;
-}
-.price{
-    flex-grow:1;
 }
 
 
@@ -60,26 +55,17 @@
     border-style: solid;
     border-width: 1px;
     border-color: $color-grey-5;
-    
-    display: inline-block;
-    margin-right: 0.3rem;
+    margin: 0.3125rem 0.1875rem 0.3125rem 0;
 }
 
 .text{
-    width: 2rem;
-  height: 1.125rem;
-
   font-family: 'SpoqaHanSans';
   font-size: 0.75rem;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
   letter-spacing: -0.6px;
-  text-align: left;
-  
-
+  line-height: 1.5;
   color: $color-grey-5;
-  display: inline-block;
+}
 
+.popularity,.price{
+    margin-left: 0.625rem;
 }
