@@ -51,7 +51,8 @@ div.car-list-component.d-flex.flex-column
                         //-name 옆에 img 오는듯
                         div.rent-company-name.d-flex.flex-row.align-items-start
                             h3.name.mr-1.mb-0 무지개렌트카
-                            div.delivery 
+                            button(data-toggle="modal",data-target="#exampleModal").delivery
+                            include delivery-modal.pug
                         div.rent-company-umo.d-flex.flex-row.align-items-center.mt-1
                             div.check-icon
                             span.umo.mb-0 유모차/카시트 신청 가능

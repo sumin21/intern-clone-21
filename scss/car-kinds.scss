@@ -10,13 +10,16 @@
   border-radius: 0.35rem;
   background-color: $color-white;
   margin-bottom: 2rem;
+  //border-radius: 6.1875rem;
 }
 
 .car-kinds-car{//선택된 클래스만 배경:파란색, 텍스트:흰색
     //border-right: solid 1px $color-grey-7;//선 없넹 ㅎㅎ
     //width: 2.348rem;
   //height: 1.5rem;
-  
+  background-color: $color-white;
+    border-color: $color-white;
+    border: 1px solid transparent;
   padding: 0.6125rem 0.75rem;
   .label{
     -webkit-text-stroke: 0 #333333;
@@ -32,3 +35,13 @@
   }
 }
 
+.all-car{
+  
+    border-top-left-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+}
+
+.foreign{
+  border-top-right-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+}

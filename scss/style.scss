@@ -17,7 +17,7 @@ $danger: #F2F2F2;
 @import "footer.scss";
 @import "main.scss";
 @import "magam.scss";
-
+@import "delivery-modal.scss";
 
 @font-face {
   font-family: 'SpoqaHanSans';
@@ -34,4 +34,10 @@ body {
   //flex-grow: 0;
   padding: 0 0 2.25rem;
   background-color: $bg-pc-section;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #424346;
+  text-align: left;
+  font-family: 'SpoqaHanSans';
 }
