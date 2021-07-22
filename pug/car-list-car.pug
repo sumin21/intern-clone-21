@@ -1,114 +1,115 @@
-div.car-list-component.d-flex.flex-column
+div.clc-car-list-component.d-flex.flex-column
     div.rows.d-flex.flex-row
         //-차
-        div.car-list-component-car.align-self-stretch.col-12.col-lg-5
-            div.car-box
-                div.real-car.d-flex.flex-column
-                    div.car-picture
-                        div.picture
-                        div.discount-container.d-flex.justify-content-center.align-items.center
-                            span.discount.badge-soft-primary 3초 가입 시 추가 할인!
+        div.clc-car-list-component-car.align-self-stretch.col-12.col-lg-5
+            div.clc-car-box
+                div.clc-real-car.d-flex.flex-column
+                    div.clc-car-picture
+                        div.clc-picture
+                        div.clc-discount-container.d-flex.justify-content-center.align-items.center
+                            span.clc-discount.badge.badge-soft-primary 3초 가입 시 추가 할인!
                                 
-                    div.car-text
-                        div.car-text-box.border-danger.border-top
-                            div.car-text-kinds-box
-                                div.car-text-kinds.d-inline-flex.align-items-center
-                                    div.car-text-kinds-icon
-                                    span.car-text-kinds-text 경형
-                            div.car-text-name 레이 The New
-                            div.car-text-explan 경차 최고의 실내공간 깡패😉
-                            div.car-text-money 39,520~66,300원
+                    div.clc-car-text
+                        //-
+                        div.clc-car-text-box.border-danger.border-top
+                            div.clc-car-text-kinds-box
+                                div.clc-car-text-kinds.d-inline-flex.align-items-center
+                                    div.clc-car-text-kinds-icon
+                                    span.clc-car-text-kinds-text 경형
+                            div.clc-car-text-name 레이 The New
+                            div.clc-car-text-explan 경차 최고의 실내공간 깡패😉
+                            div.clc-car-text-money 39,520~66,300원
                 //-flex
-                div.car-option.d-flex.flex-wrap.justify-content-between.align-items-center
-                    div.person-box.pr-4.pt-2
-                        div.person.d-flex.align-items-center
-                            div.icon
-                            span.text 5인
-                    div.auto-box.pr-4.pt-2
-                        div.auto.d-flex.align-items-center
-                            div.icon
-                            span.text 오토
-                    div.baggage-box.pr-4.pt-2
-                        div.baggage.d-flex.align-items-center
-                            div.icon
-                            span.text 3개
-                    div.door-box.pr-4.pt-2
-                        div.door.d-flex.align-items-center 
-                            div.icon
-                            span.text 4개
-                    div.aircon-box.pr-4.pt-2
-                        div.aircon.d-flex.align-items-center
-                            div.icon
-                            span.text 에어컨
+                div.clc-car-option.d-flex.flex-wrap.justify-content-between.align-items-center
+                    div.clc-person-box.pr-4.pt-2
+                        div.clc-person.d-flex.align-items-center
+                            div.clc-icon
+                            span.clc-text 5인
+                    div.clc-auto-box.pr-4.pt-2
+                        div.clc-auto.d-flex.align-items-center
+                            div.clc-icon
+                            span.clc-text 오토
+                    div.clc-baggage-box.pr-4.pt-2
+                        div.clc-baggage.d-flex.align-items-center
+                            div.clc-icon
+                            span.clc-text 3개
+                    div.clc-door-box.pr-4.pt-2
+                        div.clc-door.d-flex.align-items-center 
+                            div.clc-icon
+                            span.clc-text 4개
+                    div.clc-aircon-box.pr-4.pt-2
+                        div.clc-aircon.d-flex.align-items-center
+                            div.clc-icon
+                            span.clc-text 에어컨
             
                 //-span.real-car
                 //-span.white-background
         //-렌트카 (여러개일수)
-        div.car-list-component-rent.align-self-stretch.col-12.col-lg-7
-            div.rent
-                div.rent-company.mb-3.d-flex.flex-row.align-itmes-center
-                    div.rent-company-name-umo.col-9
+        div.clc-car-list-component-rent.align-self-stretch.col-12.col-lg-7
+            div.clc-rent
+                div.clc-rent-company.mb-3.d-flex.flex-row.align-itmes-center
+                    div.clc-rent-company-name-umo.col-9
                         //-name 옆에 img 오는듯
-                        div.rent-company-name.d-flex.flex-row.align-items-start
-                            h3.name.mr-1.mb-0 무지개렌트카
-                            button(data-toggle="modal",data-target="#exampleModal").delivery
+                        div.clc-rent-company-name.d-flex.flex-row.align-items-start
+                            h3.clc-name.mr-1.mb-0 무지개렌트카
+                            button(data-toggle="modal",data-target="#deliveryModal").clc-delivery
                             include delivery-modal.pug
-                        div.rent-company-umo.d-flex.flex-row.align-items-center.mt-1
-                            div.check-icon
-                            span.umo.mb-0 유모차/카시트 신청 가능
-                    div.rent-company-score-reserve.col-3
-                        div.rent-company-score.d-flex.flex-row.align-items-center.justify-content-end
-                            div.star-icon.mr-1
-                            span.score 4.4
-                        div.rent-company-reserve.mt-1.mb-0.text-right 예약수 11200+
+                        div.clc-rent-company-umo.d-flex.flex-row.align-items-center.mt-1
+                            div.clc-check-icon
+                            span.clc-umo.mb-0 유모차/카시트 신청 가능
+                    div.clc-rent-company-score-reserve.col-3
+                        div.clc-rent-company-score.d-flex.flex-row.align-items-center.justify-content-end
+                            div.clc-star-icon.mr-1
+                            span.clc-score 4.4
+                        div.clc-rent-company-reserve.mt-1.mb-0.text-right 예약수 11200+
                 //-여러개일수
-                div.rent-option-container
-                    div.rent-option-box-1
-                        div.rent-option-box.mb-2
+                div.clc-rent-option-container
+                    div.clc-rent-option-box-1
+                        div.clc-rent-option-box.mb-2
                             //-flex
-                            div.rent-option
-                                div.rent-option-top
-                                    div.rent-option-title.d-flex.justify-content-between.align-items-center
-                                        div.rent-option-year-oil
+                            div.clc-rent-option
+                                div.clc-rent-option-top
+                                    div.clc-rent-option-title.d-flex.justify-content-between.align-items-center
+                                        div.clc-rent-option-year-oil
                                             //-있을수도 없을수도
-                                            div.good.mr-1
-                                            span.year.mb-0 2018년식
+                                            div.clc-good.mr-1
+                                            span.clc-year.mb-0 2018년식
                                             //-ㆍ
                                             span ㆍ
-                                            span.oil.mb-0 휘발유
-                                        div.rent-option-original-money.mb-0.text-right 111,870원
+                                            span.clc-oil.mb-0 휘발유
+                                        div.clc-rent-option-original-money.mb-0.text-right 111,870원
                                     //-1/2개일수
-                                    div.rent-option-text.d-flex.justify-content-between.align-items-center
+                                    div.clc-rent-option-text.d-flex.justify-content-between.align-items-center
                                     
-                                        div.rent-option-safeicon-old.d-flex.align-items-center
-                                            div.safeicon.mr-1
-                                            span.old.mb-0 만 21세 이상
-                                        div.rent-option-discount-money.d-flex.align-items-center
+                                        div.clc-rent-option-safeicon-old.d-flex.align-items-center
+                                            div.clc-safeicon.mr-1
+                                            span.clc-old.mb-0 만 21세 이상
+                                        div.clc-rent-option-discount-money.d-flex.align-items-center
                                             //-숫자 + %할인
-                                            span.percent.px-1.mr-1 38% 할인
+                                            span.clc-percent.px-1.mr-1 38% 할인
         
-                                            div.jacha-include.mr-1
-                                                span.jacha 일반자차
-                                                span.include  포함가
+                                            div.clc-jacha-include.mr-1
+                                                span.clc-jacha 일반자차
+                                                span.clc-include  포함가
                                             //-숫자 + 원
-                                            span.discount-result.mb-0.text-right 65,280원
+                                            span.clc-discount-result.mb-0.text-right 65,280원
                                 //-2개일 때만 display되게 + 마지막 element는 display:none
-                                hr.line
+                                hr.clc-line
                                 //-if 2개라면
-                                div.rent-option-text-plus.d-flex.justify-content-between.align-items-center
-                                    div.rent-option-safeicon-old.d-flex.align-items-center
-                                            div.safeicon.mr-1
-                                            span.old.mb-0 만 23세 이상
-                                    div.rent-option-discount-money.d-flex.align-items-center
+                                div.clc-rent-option-text-plus.d-flex.justify-content-between.align-items-center
+                                    div.clc-rent-option-safeicon-old.d-flex.align-items-center
+                                            div.clc-safeicon.mr-1
+                                            span.clc-old.mb-0 만 23세 이상
+                                    div.clc-rent-option-discount-money.d-flex.align-items-center
                                         //-숫자 + %할인
-                                        div.percent.px-1.mr-1 36% 할인
+                                        div.clc-percent.px-1.mr-1 36% 할인
         
-                                        div.jacha-include.mr-1
-                                            span.jacha 완전자차
-                                            span.include  포함가
+                                        div.clc-jacha-include.mr-1
+                                            span.clc-jacha 완전자차
+                                            span.clc-include  포함가
                                         //-숫자 + 원
-                                        div.discount-result.mb-0.text-right 71,210원
+                                        div.clc-discount-result.mb-0.text-right 71,210원
     //-마감일때만
-    div.text-center.magam-container
-        div.magam
-            p.magam-text 이외에 7개 업체에서 7대의 차량은 이미 모두 마감되었습니다.                          
+    div.text-center.clc-magam-container
+        div.clc-magam
+            p.clc-magam-text 이외에 7개 업체에서 7대의 차량은 이미 모두 마감되었습니다.                          

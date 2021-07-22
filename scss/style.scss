@@ -2,13 +2,13 @@ $danger: #F2F2F2;
 
 @import "bootstrap/scss/bootstrap";
 @import "node_modules/bootstrap/scss/_variables.scss";
-@import "header.scss";
 @import "colors.scss";
+@import "header.scss";
 @import "menu-calendar-bar.scss";
 @import "bodys.scss";
 
 @import "filter.scss";
-@import "car-main.scss";
+@import "car-result-title.scss";
 @import "car-kinds.scss";
 @import "car-list.scss";
 @import "car.scss";
@@ -18,6 +18,11 @@ $danger: #F2F2F2;
 @import "main.scss";
 @import "magam.scss";
 @import "delivery-modal.scss";
+@import "menu-modal.scss";
+@import "my-location.scss";
+@import "search-result-all-remove-modal.scss";
+@import "calendar-modal.scss";
+@import "location-toasts.scss";
 
 @font-face {
   font-family: 'SpoqaHanSans';
@@ -26,6 +31,9 @@ $danger: #F2F2F2;
   //font-style: normal;
 }
 
+html{
+  -webkit-tap-highlight-color: rgba(30, 30, 30, 0);
+}
 
 
 body {
@@ -40,4 +48,12 @@ body {
   color: #424346;
   text-align: left;
   font-family: 'SpoqaHanSans';
+  letter-spacing: -0.03em;
+  word-wrap: break-word;
+  word-break: keep-all;
+  -webkit-font-smoothing: antialiased;
+}
+
+.no-scroll{
+  overflow: hidden;
 }

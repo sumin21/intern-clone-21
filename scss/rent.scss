@@ -1,18 +1,18 @@
 
-.car-list-component-rent{
+.clc-car-list-component-rent{
     background-color: $color-rentcar;
     //width: 26.61375rem;
     flex-grow:0;
     padding: 0;
 }
 
-.rent{
+.clc-rent{
     padding: 1rem;
     border-bottom: 1px solid $color-grey-7;
 }
 
-.rent-company-name{
-    .name{
+.clc-rent-company-name{
+    .clc-name{
         font-weight: bold;
         font-size: 1rem;
         letter-spacing: -0.05em;
@@ -26,7 +26,7 @@
         color: $color-rent-name;
         height: auto;
     }
-    .delivery{
+    .clc-delivery{
         width: 4.125rem;
         height: 1.125rem;
         background-image: url("../renticon/delivery.png");
@@ -42,19 +42,19 @@
 }
 
 
-.rent-company-name-umo{
+.clc-rent-company-name-umo{
     padding: 0;
 }
 
-.rent-company-score-reserve{
+.clc-rent-company-score-reserve{
     padding: 0;
 }
 
-.rent-company-name{
+.clc-rent-company-name{
     height: auto;
 }
 
-.rent-company-umo .check-icon{
+.clc-rent-company-umo .clc-check-icon{
     width: 1rem;
     height: 1rem;
     background-image: url("../renticon/check.png");
@@ -65,7 +65,7 @@
     vertical-align: middle;
 }
 
-.rent-company-umo .umo{
+.clc-rent-company-umo .clc-umo{
     color: $color-grey-4;
     font-size: 0.9rem;
     line-height: 1.5;
@@ -79,7 +79,7 @@
 
 }
 
-.star-icon{
+.clc-star-icon{
     width: 0.624375rem;
     height: 0.624375rem;
     background-image: url("../renticon/star.png");
@@ -90,7 +90,7 @@
     vertical-align: middle;
 }
 
-.score{
+.clc-score{
     font-size: 0.9rem;
     line-height: 1.5;
     letter-spacing: -0.5px;
@@ -103,7 +103,7 @@
     color: $color-grey-2;
 }
 
-.rent-company-reserve{
+.clc-rent-company-reserve{
     font-size: 0.9rem;
     text-align: right;
     line-height: 1.5;
@@ -116,19 +116,19 @@
     color: $color-grey-5;
 }
 
-.rent-option-box{
+.clc-rent-option-box{
     padding: 0.75rem;
 }
 
-.rent-option-box-1{//box-2, 3, 4.....
+.clc-rent-option-box-1{//box-2, 3, 4.....
     border-radius: 6px;
   box-shadow: 0 3px 12px 0 rgba(187, 203, 225, 0.5);
   background-color: $color-white;
 }
 
-.rent-option-year-oil {
+.clc-rent-option-year-oil {
     height: 21.48px;
-    .good{
+    .clc-good{
         width: 0.75rem;
         height: 0.75rem;
         background-image: url("../renticon/good.png");
@@ -138,7 +138,7 @@
         display: inline-block;
         vertical-align: middle;
     }
-    .year,.oil{
+    .clc-year,.clc-oil{
         font-size: 0.9rem;
         line-height: 1.5;
         letter-spacing: -0.5px;
@@ -156,7 +156,7 @@
 
 }
 
-.rent-option-original-money{
+.clc-rent-option-original-money{
     font-size: 0.84rem;
     line-height: 1.5;
     letter-spacing: -0.05em;
@@ -169,8 +169,8 @@
     text-decoration: line-through;
 }
 
-.rent-option-safeicon-old{
-    .safeicon{
+.clc-rent-option-safeicon-old{
+    .clc-safeicon{
         width: 1rem;
         height: 1rem;
         background-image: url("../renticon/shield.png");
@@ -180,7 +180,7 @@
         display: inline-block;
         vertical-align: middle
     }
-    .old{
+    .clc-old{
         font-size: 0.9rem;
         line-height: 1.5;
         letter-spacing: -0.5px;
@@ -193,8 +193,8 @@
     }
 }
 
-.rent-option-discount-money{
-    .percent{
+.clc-rent-option-discount-money{
+    .clc-percent{
         border-radius: 20px;
         border: solid 1px $color-primary;
         color: $color-primary;
@@ -207,7 +207,7 @@
         font-family: 'SpoqaHanSans';
 
     }
-    .jacha-include{
+    .clc-jacha-include{
         //height: auto;
         color: $color-grey-4;
         font-size: 0.9rem;
@@ -219,16 +219,16 @@
         -webkit-font-smoothing: antialiased;
         font-family: 'SpoqaHanSans';
         
-        .jacha{
+        .clc-jacha{
             font-weight: 700;
             text-shadow: 0 0 1px rgba(0,0,0, 0.2);
         }
-        .include{
+        .clc-include{
             text-shadow: 0 0 1px rgba(0,0,0, 0.2);
 
         }
     }
-    .discount-result{
+    .clc-discount-result{
         color: $color-red-dark;
         font-size: 1rem;
         line-height: 1.5;
@@ -243,6 +243,6 @@
 
 }
 
-.line{
+.clc-line{
     margin: 12px 0;
 }

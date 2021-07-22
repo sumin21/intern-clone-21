@@ -8,6 +8,7 @@
     height: 53px;
     padding: 14.4px 19.5px 14.4px 19.2px;
     border-bottom: 0;
+    align-items: center;
 }
 .modal-dialog-centered {
     min-height: calc(100% - 14rem);
@@ -54,13 +55,13 @@
     border-radius: 0.25rem;
 }
 
-.modal-body{
+.dm-delivery-modal .modal-body{
     padding: 0 1.2rem 0 1.2rem;
 }
 
-.delivery-title{
+.dm-delivery-title{
     width: 100%;
-    .delivery-icon{
+    .dm-delivery-icon{
         width: 20px;
         height: 18px;
         background-image: url("../renticon/delivery-icon.png");
@@ -70,7 +71,7 @@
         display: inline-block;
         vertical-align: middle;
     }
-    .delivery-text{
+    .dm-delivery-text{
         font-size: 1rem;
         color: $color-primary;
         font-weight: bold;
@@ -81,8 +82,8 @@
     }
 }
 
-.delivery-body{
-    .delivery-body-element-left{
+.dm-delivery-body{
+    .dm-delivery-body-element-left{
         color: $color-grey-3;
         font-size: 1rem;
         font-weight: bold;
@@ -90,13 +91,13 @@
         letter-spacing: -0.03em;
         line-height: 1.5;
     }
-    .delivery-body-element-right{
+    .dm-delivery-body-element-right{
         word-break: break-word;
         height: auto;
         .d-inline-flex{
             margin-bottom: 5px;
         }
-        .delivery-body-element-right-icon{
+        .dm-delivery-body-element-right-icon{
             width: 12px;
             height: 12px;
             background-image: url("../icon/icon-location-grey@3x.png");
@@ -106,7 +107,7 @@
             display: inline-block;
             //vertical-align: middle;
         }
-        .delivery-body-element-right-text{
+        .dm-delivery-body-element-right-text{
             color: $color-grey-4;
             font-family: 'SpoqaHanSans';
             font-size: 0.9rem;
@@ -123,8 +124,8 @@
     }
 }
 
-.delivery-body-element-gyeonggi{
-    .gyeonggi-title{
+.dm-delivery-body-element-gyeonggi{
+    .dm-gyeonggi-title{
         color: $color-grey-3;
         font-size: 1rem;
         font-weight: bold;
@@ -132,7 +133,7 @@
         font-family: 'SpoqaHanSans';
 
     }
-    .delivery-body-element-left{
+    .dm-delivery-body-element-left{
         font-size: 0.9rem;
         letter-spacing: -0.05em;
         word-spacing: 0.01em;
@@ -140,7 +141,7 @@
         font-weight: normal;
     }
 }
-.modal-footer{
+.dm-delivery-modal .modal-footer{
     border: 0;
     padding: 6.4px 19.2px 14.4px;
     height: 62.79px;

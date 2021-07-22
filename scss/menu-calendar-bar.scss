@@ -1,140 +1,64 @@
 $time-color: #F1F4F9;
 
-.menu-calendar-bar{
-    //width: 90rem;
-    display: flex;
-    height: 5rem;
-    flex-grow: 0;
-    margin: 0 0 3rem;
-    padding: 0.95rem 5rem 0.75rem 4.7rem;//장소메뉴창 위치조절
+.mcb-container{
+    top: 80px;
+    position: fixed;//js로 수정
+    width: 100%;
+    box-shadow: 0 4px 14px 0 rgba(177, 177, 177, 0.2);
     background-color: $color-white;
-    box-shadow: 0 0 0.8125rem 0 $color-grey-6; //그림자 나중에 수정
-}//선 색 color-grey7
-
-.menu-bar{
-    width: 21.9rem;
-    height: 3.1rem;
-    flex-grow: 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-
-    gap: 0.25rem;
-    padding: 0.625rem 0.75rem;
-    border-radius: 0.375rem;
-    background-color: $color-white;
-    border-color: $color-grey-7;
+    z-index: 1022;
 }
 
-.menu-text{
-    width: 7.563rem;
-    height: 1.875rem;
-    flex-grow: 0;
-    -webkit-text-stroke: 0 #d4d4d4;
-    font-family: 'SpoqaHanSans';
-    font-size: 1.25rem;
-    font-weight: 900;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: -0.0625rem;
-    text-align: left;
+.m-menu-bar{
+    border: solid 1px #f3f3f3;
+    border-radius: 4px;
+    .m-menu-text{
+        color: $color-grey-3;
+        font-size: 1.25rem;
+        letter-spacing: -0.05em;
+        word-spacing: 0.01em;
+        font-weight: bold;
+        text-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+        zoom: 1;
+    }
+    .m-menu-icon{  
+        background-image: url("../icon/menu-bar-icon.png");
+        width: 1rem;
+        height: 1rem;
+        background-repeat: no-repeat;
+        background-size : contain; //png 비율 알맞게
+        display: inline-block;
+        vertical-align: middle;
+    }
+}
+
+
+
+
+
+.c-calendar-bar-flex{
+    overflow: hidden;
+    position: relative;
+    border: solid 1px $color-grey-7;
+    border-radius: 4px;
+}
+
+
+
+.c-calendar-bar-start-text,.c-calendar-bar-end-text{
     color: $color-grey-3;
-    margin-left: 0.3rem;
-}
-
-.menu-icon{
-    background-image: url("../icon/icon-arrow-right-darkgrey@3x.png");
-    background-repeat: no-repeat;
-    width: 0.625rem;
-    height: 0.875rem;
-    margin: 0.3125rem 0.188rem 0.063rem 11.25rem;
-    background-size : contain;
-    transform: rotate(90deg);
-  }
-
-
-.calendar-bar{
-    width: 27.85rem;
-    height: 3.1rem;
-    flex-grow: 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-
-    gap: 114px;
-    margin: 0 0 0 1.85rem;
-    padding: 0.625rem 0.75rem;
-    border-radius: 0.375rem;
-    background-color: $color-white;
-    border-color: $color-grey-7;
-    justify-content: center;
-}
-
-.calendar-component{
-    display:flex;
-    justify-content: space-evenly;
-    width: 26.19rem;
-}
-
-
-.calendar-start-text{
-    //flex-basis: auto; //width auto
-    height: 1.875rem;
-    flex-grow: 4;
-    -webkit-text-stroke: 0 #d4d4d4;
-    font-family: 'SpoqaHanSans';
     font-size: 1rem;
-    font-weight: bolder;
-    margin-top: 0.4rem;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: -0.0225rem;
-    text-align: right;
-    color: $color-grey-3;
+    font-weight: bold;
 }
 
-.calendar-end-text{
-    //width: auto;
-    height: 1.875rem;
-    flex-grow: 4;
-    -webkit-text-stroke: 0 #d4d4d4;
-    font-family: 'SpoqaHanSans';
-    font-size: 1rem;
-    font-weight: bolder;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: -0.0225rem;
-    text-align: left;
-    color: $color-grey-3;
-    margin-top: 0.4rem;
-    
-  }
 
-  .calendar-time-icon{
-    //width: 5rem; //js로 시간 길이마다 width 조절 -> 안해도 될듯!! flex-grow해서
-    height: 1.875rem;
-    flex-grow: 1;
-    
 
+.c-calendar-bar-time{
     border-radius: 12px;
-    background-color: $time-color;
-    margin: 0.16rem 1.5rem 0;
-  }
-
-  .calendar-time-text{
-      -webkit-text-stroke: 0 #d4d4d4;
-    font-family: 'SpoqaHanSans';
-    font-size: 0.9rem;
-    margin-top: 0.3rem;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: -0.0225rem;
-    text-align: center;
+    background-color: $color-light-grey;
     color: $color-grey-4;
-  }
+    font-size: 0.9rem;
+    line-height: 1.5;
+    letter-spacing: -0.5px;
+    word-spacing: 0.01em;
+ }

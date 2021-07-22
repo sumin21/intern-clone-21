@@ -12,13 +12,7 @@ module.exports = {
         filename:'index_bundle.js'
     },
     
-    plugins: [
-        new HtmlWebpackPlugin({
-            template: path.join(__dirname, 'pug/index.pug'),
-            filename: 'index.html'
-          }),
-        
-    ],
+    
     
     module:{
         rules: [
@@ -95,6 +89,15 @@ module.exports = {
             
         ]
     },
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: path.join(__dirname, 'pug/index.pug'),
+            filename: 'index.html'
+          }),
+        
+        
+    ],
+    
     devServer: {
         inline: true,
         hot: true,

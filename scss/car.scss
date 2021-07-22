@@ -1,20 +1,20 @@
-.car-box{
+.clc-car-box{
     padding: 1rem;
 }
 
-.car-list-component-car{
+.clc-car-list-component-car{
     //width: 19.010625rem;
     flex-grow: 0;
     padding: 0;
 }
 
 
-.real-car{
+.clc-real-car{
     width: 100%;
     //height: 18.245rem;
 }
 
-.car-picture{
+.clc-car-picture{
     padding-bottom: 1rem;
     text-align: center;
     //height: 10.1156rem;
@@ -22,7 +22,7 @@
     //flex-grow: 0;
 }
 
-.picture{
+.clc-picture{
     margin: 0 1.939875rem 0.5rem;
     padding: 1rem;
     width: 13.125rem;
@@ -38,42 +38,37 @@
 }
 
 
-.discount{
-    font-family: 'SpoqaHanSans';
+.clc-discount{
+    //font-family: 'SpoqaHanSans';
   color: $color-primary;
   font-size: 0.84rem;
   letter-spacing: -0.05em;
-  padding: 0.2rem 0.5rem;
-  font-weight: 700;
-    line-height: 1;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: baseline;
-    border-radius: 0.25rem;
+    word-spacing: 0.01em;
     text-shadow: 0 0 1px rgba(0,0,0, 0.2);
-
-  background-color: $color-discount;
+    padding: 0.2rem 0.5rem;
+    background-color: rgba(13, 111, 252, 0.1);
+    
 }
 
 
 
-.car-text{
+.clc-car-text{
     //height: 8.1275rem;
     width: 100%;
     flex-grow: 0;
 }
 
-.car-text-box{
+.clc-car-text-box{
     border-top: 0.99px;
     padding-top: 1rem;
 }
 
-.car-text-kinds-box{
+.clc-car-text-kinds-box{
     width:100%;
     //height:1.68125rem;
 }
 
-.car-text-kinds{
+.clc-car-text-kinds{
     padding: 0.25rem 0.5rem;
     border-radius: 12px;
     background-color: $time-color;
@@ -83,7 +78,7 @@
 
 }
 
-.car-text-kinds-icon{
+.clc-car-text-kinds-icon{
     width: 16px;
     height: 16px;
     background-image: url("../car-kinds/car-kinds.png");
@@ -94,7 +89,7 @@
     vertical-align: middle;
 }
 
-.car-text-kinds-text{
+.clc-car-text-kinds-text{
     display: inline-block;
     width: auto;
     margin-left: 0.25rem;
@@ -106,7 +101,7 @@
 
 }   
 
-.car-text-name{
+.clc-car-text-name{
     //height: 1.875rem;
     margin-bottom: 0.25rem;
     font-weight: bolder;
@@ -120,7 +115,7 @@
     word-break: keep-all;
 }
 
-.car-text-explan{
+.clc-car-text-explan{
     //height: 1.333125rem;
     color: $color-grey-5;
     font-size: 0.9rem;
@@ -131,7 +126,7 @@
     font-family: 'SpoqaHanSans';
 }
 
-.car-text-money{
+.clc-car-text-money{
     //height: 1.5rem;
     margin-top: 0.5rem;
     font-size: 1rem;
@@ -146,14 +141,11 @@
 
 }
 
-.car-option{
+.clc-car-option{
     width: 100%;
 }
 
-.person{
-    
-}
-.person .icon{
+.clc-person .clc-icon{
     width: 17px;
     height: 16px;
     background-image: url("../option-icon/person.png");
@@ -164,7 +156,7 @@
     vertical-align: middle;
 }
 
-.auto .icon{
+.clc-auto .clc-icon{
     width: 16px;
     height: 17px;
     background-image: url("../option-icon/auto.png");
@@ -174,7 +166,7 @@
     display: inline-block;
     vertical-align: middle;
 }
-.baggage .icon{
+.clc-baggage .clc-icon{
     width: 16px;
     height: 17px;
     background-image: url("../option-icon/baggage.png");
@@ -184,7 +176,7 @@
     display: inline-block;
     vertical-align: middle;
 }
-.door .icon{
+.clc-door .clc-icon{
     width: 16px;
     height: 17px;
     background-image: url("../option-icon/door.png");
@@ -194,7 +186,7 @@
     display: inline-block;
     vertical-align: middle;
 }
-.aircon .icon{
+.clc-aircon .clc-icon{
     width: 16px;
     height: 17px;
     background-image: url("../option-icon/aircon.png");
@@ -205,11 +197,11 @@
     vertical-align: middle;
 }
 
-.car-option{
+.clc-car-option{
     width: auto;
 }
 
-.car-option .text{
+.clc-car-option .clc-text{
     margin-left: 0.25rem;
     width: auto;
     text-shadow: 0 0 0.15px $color-car-option-text;

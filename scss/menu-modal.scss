@@ -1,0 +1,291 @@
+.modal-title{
+    line-height: 1;
+    color: $color-grey-3;
+    font-size: 1rem;
+    letter-spacing: -0.05em;
+    text-shadow: 0 0 1px rgba(0,0,0, 0.2);
+
+}
+.mm-menu-modal{
+    z-index: 1050;
+}
+.mm-menu-modal .modal-content{
+    min-height: 100%;
+}
+
+.mm-menu-modal .mm-back-button-container{
+    display: none;//검색바에 클릭했을때만 보이게
+    overflow: hidden;
+    position: relative;
+    width: 40px;
+    .mm-back-button-box{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .mm-back-button{
+        width: 0.625rem;
+        height: 1rem;
+        background-image: url("../icon/back-icon.png");
+        background-repeat: no-repeat;
+        //margin: auto auto;
+        background-size : cover; //배경에 딱맞게
+        display: inline-block;
+        vertical-align: middle;
+
+    }
+
+}
+
+.mm-menu-modal .mm-search-bar-container{
+    flex-grow: 1;
+    margin: 0.5rem 1rem;
+    padding: 0.5rem 1rem;
+    background: $color-grey-7;
+    border-radius: 1rem;
+    .mm-search-icon{
+        width: 1rem;
+        height: 1rem;
+        background-image: url("../icon/search-icon.png");
+        background-repeat: no-repeat;
+        //margin: auto auto;
+        background-size : cover; //배경에 딱맞게
+        display: inline-block;
+        vertical-align: middle;
+        line-height: 1;
+    }
+    .mm-search-bar{
+        width: 100%;
+        color: $color-grey-4;
+        background: $color-grey-7;
+        border: none;
+    }
+    input:focus {outline:none;}
+    
+}
+
+.mm-menu-modal .mm-modal-space-kinds-container{
+    position: relative;
+    width: 100%;
+    height: 40px;
+    background: $color-white;
+    border-bottom: 1px solid $color-grey-7;
+    .mm-modal-space-kinds{
+        overflow-x: auto;
+        .mm-modal-space-kinds-element{
+            color: #666;
+            font-weight: lighter;
+            padding: 10px 8px;
+            font-size: 12px;
+            white-space: nowrap;
+            text-align: left;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+
+        }
+        .mm-active{
+            color: #0d6ffc;
+            border-bottom-color: #0d6ffc;
+            font-weight: bold;
+        }
+    }
+}
+
+
+.clickable{
+    cursor: pointer;
+}
+
+.mm-container-search-result{
+    margin-right: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    background: $color-white;
+}
+
+.mm-menu-modal .modal-body{
+    background: $color-white;
+    padding: 0;
+    //min-height: 243.375px;
+    .mm-popular-table-container{
+        padding-bottom: 10px;
+        .mm-popular-table{
+            table-layout: fixed;
+            width: 100%;
+            text-align: center;
+            .col{//
+                width: 33%;
+            }
+            td{
+                zoom: 1;
+            }
+            .mm-location{
+                padding: 10px;
+                background: $color-white;
+                border: 1px solid $color-grey-7;
+            }
+            .mm-location-icon{
+                width: 50px;
+                height: 50px;
+                margin: 5px;
+                vertical-align: middle;
+                border-style: none;
+                background-repeat: no-repeat;
+                //margin: auto auto;
+                background-size : cover; //배경에 딱맞게
+                display: inline-block;
+            }
+            .mm-jeju{
+                background-image: url("../popular-location-icon/jeju.jpg");
+            }
+            .mm-seoul{
+                background-image: url("../popular-location-icon/seoul.jpg");
+            }
+            .mm-gimpo{
+                background-image: url("../popular-location-icon/gimpo.jpg");
+            }
+            .mm-busan{
+                background-image: url("../popular-location-icon/busan.jpg");
+            }
+            .mm-camping{
+                background-image: url("../popular-location-icon/camping.jpg");
+            }
+            .mm-yeosu{
+                background-image: url("../popular-location-icon/yeosu.jpg");
+            }
+            .mm-gangneung{
+                background-image: url("../popular-location-icon/gangneung.jpg");
+            }
+            .mm-ulleung{
+                background-image: url("../popular-location-icon/ulleung.jpg");
+            }
+            .mm-gwangju{
+                background-image: url("../popular-location-icon/gwangju.jpg");
+            }
+            .mm-suwon{
+                background-image: url("../popular-location-icon/suwon.jpg");
+            }
+            .mm-singeongju{
+                background-image: url("../popular-location-icon/singeongju.jpg");
+            }
+            .mm-bucheon{
+                background-image: url("../popular-location-icon/bucheon.jpg");
+            }
+            .mm-gwam{
+                background-image: url("../popular-location-icon/gwam.jpg");
+            }
+            .mm-saipan{
+                background-image: url("../popular-location-icon/saipan.jpg");
+            }
+            .mm-incheon{
+                background-image: url("../popular-location-icon/incheon.jpg");
+            }
+            
+            .mm-location-text{
+                font-size: 0.9rem;
+                letter-spacing: -0.05em;
+                word-spacing: 0.01em;
+                width: auto;
+            }
+        }
+    }
+}
+
+.mm-area-list-container,.mm-search-result-list-container{
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    .mm-location-container{
+        cursor: pointer;
+        width: 100%;
+        padding: 0.5rem 0.75rem;
+        color: #999;
+        background: #fff;
+        border-bottom: 1px solid #ebecec;
+        transition: background 400ms ease-out 100ms;
+        .mm-location{
+            width: 100%;
+            padding: 10px 0;
+            color: $color-grey-2;
+            font-size: 0.9rem;
+            letter-spacing: -0.05em;
+            word-spacing: 0.01em;
+            zoom: 1;
+            .mm-location-badge{
+                margin-left: 5px;
+                color: $color-primary;
+                background-color: rgba(13, 111, 252, 0.1);
+                padding: 0.2rem 0.5rem;
+                //border-spacing: 2px;
+            }
+        }
+        .mm-result-location{
+            width: 100%;
+            .mm-location{
+                width: 90%;
+            }
+            .mm-location-delete-button{
+                width: 10%;
+                cursor: pointer;
+                .mm-delete-icon{
+                    background-image: url("../icon/delete-icon.png");
+                    width: 15px;
+                    height: 15px;
+                    vertical-align: middle;
+                    border-style: none;
+                    background-repeat: no-repeat;
+                    
+                    background-size : cover; //배경에 딱맞게
+                    display: inline-block;
+                    
+                }
+            }
+        }
+    }
+}
+
+
+.js_domain_2, .js_domain_3, .js_domain_4, .js_domain_5, .js_domain_6, .js_domain_7{
+    display: none;
+}
+
+.mm-search-domain{
+    display: none;
+}
+.mm-search-history-title-container{
+    .mm-search-history-title-text{
+        font-weight: bold;
+        font-size: 1rem;
+        color: $color-grey-3;
+        letter-spacing: -0.05em;
+        word-spacing: 0.01em;
+    }
+    .mm-search-history-title-button{
+        color: $color-grey-5;
+        font-size: 0.9rem;
+        letter-spacing: -0.05em;
+        word-spacing: 0.01em;
+        font-weight: bold;
+        text-decoration: none;
+        border: 0;
+        line-height: 1.5;
+        vertical-align: middle;
+        background-color: $color-white;
+    }
+}
+
+.mm-recent-search-no{
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    
+    .mm-recent-search-no-text{
+        color: $color-grey-5;
+        font-size: 1rem;
+        padding-top: 2rem;
+    }
+}
+

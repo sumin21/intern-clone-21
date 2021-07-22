@@ -3,22 +3,19 @@ html
     include head.pug
     body
         header
-            include header.pug
+            include header-headers.pug
             
         div.bodys
-            div.menu-calendar-bar
-                
-                include menu.pug 
-                include calendar.pug 
+            include menu-calendar-bar.pug
             div.main-container
                 div.main.d-flex.flex-row
                     div.left.align-self-stretch.col-lg-4
                         div.filter
                     div.right.align-self-stretch.col-lg-8
                         div.banner
-                        include car-main.pug
+                        include car-result-title.pug
                         include car-kinds.pug
                         include car-list.pug
         footer
             include footer.pug
-            
+        //script(src="index_bundle.js")   

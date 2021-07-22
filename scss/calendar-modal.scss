@@ -1,0 +1,221 @@
+.cm-calendar-modal{
+    .cm-calendar-time-view-left{
+        padding: 0.4rem 0rem 0.4rem 0.75rem;
+        text-align: left;
+        .cm-time-icon{
+            background-image: url("../icon/time-icon.png");
+            background-repeat: no-repeat;
+            
+            background-size : cover; //배경에 딱맞게
+            vertical-align: middle;
+            width: 25px;
+            height: 25px;
+            margin-right: 0.5rem;
+            display: inline-block;
+            
+        }
+        .cm-date{
+            font-size: 0.9rem;
+            letter-spacing: -0.05em;
+            word-spacing: 0.01em;
+            text-shadow: 0 0 1px rgba(0,0,0, 0.2);
+        }
+        .cm-time{
+            color: $color-grey-5;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            letter-spacing: -0.5px;
+            word-spacing: 0.01em;
+            text-shadow: 0 0 1px rgba(0,0,0, 0.2);
+
+        }
+        .cm-direction-icon{
+            background-image: url("../icon/time-direction-icon.png");
+            background-size : cover; //배경에 딱맞게
+            background-repeat: no-repeat;
+            //margin: auto auto;
+            width: 8px;
+            height: 14px;
+            vertical-align: middle;
+            display: inline-block;
+        }
+    }
+    .cm-calendar-time-view-right{
+        flex-shrink: 0;
+        padding: 0.4rem 0.75rem 0.4rem 0;
+        text-align: right;
+        .cm-all-time{
+            text-shadow: 0 0 1px rgba(0,0,0, 0.2);
+            zoom: 1;
+            .cm-all-time-num,.cm-all-time-text{
+                color: $color-primary;
+                font-size: 0.9rem;
+                line-height: 1.5;
+                letter-spacing: -0.5px;
+                word-spacing: 0.01em;
+                text-shadow: 0 0 1px rgba(0,0,0, 0.2);
+            }
+        }
+       
+    }
+    label{
+        .badge{
+            color: $color-white;
+            background-color: $color-primary;
+            text-shadow: 0 0 1px rgba(0,0,0, 0.2);
+            padding: 0.2rem 0.5rem;
+            letter-spacing: -0.05em;
+            word-spacing: 0.01em;
+        }
+        .cm-label-text{
+            margin-left: 3px;
+        }
+    }
+    
+    select{
+        border-radius: 0 !important;
+    }
+
+    .modal-body{
+        background-color: $bg-pc-section;
+        padding: 1.2rem;
+    }
+    .cm-week{
+        width: 100%;
+        border-bottom: 1px solid $color-grey-7;
+        
+        div{
+            padding-bottom: 5px;
+        }
+        .cm-sunday{
+            color: $color-red;
+        }
+        .cm-saturday{
+            color: $color-primary;
+        }
+
+    }
+    .cm-calendar{
+        overflow-x: hidden;
+        table{
+            width: 100%;
+            td{
+                z-index : 0;
+                zoom: 1;
+                div{
+                    height: 30px;
+                }
+            }
+            .cm-month{
+                padding-top: 10px;
+                padding-bottom: 10px;
+                font-weight: bold;
+                font-size: 1.5rem;
+                text-align: left;
+            }
+            .cm-first-week{
+                text-align: center;
+                padding: 7px;
+            }
+            .color-red{
+                color: $color-red;
+            }
+            .cm-not-first-week{
+                text-align: center;
+                padding: 7px;
+            }
+            .cm-today-td{
+                position: relative;
+                color: $color-primary;
+            }
+            .cm-today-circle{
+                width: 30px;
+                padding: 4px;
+                background: none;
+                border: 2px solid $color-primary;
+                border-radius: 100%;
+                z-index: 100 !important;
+            }
+            .cm-active-child{
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                z-index: -1;
+                margin: auto;
+            }
+            .cm-active-date{
+                z-index: 0;
+                color: $color-white !important;
+
+            }
+            .cm-rent-possible-bg{
+                width: 100%;
+                background: $color-rent-possible;
+            }
+            .cm-half-circle-start{
+                width: calc(100% + 2px);
+                border-radius: 1rem 0 0 1rem;
+            }
+            .cm-half-circle-start,.cm-rect,.cm-half-circle-end{
+                background: $color-primary;
+            }
+            .cm-rect{
+                width: calc(100% + 4px);
+                margin-left: -2px;
+            }
+            .cm-half-circle-end{
+                width: calc(100% + 2px);
+                margin-left: -2px;
+                border-radius: 0 1rem 1rem 0;
+            }
+            .cm-date-td{
+                position: relative;
+            }
+            .cm-circle{
+                width: 30px;
+                border-radius: 1rem;
+                background: $color-primary;
+            }
+        }
+    }
+    .modal-footer{
+        padding: 0.4rem 1.2rem 0.9rem;
+        .cm-back-btn{
+            background-color: white;
+            color: #212529;
+            padding: 0.6125rem 0.75rem;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+        .cm-apply-btn{
+            border-radius: 6.1875rem;
+            background-color: #0d6ffc;
+            border-color: #0d6ffc;
+            margin-top: 0;
+            margin-bottom: 0;
+            padding-left: 2.5rem;
+            padding-right: 2.5rem;
+            font-size: 1.00625rem;
+            color: $color-white;
+
+
+
+        }
+    }
+    
+
+}
+img{
+    border-style: none;
+    box-shadow: 0;
+}
+
+.color-grey{
+    color: $color-grey-6;
+}
+
+.color-red{
+    color: $color-red;
+}
