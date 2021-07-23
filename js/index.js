@@ -2,7 +2,7 @@ import $ from "jquery";
 import 'bootstrap';
 import {sum} from './hello.js';
 import {f_drow_calendar} from './drow_calendar.js';
-import {f_calendar_event} from './drow_calendar.js';
+import {f_calendar_event} from './event_calendar.js';
 import '../scss/style.scss';
 import '../node_modules/bootstrap/dist/js/bootstrap.js';
 import 'bootstrap/js/dist/util';
