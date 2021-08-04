@@ -3,15 +3,18 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  
   "scripts": {
     "build": "webpack --mode development",
-    "dev": "webpack serve"
+    "dev": "webpack serve",
+    "type": "module"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@popperjs/core": "^2.9.2",
     "autoprefixer": "^10.2.6",
+    "axios": "^0.21.1",
     "bootstrap": "^4.6.0",
     "css-loader": "^5.2.6",
     "file-loader": "^6.2.0",

@@ -6,7 +6,7 @@
     padding: 0;
 }
 
-.clc-rent{
+.clc-rent,.clc-rent-clone{
     padding: 1rem;
     border-bottom: 1px solid $color-grey-7;
 }
@@ -29,15 +29,15 @@
     .clc-delivery{
         width: 4.125rem;
         height: 1.125rem;
-        background-image: url("../renticon/delivery.png");
-        background-repeat: no-repeat;
-        //margin: auto auto;
-        background-size : contain; //png 비율 알맞게
-        display: inline-block;
-        vertical-align: middle;
-        background-color: $color-white;
-        border-color: $color-white;
-        border: 1px solid transparent;
+        // background-image: url("../icon/icon-delivery.png");
+        // background-repeat: no-repeat;
+        // //margin: auto auto;
+        // background-size : contain; //png 비율 알맞게
+        // display: inline-block;
+        // vertical-align: middle;
+        // background-color: $color-white;
+        // border-color: $color-white;
+        // border: 1px solid transparent;
     }
 }
 
@@ -180,7 +180,7 @@
         display: inline-block;
         vertical-align: middle
     }
-    .clc-old{
+    .clc-old,.clc-plus-old{
         font-size: 0.9rem;
         line-height: 1.5;
         letter-spacing: -0.5px;
@@ -207,7 +207,7 @@
         font-family: 'SpoqaHanSans';
 
     }
-    .clc-jacha-include{
+    .clc-insurance{
         //height: auto;
         color: $color-grey-4;
         font-size: 0.9rem;
@@ -219,16 +219,16 @@
         -webkit-font-smoothing: antialiased;
         font-family: 'SpoqaHanSans';
         
-        .clc-jacha{
+        .clc-insurance-text-top{
             font-weight: 700;
             text-shadow: 0 0 1px rgba(0,0,0, 0.2);
         }
-        .clc-include{
+        .clc-insurance-text-bottom{
             text-shadow: 0 0 1px rgba(0,0,0, 0.2);
 
         }
     }
-    .clc-discount-result{
+    .clc-discount-result,.clc-plus-discount-result{
         color: $color-red-dark;
         font-size: 1rem;
         line-height: 1.5;
@@ -244,5 +244,6 @@
 }
 
 .clc-line{
+    display: none;
     margin: 12px 0;
 }

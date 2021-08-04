@@ -14,17 +14,19 @@ div(tabindex="-1",aria-labelledby="calendarModalLabel",aria-hidden="true").cm-ca
                             div.cm-time-icon#js_timeicon
                             div.cm-time-text.d-flex.flex-grow-1.justify-content-start
                                 div.cm-time-text-1
-                                    span.cm-date.mr-1 7/19/월
-                                    span.cm-time 10:00
+                                    span.cm-date.mr-1#js_rent_start_date_text1 7/19/월
+                                    span.cm-time#js_rent_start_date_text2 10:00
                                 div.cm-time-text-2
                                     div.cm-direction-icon.mx-1
-                                div.cm-time-text-3
-                                    span.cm-date.mr-1 7/20/화
-                                    span.cm-time 10:00
-                        div.cm-calendar-time-view-right.d-flex.align-items-center
+                                div.cm-time-text-3#js_rent_end_date_text
+                                    span.cm-date.mr-1#js_rent_end_date_text1 7/20/화
+                                    span.cm-time#js_rent_end_date_text2 10:00
+                        div.cm-calendar-time-view-right.d-flex.align-items-center#js_rent_all_time
                             p.cm-all-time.mb-0
-                                strong.cm-all-time-num 24
-                                span.cm-all-time-text 시간
+                                strong.cm-all-day-num#js_rent_all_time_days_num 3
+                                span.cm-all-day-text.mr-1#js_rent_all_time_days_text 일
+                                strong.cm-all-time-num#js_rent_all_time_hours_num 24
+                                span.cm-all-time-text#js_rent_all_time_hours_text 시간
                     div.cm-calendar-time-selector.container
                         div.row
                             div.col
@@ -32,70 +34,16 @@ div(tabindex="-1",aria-labelledby="calendarModalLabel",aria-hidden="true").cm-ca
                                     label
                                         span.badge 시작
                                         span.cm-label-text 대여시간
-                                    select.custom-select
+                                    select.custom-select#js_rent_start_time
                                         //-07:00:00
-                                        option(value="07:00") 07:00
-                                        option(value="07:30") 07:30
-                                        option(value="08:00") 08:00
-                                        option(value="08:30") 08:30
-                                        option(value="09:00") 09:00
-                                        option(value="09:30") 09:30
-                                        option(value="10:00", selected) 10:00
-                                        option(value="10:30") 10:30
-                                        option(value="11:00") 11:00
-                                        option(value="11:30") 11:30
-                                        option(value="12:00") 12:00
-                                        option(value="12:30") 12:30
-                                        option(value="13:00") 13:00
-                                        option(value="13:30") 13:30
-                                        option(value="14:00") 14:00
-                                        option(value="14:30") 14:30
-                                        option(value="15:00") 15:00
-                                        option(value="15:30") 15:30
-                                        option(value="16:00") 16:00
-                                        option(value="16:30") 16:30
-                                        option(value="17:00") 17:00
-                                        option(value="17:30") 17:30
-                                        option(value="18:00") 18:00
-                                        option(value="18:30") 18:30
-                                        option(value="19:00") 19:00
-                                        option(value="19:30") 19:30
-                                        option(value="20:00") 20:00
-                                        option(value="20:30") 20:30
-                                        option(value="21:00") 21:00
-                                        option(value="21:30") 21:30
-                                        option(value="22:00") 22:00
+                                        
                             div.col
                                 div.cm-end-time.mb-0
                                     label
                                         span.badge 끝
                                         span.cm-label-text 반납시간
-                                    select.custom-select
-                                        option(value="10:00") 10:00
-                                        option(value="10:30") 10:30
-                                        option(value="11:00") 11:00
-                                        option(value="11:30") 11:30
-                                        option(value="12:00") 12:00
-                                        option(value="12:30") 12:30
-                                        option(value="13:00") 13:00
-                                        option(value="13:30") 13:30
-                                        option(value="14:00") 14:00
-                                        option(value="14:30") 14:30
-                                        option(value="15:00") 15:00
-                                        option(value="15:30") 15:30
-                                        option(value="16:00") 16:00
-                                        option(value="16:30") 16:30
-                                        option(value="17:00") 17:00
-                                        option(value="17:30") 17:30
-                                        option(value="18:00") 18:00
-                                        option(value="18:30") 18:30
-                                        option(value="19:00") 19:00
-                                        option(value="19:30") 19:30
-                                        option(value="20:00") 20:00
-                                        option(value="20:30") 20:30
-                                        option(value="21:00") 21:00
-                                        option(value="21:30") 21:30
-                                        option(value="22:00") 22:00
+                                    select.custom-select#js_rent_end_time
+                                        
                 
 
             div.modal-body
@@ -110,60 +58,8 @@ div(tabindex="-1",aria-labelledby="calendarModalLabel",aria-hidden="true").cm-ca
                         div.cm-friday 금
                         div.cm-saturday 토
                     div.cm-calendar#js_calendar
-                        //-7, 8, 9, 10, 11, 12 반복
-                        //- table.cm-calendar-table#js_7_calendar
-                        //-     tr
-                        //-         //-2021.7
-                        //-         td(colspan="7").cm-month#js_7_month
-                        //-     tr#test_7_1
-                                
-                        //-         td.first-week.color-grey 1
-                        //-         td.first-week.color-grey 2
-                        //-         td.first-week.color-grey 3
-                        //-     tr#test_7_2
-                        //-         td.not-first-week.color-grey 4
-                        //-         td.not-first-week.color-grey 5
-                        //-         td.not-first-week.color-grey 6
-                        //-         td.not-first-week.color-grey 7
-                        //-         td.not-first-week.color-grey 8
-                        //-         td.not-first-week.color-grey 9
-                        //-         td.not-first-week.color-grey 10
-                        //-     tr#test_7_3
-                        //-         td.not-first-week.color-grey
-                        //-             span 11
-                        //-         td.not-first-week.color-grey
-                        //-             span 11
-                        //-         td.not-first-week.color-grey
-                        //-             span 11
-                        //-         td.not-first-week.color-grey
-                        //-             span 11
-                        //-         td.not-first-week.color-grey
-                        //-             span 11
-                        //-     tr#test_7_4
-                        //-         //-active-date : 선택된
-                        //-         td.not-first-week.today-td.clickable.color-red.date-td
-                        //-             span 18
-                        //-             div.active-child.today-circle
-                        //-         td.not-first-week.clickable.active-date.date-td#js_click_date1
-                        //-             span 19
-                        //-             div.active-child.rent-possible-bg
-                        //-             div.active-child.half-circle-start
-                        //-         td.not-first-week.clickable.active-date.date-td
-                        //-             span 20
-                        //-             div.active-child.rent-possible-bg
-                        //-             div.active-child.rect
-                        //-         td.not-first-week.clickable.active-date.date-td#js_click_date2
-                        //-             span 21
-                        //-             div.active-child.rent-possible-bg
-                        //-             div.active-child.half-circle-end
-                        //-         td.not-first-week.clickable.date-td
-                        //-             span 22
-                        //-             div.active-child.rent-possible-bg
-                        //-         td.not-first-week.clickable.date-td 23
-                        //-         td.not-first-week.clickable.date-td.color-red 24
-
-                                
-                        //-     tr#test_7_5
+                    include calendar-dateover-modal.pug
+                        
             div.modal-footer
-                button(type="button",data-dismiss="modal").border-0.btn.cm-back-btn 뒤로
-                button(type="button").btn.btn-lg.cm-apply-btn 적용하기
+                button(type="button",data-dismiss="modal").border-0.btn.cm-back-btn#js_calendar_back_btn 뒤로
+                button(type="button").btn.btn-lg.cm-apply-btn#js_calendar_apply_btn 적용하기

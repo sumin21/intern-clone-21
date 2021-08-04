@@ -1,16 +1,18 @@
 //-동작 수정
 div.col-lg-5
-    div(data-toggle="modal",data-target="#calendarModal").c-calendar-bar.mb-0.h-100
+    div(data-toggle="modal",data-target="#calendarModal").c-calendar-bar.mb-0.h-100#js_calendar_bar
         div.c-calendar-bar-flex.clickable.d-flex.justify-content-center.align-items-center.px-3.py-1.h-100
             div.c-calendar-bar-start-text.mb-0
-                span 7/20/화
+                span#js_calendar_bar_start_date 7/20/화
                 span &nbsp;
-                span 10:00
+                span#js_calendar_bar_start_time 10:00
             div.c-calendar-bar-time.d-flex.py-1.px-2.mx-4
                 //-일(num)/일/시간(num)/시간
-                span.c-calendar-bar-time-num 24
-                span.c-calendar-bar-time-text 시간
+                span.c-calendar-bar-time-num#js_calendar_bar_all_time_days_num 1
+                span.c-calendar-bar-time-text#js_calendar_bar_all_time_days_text 일
+                span.c-calendar-bar-time-num#js_calendar_bar_all_time_hours_num 24
+                span.c-calendar-bar-time-text#js_calendar_bar_all_time_hours_text 시간
             div.c-calendar-bar-end-text.mb-0
-                span 7/21/수
+                span#js_calendar_bar_end_date 7/21/수
                 span &nbsp;
-                span 10:00
+                span#js_calendar_bar_end_time 10:00

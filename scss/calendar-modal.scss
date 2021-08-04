@@ -47,7 +47,7 @@
         .cm-all-time{
             text-shadow: 0 0 1px rgba(0,0,0, 0.2);
             zoom: 1;
-            .cm-all-time-num,.cm-all-time-text{
+            .cm-all-day-num,.cm-all-day-text,.cm-all-time-num,.cm-all-time-text{
                 color: $color-primary;
                 font-size: 0.9rem;
                 line-height: 1.5;
@@ -134,7 +134,7 @@
                 background: none;
                 border: 2px solid $color-primary;
                 border-radius: 100%;
-                z-index: 100 !important;
+                
             }
             .cm-active-child{
                 position: absolute;

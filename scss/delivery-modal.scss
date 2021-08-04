@@ -55,8 +55,32 @@
     border-radius: 0.25rem;
 }
 
-.dm-delivery-modal .modal-body{
-    padding: 0 1.2rem 0 1.2rem;
+.dm-delivery-modal,.dm-delivery-modal-clone{
+
+    .modal-body{
+        padding: 0 1.2rem 0 1.2rem;
+    }
+
+    .modal-footer{
+        border: 0;
+        padding: 6.4px 19.2px 14.4px;
+        height: 62.79px;
+        button{
+            background-color: $color-primary;
+            border-color: $color-primary;
+            border: 1px;
+            margin: 0 4px;
+            padding: 8px 40px;
+            border-radius: 6.1875rem;
+            font-size: 1.00625rem;
+            line-height: 1.5;
+            color: $color-white;
+            font-family: 'SpoqaHanSans';
+            border: 1px solid transparent;
+    
+        }
+    }
+    
 }
 
 .dm-delivery-title{
@@ -83,7 +107,7 @@
 }
 
 .dm-delivery-body{
-    .dm-delivery-body-element-left{
+    .dm-delivery-body-element-left,.dm-delivery-body-element-left-clone{
         color: $color-grey-3;
         font-size: 1rem;
         font-weight: bold;
@@ -91,7 +115,7 @@
         letter-spacing: -0.03em;
         line-height: 1.5;
     }
-    .dm-delivery-body-element-right{
+    .dm-delivery-body-element-right,.dm-delivery-body-element-right-clone{
         word-break: break-word;
         height: auto;
         .d-inline-flex{
@@ -119,12 +143,15 @@
 
         }
     }
-    hr{
+    .dm-hr,.dm-hr-clone{
         border-top: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    .dm-hr{
+        display: none;
     }
 }
 
-.dm-delivery-body-element-gyeonggi{
+.dm-delivery-body-element-gyeonggi,.dm-delivery-body-element-gyeonggi-clone{
     .dm-gyeonggi-title{
         color: $color-grey-3;
         font-size: 1rem;
@@ -133,7 +160,7 @@
         font-family: 'SpoqaHanSans';
 
     }
-    .dm-delivery-body-element-left{
+    .dm-delivery-body-element-left,.dm-delivery-body-element-left-clone{
         font-size: 0.9rem;
         letter-spacing: -0.05em;
         word-spacing: 0.01em;
@@ -141,22 +168,6 @@
         font-weight: normal;
     }
 }
-.dm-delivery-modal .modal-footer{
-    border: 0;
-    padding: 6.4px 19.2px 14.4px;
-    height: 62.79px;
-    button{
-        background-color: $color-primary;
-        border-color: $color-primary;
-        border: 1px;
-        margin: 0 4px;
-        padding: 8px 40px;
-        border-radius: 6.1875rem;
-        font-size: 1.00625rem;
-        line-height: 1.5;
-        color: $color-white;
-        font-family: 'SpoqaHanSans';
-        border: 1px solid transparent;
-
-    }
+.dm-delivery-modal-container{
+    display: none;
 }

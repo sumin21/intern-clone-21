@@ -201,18 +201,24 @@
     width: auto;
 }
 
-.clc-car-option .clc-text{
-    margin-left: 0.25rem;
-    width: auto;
-    text-shadow: 0 0 0.15px $color-car-option-text;
-    font-family: 'SpoqaHanSans';
-    font-size: 0.9rem;
-    line-height: 1.5;
-    letter-spacing: -0.5px;
-    letter-spacing: -0.05em;
-    word-spacing: 0.01em;
-    -webkit-font-smoothing: antialiased;
-    font-weight: 400;
-    color: $color-car-option-text;
-    //height: 1.333125rem;
+.clc-car-option{
+
+    .clc-aircon-box{
+        display: none;
+    }
+    .clc-text{
+        margin-left: 0.25rem;
+        width: auto;
+        text-shadow: 0 0 0.15px $color-car-option-text;
+        font-family: 'SpoqaHanSans';
+        font-size: 0.9rem;
+        line-height: 1.5;
+        letter-spacing: -0.5px;
+        letter-spacing: -0.05em;
+        word-spacing: 0.01em;
+        -webkit-font-smoothing: antialiased;
+        font-weight: 400;
+        color: $color-car-option-text;
+        //height: 1.333125rem;
+    }
 }

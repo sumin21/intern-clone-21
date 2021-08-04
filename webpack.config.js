@@ -98,11 +98,14 @@ module.exports = {
         
     ],
     
-    devServer: {
-        inline: true,
-        hot: true,
+    // devServer: {
+    //     inline: true,
+    //     hot: true,
         
-    },
-    
+    // },
+    devServer: {
+        
+        
+      },
     
 };

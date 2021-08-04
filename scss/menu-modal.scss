@@ -121,7 +121,7 @@
             td{
                 zoom: 1;
             }
-            .mm-location{
+            .mm-location-container,.mm-popular-location-container{
                 padding: 10px;
                 background: $color-white;
                 border: 1px solid $color-grey-7;
@@ -137,49 +137,43 @@
                 background-size : cover; //배경에 딱맞게
                 display: inline-block;
             }
-            .mm-jeju{
+            .mm-popular-2{
                 background-image: url("../popular-location-icon/jeju.jpg");
             }
-            .mm-seoul{
+            .mm-popular-13{
                 background-image: url("../popular-location-icon/seoul.jpg");
             }
-            .mm-gimpo{
+            .mm-popular-17{
                 background-image: url("../popular-location-icon/gimpo.jpg");
             }
-            .mm-busan{
+            .mm-popular-5{
                 background-image: url("../popular-location-icon/busan.jpg");
             }
-            .mm-camping{
+            .mm-popular-14{
                 background-image: url("../popular-location-icon/camping.jpg");
             }
-            .mm-yeosu{
-                background-image: url("../popular-location-icon/yeosu.jpg");
-            }
-            .mm-gangneung{
+            
+            .mm-popular-3{
                 background-image: url("../popular-location-icon/gangneung.jpg");
             }
-            .mm-ulleung{
+            .mm-popular-12{
                 background-image: url("../popular-location-icon/ulleung.jpg");
             }
-            .mm-gwangju{
-                background-image: url("../popular-location-icon/gwangju.jpg");
-            }
-            .mm-suwon{
+            
+            .mm-popular-18{
                 background-image: url("../popular-location-icon/suwon.jpg");
             }
-            .mm-singeongju{
-                background-image: url("../popular-location-icon/singeongju.jpg");
+            .mm-popular-7{
+                background-image: url("../popular-location-icon/gwangju.jpg");
             }
-            .mm-bucheon{
-                background-image: url("../popular-location-icon/bucheon.jpg");
-            }
-            .mm-gwam{
+            
+            .mm-popular-15{
                 background-image: url("../popular-location-icon/gwam.jpg");
             }
-            .mm-saipan{
+            .mm-popular-16{
                 background-image: url("../popular-location-icon/saipan.jpg");
             }
-            .mm-incheon{
+            .mm-popular-1{
                 background-image: url("../popular-location-icon/incheon.jpg");
             }
             
@@ -198,7 +192,7 @@
     width: 100%;
     height: 100%;
     overflow-y: auto;
-    .mm-location-container{
+    .mm-location-container,.mm-location-result-container{
         cursor: pointer;
         width: 100%;
         padding: 0.5rem 0.75rem;
@@ -252,7 +246,7 @@
     display: none;
 }
 
-.mm-search-domain{
+.mm-search-domain,.mm-search-result-domain{
     display: none;
 }
 .mm-search-history-title-container{

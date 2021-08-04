@@ -37,200 +37,46 @@ div(tabindex="-1",aria-labelledby="menuModalLabel",aria-hidden="true").mm-menu-m
                                         col
                                         col
                                         col
-                                    tbody
-                                        tr
-                                            td(data-idx="5").mm-location.clickable
-                                                div.mm-location-icon.mm-jeju
-                                                div.mm-location-text 제주공항
-                                            td(data-idx="89").mm-location.clickable
-                                                div.mm-location-icon.mm-seoul
-                                                div.mm-location-text 서울
-                                            td(data-idx="7").mm-location.clickable
-                                                div.mm-location-icon.mm-gimpo
-                                                div.mm-location-text 김포공항
-                                        tr
-                                            td(data-idx="26").mm-location.clickable
-                                                div.mm-location-icon.mm-busan
-                                                div.mm-location-text KTX 부산역
-                                            td(data-idx="207").mm-location.clickable
-                                                div.mm-location-icon.mm-camping
-                                                div.mm-location-text 캠핑카
-                                            td(data-idx="20").mm-location.clickable
-                                                div.mm-location-icon.mm-yeosu
-                                                div.mm-location-text KTX 여수역
-                                        tr 
-                                            td(data-idx="6").mm-location.clickable
-                                                div.mm-location-icon.mm-gangneung
-                                                div.mm-location-text KTX 강릉역
-                                            td(data-idx="8").mm-location.clickable
-                                                div.mm-location-icon.mm-ulleung
-                                                div.mm-location-text 울릉도
-                                            td(data-idx="25").mm-location.clickable
-                                                div.mm-location-icon.mm-gwangju
-                                                div.mm-location-text KTX 광주역
-                                        tr 
-                                            td(data-idx="33").mm-location.clickable
-                                                div.mm-location-icon.mm-suwon
-                                                div.mm-location-text KTX 수원역
-                                            td(data-idx="37").mm-location.clickable
-                                                div.mm-location-icon.mm-singeongju
-                                                div.mm-location-text KTX 신경주역
-                                            td(data-idx="197").mm-location.clickable
-                                                div.mm-location-icon.mm-bucheon
-                                                div.mm-location-text 부천 송내역
-                                        tr
-                                            td(data-idx="OS7").mm-location.clickable
-                                                div.mm-location-icon.mm-gwam
-                                                div.mm-location-text 괌
-                                            td(data-idx="OS84").mm-location.clickable
-                                                div.mm-location-icon.mm-saipan
-                                                div.mm-location-text 사이판
-                                            td(data-idx="1").mm-location.clickable
-                                                div.mm-location-icon.mm-incheon
-                                                div.mm-location-text 인천공항
+                                    tbody#js_popular_location_list
+                                        
 
 
                         div.mm-area-list-domain.w-100.h-100.js_domain_2#js_airport_domain
                             //-인기지역-공항
                             div.mm-area-list-container
                                 //-js용
-                                div.mm-area-list
-                                    //-반복문써서 append 넣기
-                                    div(data="1").mm-location-container
-                                        div.mm-location
-                                            span.mm-location-name 인천국제공항
-                                            div.mm-location-badge.badge.badge-soft-primary.px-1 바로 예약 지역
-                                    div(data="1").mm-location-container
-                                        div.mm-location
-                                            span.mm-location-name 인천국제공항
-                                            div.mm-location-badge.badge.badge-soft-primary.px-1 바로 예약 지역
-                                    div(data="1").mm-location-container
-                                        div.mm-location
-                                            span.mm-location-name 인천국제공항
-                                            div.mm-location-badge.badge.badge-soft-primary.px-1 바로 예약 지역
-                                    div(data="1").mm-location-container
-                                        div.mm-location
-                                            span.mm-location-name 인천국제공항
-                                            div.mm-location-badge.badge.badge-soft-primary.px-1 바로 예약 지역
-                                    div(data="1").mm-location-container
-                                        div.mm-location
-                                            span.mm-location-name 인천국제공항
-                                            div.mm-location-badge.badge.badge-soft-primary.px-1 바로 예약 지역
-
+                                div.mm-area-list#js_airport_location_list
 
                         div.mm-area-list-domain.w-100.h-100#js_ktx_domain.js_domain_3
                             //-인기지역-ktx역
                             div.mm-area-list-container
                                 //-js용
-                                div.mm-area-list
-                                    div(data="1").mm-location-container
-                                        div.mm-location
-                                            span.mm-location-name 강릉역
-                                            div.mm-location-badge.badge.badge-soft-primary.px-1 바로 예약 지역
-                                    div(data="1").mm-location-container
-                                        div.mm-location
-                                            span.mm-location-name 강릉역
-                                            div.mm-location-badge.badge.badge-soft-primary.px-1 바로 예약 지역
-                                    div(data="1").mm-location-container
-                                        div.mm-location
-                                            span.mm-location-name 강릉역
-                                            div.mm-location-badge.badge.badge-soft-primary.px-1 바로 예약 지역
-                                    div(data="1").mm-location-container
-                                        div.mm-location
-                                            span.mm-location-name 강릉역
-                                            div.mm-location-badge.badge.badge-soft-primary.px-1 바로 예약 지역
-                                    div(data="1").mm-location-container
-                                        div.mm-location
-                                            span.mm-location-name 강릉역
-                                            div.mm-location-badge.badge.badge-soft-primary.px-1 바로 예약 지역
+                                div.mm-area-list#js_ktx_location_list
+                                    
                         div.mm-area-list-domain.w-100.h-100#js_srt_domain.js_domain_4
                             //-인기지역-srt역
                             div.mm-area-list-container
                                 //-js용
-                                div.mm-area-list
-                                    div(data="1").mm-location-container
-                                        div.mm-location
-                                            span.mm-location-name 수서역
-                                            div.mm-location-badge.badge.badge-soft-primary.px-1 바로 예약 지역
-                                    div(data="1").mm-location-container
-                                        div.mm-location
-                                            span.mm-location-name 수서역
-                                            div.mm-location-badge.badge.badge-soft-primary.px-1 바로 예약 지역
-                                    div(data="1").mm-location-container
-                                        div.mm-location
-                                            span.mm-location-name 수서역
-                                            div.mm-location-badge.badge.badge-soft-primary.px-1 바로 예약 지역
-                                    div(data="1").mm-location-container
-                                        div.mm-location
-                                            span.mm-location-name 수서역
-                                            div.mm-location-badge.badge.badge-soft-primary.px-1 바로 예약 지역
-                                    div(data="1").mm-location-container
-                                        div.mm-location
-                                            span.mm-location-name 수서역
-                                            div.mm-location-badge.badge.badge-soft-primary.px-1 바로 예약 지역
+                                div.mm-area-list#js_srt_location_list
+                                    
                         div.mm-area-list-domain.w-100.h-100#js_bus_domain.js_domain_5
                             //-인기지역-버스터미널
                             div.mm-area-list-container
                                 //-js용
-                                div.mm-area-list
-                                    div(data="1").mm-location-container
-                                        div.mm-location
-                                            span.mm-location-name 광양시외버스터미널
-                                            div.mm-location-badge.badge.badge-soft-primary.px-1 바로 예약 지역
-                                    div(data="1").mm-location-container
-                                        div.mm-location
-                                            span.mm-location-name 광양시외버스터미널
-                                            div.mm-location-badge.badge.badge-soft-primary.px-1 바로 예약 지역
-                                    div(data="1").mm-location-container
-                                        div.mm-location
-                                            span.mm-location-name 광양시외버스터미널
-                                            div.mm-location-badge.badge.badge-soft-primary.px-1 바로 예약 지역
-                                    div(data="1").mm-location-container
-                                        div.mm-location
-                                            span.mm-location-name 광양시외버스터미널
-                                            div.mm-location-badge.badge.badge-soft-primary.px-1 바로 예약 지역
-                                    div(data="1").mm-location-container
-                                        div.mm-location
-                                            span.mm-location-name 광양시외버스터미널
-                                            div.mm-location-badge.badge.badge-soft-primary.px-1 바로 예약 지역
+                                div.mm-area-list#js_bus_location_list
+                                    
                         div.mm-area-list-domain.w-100.h-100#js_location_domain.js_domain_6
                             //-인기지역-지역
                             div.mm-area-list-container
                                 //-js용
-                                div.mm-area-list
-                                    div(data="1").mm-location-container
-                                        div.mm-location
-                                            span.mm-location-name 울릉도
-                                            div.mm-location-badge.badge.badge-soft-primary.px-1 바로 예약 지역
-                                    div(data="1").mm-location-container
-                                        div.mm-location
-                                            span.mm-location-name 울릉도
-                                            div.mm-location-badge.badge.badge-soft-primary.px-1 바로 예약 지역
-                                    div(data="1").mm-location-container
-                                        div.mm-location
-                                            span.mm-location-name 울릉도
-                                            div.mm-location-badge.badge.badge-soft-primary.px-1 바로 예약 지역
-                                    div(data="1").mm-location-container
-                                        div.mm-location
-                                            span.mm-location-name 울릉도
-                                            div.mm-location-badge.badge.badge-soft-primary.px-1 바로 예약 지역
-                                    div(data="1").mm-location-container
-                                        div.mm-location
-                                            span.mm-location-name 울릉도
-                                            div.mm-location-badge.badge.badge-soft-primary.px-1 바로 예약 지역
+                                div.mm-area-list#js_region_location_list
+                                    
                         div.mm-area-list-domain.w-100.h-100#js_foreign_domain.js_domain_7
                             //-인기지역-해외
                             div.mm-area-list-container
                                 //-js용
-                                div.mm-area-list
-                                    div(data="1").mm-location-container
-                                        div.mm-location
-                                            span.mm-location-name 미국(괌)
-                                            div.mm-location-badge.badge.badge-soft-primary.px-1 바로 예약 지역
-                                    div(data="1").mm-location-container
-                                        div.mm-location
-                                            span.mm-location-name 미국(사이판)
-                                            div.mm-location-badge.badge.badge-soft-primary.px-1 바로 예약 지역
+                                div.mm-area-list#js_abroad_location_list
+                                    
                                     
 
 
@@ -241,12 +87,16 @@ div(tabindex="-1",aria-labelledby="menuModalLabel",aria-hidden="true").mm-menu-m
                             div.mm-location-icon
                             span.mm-location-text 내위치
                         include location-toasts.pug
+
+                div.mm-search-result-domain#js_search_result_domain
+                    div.mm-search-result-list-container
+                        div.mm-search-result-list#js_search_location_list
                 div.mm-search-domain#js_search_domain
                     div.mm-search-history-container
                         div.mm-search-history-title-container
                             div.mm-search-history-title.d-flex.align-items-center.justify-content-between.p-3
                                 div.mm-search-history-title-text 최근 검색기록
-                                button(data-toggle="modal",data-target="#allremoveModal").mm-search-history-title-button.p-2#js_all_delete_open_btn 기록 삭제
+                                button(data-toggle="modal",data-target="#allremoveModal").mm-search-history-title-button.p-2#js_all_delete_modal_open_btn 기록 삭제
                                 include search-result-all-remove-modal.pug
                         div.mm-search-history-list
                     div.mm-recent-search-no
@@ -254,50 +104,13 @@ div(tabindex="-1",aria-labelledby="menuModalLabel",aria-hidden="true").mm-menu-m
                     div.mm-search-result-list-container
                         div.mm-search-result-list
                             //-추가할때마다 js_search_result_1,2,3,4... (한꺼번에 삭제)
-                            div(data="1").mm-location-container
+                            div(data="1").mm-location-result-container
                                 div.mm-result-location.d-flex
                                     div.mm-location
                                         span.mm-location-name 인천국제공항
                                         div.mm-location-badge.badge.badge-soft-primary.px-1 바로 예약 지역
                                     div.mm-location-delete-button.d-flex.align-items-center.justify-content-center.text-align-center
                                         div.mm-delete-icon
-                            div(data="1").mm-location-container
-                                div.mm-result-location.d-flex
-                                    div.mm-location
-                                        span.mm-location-name 1
-                                        div.mm-location-badge.badge.badge-soft-primary.px-1 바로 예약 지역
-                                    div.mm-location-delete-button.d-flex.align-items-center.justify-content-center.text-align-center
-                                        div.mm-delete-icon
-                            div(data="1").mm-location-container
-                                div.mm-result-location.d-flex
-                                    div.mm-location
-                                        span.mm-location-name 2
-                                        div.mm-location-badge.badge.badge-soft-primary.px-1 바로 예약 지역
-                                    div.mm-location-delete-button.d-flex.align-items-center.justify-content-center.text-align-center
-                                        div.mm-delete-icon
-                            div(data="1").mm-location-container
-                                div.mm-result-location.d-flex
-                                    div.mm-location
-                                        span.mm-location-name 3
-                                        div.mm-location-badge.badge.badge-soft-primary.px-1 바로 예약 지역
-                                    div.mm-location-delete-button.d-flex.align-items-center.justify-content-center.text-align-center
-                                        div.mm-delete-icon
-                            div(data="1").mm-location-container
-                                div.mm-result-location.d-flex
-                                    div.mm-location
-                                        span.mm-location-name 4
-                                        div.mm-location-badge.badge.badge-soft-primary.px-1 바로 예약 지역
-                                    div.mm-location-delete-button.d-flex.align-items-center.justify-content-center.text-align-center
-                                        div.mm-delete-icon
-
-
-
-
-
-
-
-
-
 
             div.modal-footer.d-none
                 button(type="button",data-dismiss="modal") 확인
