@@ -1,5 +1,4 @@
 import axios from 'axios';
-import $ from 'jquery';
 import {f_locations_event} from './locations_event.js';
 import {f_locations_click_event} from './locations_event.js';
 import {f_popular_locations_click_event} from './locations_event.js';

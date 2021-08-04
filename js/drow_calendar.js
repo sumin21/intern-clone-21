@@ -84,8 +84,8 @@ export function f_drow_calendar() { //캘린더 그리기
         //당일 푸른 동그라미
         else if (f_equalDate(comparedDate, nowDate)) {
             td_e.classList.add('cm-today-td', 'clickable', 'color-red', 'cm-date-td');
-            
-            if(f_today_timeout()){//선택 안되게
+
+            if (f_today_timeout()) { //선택 안되게
                 td_e.classList.remove('clickable', 'cm-date-td', 'color-red');
                 td_e.classList.add('color-grey');
                 //span_e.style.cursor = 'text';
@@ -111,7 +111,7 @@ export function f_drow_calendar() { //캘린더 그리기
             }
         }
 
-        
+
         tr_e.appendChild(td_e);
         comparedDate.setDate(comparedDate.getDate() + 1); //+1씩 증가
     }
@@ -157,9 +157,9 @@ function f_date_set(date, month, day) {
     date.setDate(day);
 }
 
-export function f_today_timeout(){
+export function f_today_timeout() {
     const today = new Date();
-    if(today.getHours >= 21 && today.getMinutes >= 30){
+    if (today.getHours >= 21 && today.getMinutes >= 30) {
         return true;
     }
     return false;

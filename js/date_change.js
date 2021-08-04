@@ -1,4 +1,3 @@
-import {f_calendar_event} from './event_calendar.js';
 import {f_childsAllRemove} from './event_calendar.js';
 import {f_selected} from './event_calendar.js';
 import {f_allTimeCalcular} from './event_calendar.js';

@@ -1,4 +1,4 @@
-export function f_car_list_more_btn(){
+export function f_car_list_more_btn() {
     let fragment = document.createDocumentFragment();
     var button_e = document.createElement('button');
     button_e.classList.add('cl-more-button');

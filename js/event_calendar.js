@@ -1,7 +1,6 @@
 import $ from "jquery";
 import {f_DateToStr} from './drow_calendar.js';
 import {f_StrToDate} from './drow_calendar.js';
-import {f_today_timeout} from './drow_calendar.js';
 import {f_rent_time_select} from './rent_time.js';
 import {f_rent_today_time} from './rent_time.js';
 
