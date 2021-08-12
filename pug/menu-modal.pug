@@ -17,13 +17,13 @@ div(tabindex="-1",aria-labelledby="menuModalLabel",aria-hidden="true").mm-menu-m
                         input(type="text",placeholder="지역이나 역, 건물 이름으로 검색").mm-search-bar.d-flex#js_search_bar
                 div.mm-modal-space-kinds-container#js_space_kinds_display
                     div.mm-modal-space-kinds.p-0.d-flex.container
-                        div(data-index="1").mm-modal-space-kinds-element.d-inline-block.mm-active#js_popular_title 인기지역
-                        div(data-index="2").mm-modal-space-kinds-element.d-inline-block#js_airport_title 공항
-                        div(data-index="3").mm-modal-space-kinds-element.d-inline-block#js_ktx_title KTX역
-                        div(data-index="4").mm-modal-space-kinds-element.d-inline-block#js_srt_title SRT역
-                        div(data-index="5").mm-modal-space-kinds-element.d-inline-block#js_bus_title 버스 터미널
-                        div(data-index="6").mm-modal-space-kinds-element.d-inline-block#js_location_title 지역
-                        div(data-index="7").mm-modal-space-kinds-element.d-inline-block#js_foreign_title 해외
+                        div(data-index="1").mm-modal-space-kinds-element.d-inline-block.mm-active#js_popular 인기지역
+                        div(data-index="2").mm-modal-space-kinds-element.d-inline-block#js_airport 공항
+                        div(data-index="3").mm-modal-space-kinds-element.d-inline-block#js_ktx KTX역
+                        div(data-index="4").mm-modal-space-kinds-element.d-inline-block#js_srt SRT역
+                        div(data-index="5").mm-modal-space-kinds-element.d-inline-block#js_bus 버스 터미널
+                        div(data-index="6").mm-modal-space-kinds-element.d-inline-block#js_location 지역
+                        div(data-index="7").mm-modal-space-kinds-element.d-inline-block#js_foreign 해외
                     //-??
                     div.mm-container-search-result
 
@@ -97,7 +97,7 @@ div(tabindex="-1",aria-labelledby="menuModalLabel",aria-hidden="true").mm-menu-m
                             div.mm-search-history-title.d-flex.align-items-center.justify-content-between.p-3
                                 div.mm-search-history-title-text 최근 검색기록
                                 button(data-toggle="modal",data-target="#allremoveModal").mm-search-history-title-button.p-2#js_all_delete_modal_open_btn 기록 삭제
-                                include search-result-all-remove-modal.pug
+                            
                         div.mm-search-history-list
                     div.mm-recent-search-no
                         div.mm-recent-search-no-text.text-center#js_recent_search_no_text 최근 검색기록이 없습니다.
@@ -108,6 +108,13 @@ div(tabindex="-1",aria-labelledby="menuModalLabel",aria-hidden="true").mm-menu-m
                                 div.mm-result-location.d-flex
                                     div.mm-location
                                         span.mm-location-name 인천국제공항
+                                        div.mm-location-badge.badge.badge-soft-primary.px-1 바로 예약 지역
+                                    div.mm-location-delete-button.d-flex.align-items-center.justify-content-center.text-align-center
+                                        div.mm-delete-icon
+                            div(data="1").mm-location-result-container
+                                div.mm-result-location.d-flex
+                                    div.mm-location
+                                        span.mm-location-name 부산역
                                         div.mm-location-badge.badge.badge-soft-primary.px-1 바로 예약 지역
                                     div.mm-location-delete-button.d-flex.align-items-center.justify-content-center.text-align-center
                                         div.mm-delete-icon

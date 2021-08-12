@@ -1,36 +1,38 @@
-.nc-container{
+.nc-container {
     display: none;
     margin-top: 30px;
-    .nc-icon{
+
+    .nc-icon {
         width: 400px;
         height: 160px;
         background-image: url("../icon/no-car-icon.png");
         background-repeat: no-repeat;
-        //margin: auto auto;
-        background-size : contain; //png 비율 알맞게
+        background-size: contain; //png 비율 알맞게
         display: inline-block;
         vertical-align: middle;
         max-width: 25rem;
-
     }
-    .nc-text-top{
+
+    .nc-text-top {
         color: $color-grey-2;
         font-weight: bold;
         font-size: 1rem;
         letter-spacing: -0.05em;
         word-spacing: 0.01em;
         line-height: 1.2;
-        text-shadow: 0 0 1px rgba(0,0,0, 0.2);
+        text-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
     }
-    .nc-text-bottom{
+
+    .nc-text-bottom {
         color: $color-grey-5;
         font-size: 0.9rem;
         line-height: 1.5;
         letter-spacing: -0.5px;
         word-spacing: 0.01em;
-        text-shadow: 0 0 1px rgba(0,0,0, 0.2);
+        text-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
     }
-    button{
+
+    button {
         border-radius: 6.1875rem;
         padding-left: 3rem;
         padding-right: 3rem;

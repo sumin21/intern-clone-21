@@ -1,41 +1,40 @@
-import {f_childsAllRemove} from './event_calendar.js';
-import {f_selected} from './event_calendar.js';
-import {f_allTimeCalcular} from './event_calendar.js';
-import {f_rent_time_select} from './rent_time.js';
+import {emptyElmtChild} from './common.js';
+import {selected} from './common.js';
+import {allTimeCalcular} from './common.js';
+import {rentTimeSelect} from './rent_time.js';
 
+export function dateChange() {
+    const startDates = document.getElementById('js_rent_start_time');
+    const endDates = document.getElementById('js_rent_end_time');
 
-export function f_date_change(){
-    const start_dates = document.getElementById('js_rent_start_time');
-    const end_dates = document.getElementById('js_rent_end_time');
+    startDates.addEventListener('change', function () {
+        let startDateTime = selected('js_rent_start_time');
+        let endDateTime = selected('js_rent_end_time');
+        console.log(startDateTime);
+        document.getElementById('js_rent_start_date_text2').innerHTML = startDateTime;
 
-    start_dates.addEventListener('change', function(){
-        var start_date_time = f_selected('js_rent_start_time');
-        var end_date_time = f_selected('js_rent_end_time');
-        console.log(start_date_time);
-        document.getElementById('js_rent_start_date_text2').innerHTML = start_date_time;
-
-        f_allTimeCalcular(start_date_time, end_date_time);
+        allTimeCalcular(startDateTime, endDateTime);
 
         //날짜는 안바뀌는 채로 start time 시간만 변경될때 반납시간 select는 재로드
-        if(document.getElementsByClassName('cm-active-date').length == 2){
-            
+        if (document.getElementsByClassName('cm-active-date').length == 2) {
 
-            f_childsAllRemove('js_rent_end_time');
-            f_rent_time_select(start_date_time, end_date_time, 'js_rent_end_time'); 
+
+            emptyElmtChild('js_rent_end_time');
+            rentTimeSelect(startDateTime, endDateTime, 'js_rent_end_time');
             document.getElementById('js_rent_end_time').disabled = false;
-            end_date_time = f_selected('js_rent_end_time');
-            document.getElementById('js_rent_end_date_text2').innerHTML = end_date_time;
+            endDateTime = selected('js_rent_end_time');
+            document.getElementById('js_rent_end_date_text2').innerHTML = endDateTime;
 
-            f_allTimeCalcular(start_date_time, end_date_time);
+            allTimeCalcular(startDateTime, endDateTime);
 
         }
-        
+
     })
-    end_dates.addEventListener('change', function(){
-        var start_date_time = f_selected('js_rent_start_time');
-        var end_date_time = f_selected('js_rent_end_time');
-        console.log(end_date_time);
-        document.getElementById('js_rent_end_date_text2').innerHTML = end_date_time;
-        f_allTimeCalcular(start_date_time, end_date_time);
+    endDates.addEventListener('change', function () {
+        let startDateTime = selected('js_rent_start_time');
+        let endDateTime = selected('js_rent_end_time');
+        console.log(endDateTime);
+        document.getElementById('js_rent_end_date_text2').innerHTML = endDateTime;
+        allTimeCalcular(startDateTime, endDateTime);
     })
 }

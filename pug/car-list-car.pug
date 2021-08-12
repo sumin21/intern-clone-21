@@ -1,26 +1,26 @@
 div.clc-car-list-component.d-flex.flex-column
-    div.rows.d-flex.flex-row
+    div.row.no-gutters
         //-차
         div.clc-car-list-component-car.align-self-stretch.col-12.col-lg-5
-            div.clc-car-box
-                div.clc-real-car.d-flex.flex-column
-                    div.clc-car-picture
-                        div.clc-picture
+            div.clc-car-box.pt-3.pb-2.px-1.p-lg-3
+                div.clc-real-car.row.no-gutters
+                    div.clc-car-picture.col-6.col-lg-12.pb-lg-3
+                        img(src="https://d1masd123hbmlx.cloudfront.net/20181023004239_671_CARMST/20181023004239_671_CARMST_214.png").clc-picture.px-2.p-lg-3.mb-2
                         div.clc-discount-container.d-flex.justify-content-center.align-items.center
                             span.clc-discount.badge.badge-soft-primary
                                 
-                    div.clc-car-text
+                    div.clc-car-text.col-6.col-lg-12.d-flex.flex-column.justify-content-center
                         //-
-                        div.clc-car-text-box.border-danger.border-top
+                        div.clc-car-text-box.border-danger.pt-lg-3
                             div.clc-car-text-kinds-box
                                 div.clc-car-text-kinds.d-inline-flex.align-items-center
                                     div.clc-car-text-kinds-icon
                                     span.clc-car-text-kinds-text
                             div.clc-car-text-name
-                            div.clc-car-text-explan
+                            div.clc-car-text-explan.text-12
                             div.clc-car-text-money
                 //-flex
-                div.clc-car-option.d-flex.flex-wrap.justify-content-between.align-items-center
+                div.clc-car-option.d-flex.flex-wrap.justify-content-between.align-items-center.text-12.px-3.px-lg-0
                     div.clc-person-box.pr-4.pt-2
                         div.clc-person.d-flex.align-items-center
                             div.clc-icon
@@ -40,12 +40,12 @@ div.clc-car-list-component.d-flex.flex-column
                     div.clc-aircon-box.pr-4.pt-2
                         div.clc-aircon.d-flex.align-items-center
                             div.clc-icon
-                            span.clc-text
+                            span.clc-text 에어컨
             
                 //-span.real-car
                 //-span.white-background
         //-렌트카 (여러개일수)
-        div.clc-car-list-component-rent.align-self-stretch.col-12.col-lg-7#js_clone_test_component_rent
+        div.clc-car-list-component-rent.col-12.col-lg-7#js_clone_test_component_rent
             div.clc-rent
                 div.clc-rent-company.mb-3.d-flex.flex-row.align-itmes-center
                     div.clc-rent-company-name-umo.col-9
@@ -56,12 +56,12 @@ div.clc-car-list-component.d-flex.flex-column
                             include delivery-modal.pug
                         div.clc-rent-company-umo.d-flex.flex-row.align-items-center.mt-1
                             div.clc-check-icon
-                            span.clc-umo.mb-0
+                            span.clc-umo.mb-0.text-12
                     div.clc-rent-company-score-reserve.col-3
                         div.clc-rent-company-score.d-flex.flex-row.align-items-center.justify-content-end
                             div.clc-star-icon.mr-1
-                            span.clc-score
-                        div.clc-rent-company-reserve.mt-1.mb-0.text-right
+                            span.clc-score.text-12
+                        div.clc-rent-company-reserve.mt-1.mb-0.text-right.text-12
                 //-여러개일수
                 div.clc-rent-option-container
                     div.clc-rent-option-box-1
@@ -74,21 +74,21 @@ div.clc-car-list-component.d-flex.flex-column
                                         div.clc-rent-option-year-oil
                                             //-있을수도 없을수도
                                             div.clc-good.mr-1
-                                            span.clc-year.mb-0
+                                            span.clc-year.mb-0.text-12
                                             //-ㆍ
                                             span ㆍ
-                                            span.clc-oil.mb-0
+                                            span.clc-oil.mb-0.text-12
                                         div.clc-rent-option-original-money.mb-0.text-right
                                     //-1/2개일수
                                     div.clc-rent-option-text.d-flex.justify-content-between.align-items-center
                                     
                                         div.clc-rent-option-safeicon-old.d-flex.align-items-center
                                             div.clc-safeicon.mr-1
-                                            span.clc-old.mb-0
+                                            span.clc-old.mb-0.text-12
                                         div.clc-rent-option-discount-money.d-flex.align-items-center
                                         
         
-                                            div.clc-insurance.mr-1
+                                            div.clc-insurance.mr-1.text-12
                                                 span.clc-insurance-text-top 일반자차
                                                 span.clc-insurance-text-bottom  포함가
                                             //-숫자 + 원
@@ -111,4 +111,4 @@ div.clc-car-list-component.d-flex.flex-column
     //-마감일때만
     div.clc-reserved-car-container.text-center
         div.clc-reserved-car
-            p.clc-reserved-car-text
+            p.clc-reserved-car-text.text-12

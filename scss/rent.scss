@@ -1,249 +1,161 @@
-
-.clc-car-list-component-rent{
+.clc-car-list-component-rent {
     background-color: $color-rentcar;
-    //width: 26.61375rem;
-    flex-grow:0;
+    flex-grow: 0;
     padding: 0;
 }
 
-.clc-rent,.clc-rent-clone{
+.clc-rent,
+.clc-rent-clone {
     padding: 1rem;
     border-bottom: 1px solid $color-grey-7;
 }
 
-.clc-rent-company-name{
-    .clc-name{
+.clc-rent-company-name {
+    .clc-name {
         font-weight: bold;
         font-size: 1rem;
         letter-spacing: -0.05em;
         word-spacing: 0.01em;
         text-shadow: 0 0 0.15px $color-car-option-text;
         line-height: 1.2;
-        word-wrap: break-word;
-        word-break: keep-all;
-        -webkit-font-smoothing: antialiased;
-        font-family: 'SpoqaHanSans';
         color: $color-rent-name;
-        height: auto;
     }
-    .clc-delivery{
+
+    .clc-delivery {
         width: 4.125rem;
         height: 1.125rem;
-        // background-image: url("../icon/icon-delivery.png");
-        // background-repeat: no-repeat;
-        // //margin: auto auto;
-        // background-size : contain; //png 비율 알맞게
-        // display: inline-block;
-        // vertical-align: middle;
-        // background-color: $color-white;
-        // border-color: $color-white;
-        // border: 1px solid transparent;
     }
 }
 
-
-.clc-rent-company-name-umo{
+.clc-rent-company-name-umo {
     padding: 0;
 }
 
-.clc-rent-company-score-reserve{
+.clc-rent-company-score-reserve {
     padding: 0;
 }
 
-.clc-rent-company-name{
+.clc-rent-company-name {
     height: auto;
 }
 
-.clc-rent-company-umo .clc-check-icon{
+.clc-rent-company-umo .clc-check-icon {
     width: 1rem;
     height: 1rem;
     background-image: url("../renticon/check.png");
     background-repeat: no-repeat;
-    //margin: auto auto;
-    background-size : contain; //png 비율 알맞게
+    background-size: contain; //png 비율 알맞게
     display: inline-block;
     vertical-align: middle;
 }
 
-.clc-rent-company-umo .clc-umo{
+.clc-rent-company-umo .clc-umo {
     color: $color-grey-4;
-    font-size: 0.9rem;
-    line-height: 1.5;
-    letter-spacing: -0.5px;
-    word-spacing: 0.01em;
-    word-wrap: break-word;
-    word-break: keep-all;
-    -webkit-font-smoothing: antialiased;
-    font-weight: 400;
-    font-family: 'SpoqaHanSans';
-
 }
 
-.clc-star-icon{
+.clc-star-icon {
     width: 0.624375rem;
     height: 0.624375rem;
     background-image: url("../renticon/star.png");
     background-repeat: no-repeat;
-    //margin: auto auto;
-    background-size : contain; //png 비율 알맞게
+    background-size: contain; //png 비율 알맞게
     display: inline-block;
     vertical-align: middle;
 }
 
-.clc-score{
-    font-size: 0.9rem;
-    line-height: 1.5;
-    letter-spacing: -0.5px;
-    word-spacing: 0.01em;
-    word-wrap: break-word;
-    word-break: keep-all;
-    -webkit-font-smoothing: antialiased;
-    font-weight: 400;
-    font-family: 'SpoqaHanSans';
+.clc-score {
     color: $color-grey-2;
 }
 
-.clc-rent-company-reserve{
-    font-size: 0.9rem;
-    text-align: right;
-    line-height: 1.5;
-    letter-spacing: -0.5px;
-    word-spacing: 0.01em;
-    word-wrap: break-word;
-    word-break: keep-all;
-    -webkit-font-smoothing: antialiased;
-    font-family: 'SpoqaHanSans';
+.clc-rent-company-reserve {
     color: $color-grey-5;
 }
 
-.clc-rent-option-box{
+.clc-rent-option-box {
     padding: 0.75rem;
 }
 
-.clc-rent-option-box-1{//box-2, 3, 4.....
+.clc-rent-option-box-1 {
     border-radius: 6px;
-  box-shadow: 0 3px 12px 0 rgba(187, 203, 225, 0.5);
-  background-color: $color-white;
+    box-shadow: 0 3px 12px 0 rgba(187, 203, 225, 0.5);
+    background-color: $color-white;
 }
 
 .clc-rent-option-year-oil {
     height: 21.48px;
-    .clc-good{
+
+    .clc-good {
         width: 0.75rem;
         height: 0.75rem;
         background-image: url("../renticon/good.png");
         background-repeat: no-repeat;
-        //margin: auto auto;
-        background-size : contain; //png 비율 알맞게
+        background-size: contain; //png 비율 알맞게
         display: inline-block;
         vertical-align: middle;
     }
-    .clc-year,.clc-oil{
-        font-size: 0.9rem;
-        line-height: 1.5;
-        letter-spacing: -0.5px;
-        word-spacing: 0.01em;
-        word-wrap: break-word;
-        word-break: keep-all;
-        -webkit-font-smoothing: antialiased;
-        font-weight: 700;
-        font-family: 'SpoqaHanSans';
+
+    .clc-year,
+    .clc-oil {
         color: $color-grey-2;
-        text-shadow: 0 0 1px rgba(0,0,0, 0.2);
-
-
+        text-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+        font-weight: 700;
     }
 
 }
 
-.clc-rent-option-original-money{
+.clc-rent-option-original-money {
     font-size: 0.84rem;
     line-height: 1.5;
     letter-spacing: -0.05em;
     word-spacing: 0.01em;
-    word-wrap: break-word;
-    word-break: keep-all;
-    -webkit-font-smoothing: antialiased;
-    font-family: 'SpoqaHanSans';
     color: $color-grey-5;
     text-decoration: line-through;
 }
 
-.clc-rent-option-safeicon-old{
-    .clc-safeicon{
+.clc-rent-option-safeicon-old {
+    .clc-safeicon {
         width: 1rem;
         height: 1rem;
         background-image: url("../renticon/shield.png");
         background-repeat: no-repeat;
-        //margin: auto auto;
-        background-size : contain; //png 비율 알맞게
+        background-size: contain; //png 비율 알맞게
         display: inline-block;
         vertical-align: middle
     }
-    .clc-old,.clc-plus-old{
-        font-size: 0.9rem;
-        line-height: 1.5;
-        letter-spacing: -0.5px;
-        word-spacing: 0.01em;
-        word-wrap: break-word;
-        word-break: keep-all;
-        -webkit-font-smoothing: antialiased;
-        font-family: 'SpoqaHanSans';
+
+    .clc-old,
+    .clc-plus-old {
         color: $color-grey-3;
     }
 }
 
-.clc-rent-option-discount-money{
-    .clc-percent{
-        border-radius: 20px;
-        border: solid 1px $color-primary;
-        color: $color-primary;
-        font-size: 10px;
-        letter-spacing: -0.03em;
-        word-wrap: break-word;
-        word-break: keep-all;
-        -webkit-font-smoothing: antialiased;
-        line-height: 1.5;
-        font-family: 'SpoqaHanSans';
+.clc-rent-option-discount-money {
 
-    }
-    .clc-insurance{
-        //height: auto;
+    .clc-insurance {
         color: $color-grey-4;
-        font-size: 0.9rem;
-        line-height: 1.5;
-        letter-spacing: -0.5px;
-        word-spacing: 0.01em;
-        word-wrap: break-word;
-        word-break: keep-all;
-        -webkit-font-smoothing: antialiased;
-        font-family: 'SpoqaHanSans';
-        
-        .clc-insurance-text-top{
-            font-weight: 700;
-            text-shadow: 0 0 1px rgba(0,0,0, 0.2);
-        }
-        .clc-insurance-text-bottom{
-            text-shadow: 0 0 1px rgba(0,0,0, 0.2);
 
+        .clc-insurance-text-top {
+            font-weight: 700;
+            text-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+        }
+
+        .clc-insurance-text-bottom {
+            text-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
         }
     }
-    .clc-discount-result,.clc-plus-discount-result{
+
+    .clc-discount-result,
+    .clc-plus-discount-result {
         color: $color-red-dark;
         font-size: 1rem;
         line-height: 1.5;
         letter-spacing: -0.05em;
         word-spacing: 0.01em;
-        word-wrap: break-word;
-        word-break: keep-all;
-        -webkit-font-smoothing: antialiased;
-        font-family: 'SpoqaHanSans';
         font-weight: bold;
     }
-
 }
 
-.clc-line{
+.clc-line {
     display: none;
     margin: 12px 0;
 }

@@ -1,15 +1,15 @@
-.modal-content{
+.modal-content {
     border-radius: 1rem;
     position: relative;
-
 }
 
-.modal-header{
+.modal-header {
     height: 53px;
     padding: 14.4px 19.5px 14.4px 19.2px;
     border-bottom: 0;
     align-items: center;
 }
+
 .modal-dialog-centered {
     min-height: calc(100% - 14rem);
 }
@@ -26,46 +26,43 @@
 }
 
 
-.x-btn{
-    padding:0px!important;
+.x-btn {
+    padding: 0px !important;
     margin: 0px !important;
     border: 1px !important;
     text-shadow: 0 0 0;
-    
     flex-grow: 0;
-
 }
 
-.x{
+.x {
     height: 24.5px;
-    
     font-size: 1rem;
     font-weight: bolder;
-    
 }
 
-.x-box{
+.x-box {
     width: 24.5px;
     height: 24.5px;
     padding-top: 3px;
     border-color: transparent;
-    
     background-color: rgba(108, 117, 125, 0.2) !important;
     border-color: transparent;
     border-radius: 0.25rem;
 }
 
-.dm-delivery-modal,.dm-delivery-modal-clone{
+.dm-delivery-modal,
+.dm-delivery-modal-clone {
 
-    .modal-body{
+    .modal-body {
         padding: 0 1.2rem 0 1.2rem;
     }
 
-    .modal-footer{
+    .modal-footer {
         border: 0;
         padding: 6.4px 19.2px 14.4px;
         height: 62.79px;
-        button{
+
+        button {
             background-color: $color-primary;
             border-color: $color-primary;
             border: 1px;
@@ -73,101 +70,97 @@
             padding: 8px 40px;
             border-radius: 6.1875rem;
             font-size: 1.00625rem;
-            line-height: 1.5;
             color: $color-white;
-            font-family: 'SpoqaHanSans';
             border: 1px solid transparent;
-    
         }
     }
-    
+
 }
 
-.dm-delivery-title{
+.dm-delivery-title {
     width: 100%;
-    .dm-delivery-icon{
+
+    .dm-delivery-icon {
         width: 20px;
         height: 18px;
         background-image: url("../renticon/delivery-icon.png");
         background-repeat: no-repeat;
-        //margin: auto auto;
-        background-size : contain; //png 비율 알맞게
+        background-size: contain; //png 비율 알맞게
         display: inline-block;
         vertical-align: middle;
     }
-    .dm-delivery-text{
+
+    .dm-delivery-text {
         font-size: 1rem;
         color: $color-primary;
         font-weight: bold;
-        letter-spacing: -0.03em;
-        line-height: 1.5;
-        font-family: 'SpoqaHanSans';
-
     }
 }
 
-.dm-delivery-body{
-    .dm-delivery-body-element-left,.dm-delivery-body-element-left-clone{
+.dm-delivery-body {
+
+    .dm-delivery-body-element-left,
+    .dm-delivery-body-element-left-clone {
         color: $color-grey-3;
         font-size: 1rem;
         font-weight: bold;
-        font-family: 'SpoqaHanSans';
-        letter-spacing: -0.03em;
-        line-height: 1.5;
     }
-    .dm-delivery-body-element-right,.dm-delivery-body-element-right-clone{
+
+    .dm-delivery-body-element-right,
+    .dm-delivery-body-element-right-clone {
         word-break: break-word;
         height: auto;
-        .d-inline-flex{
+
+        .d-inline-flex {
             margin-bottom: 5px;
         }
-        .dm-delivery-body-element-right-icon{
+
+        .dm-delivery-body-element-right-icon {
             width: 12px;
             height: 12px;
             background-image: url("../icon/icon-location-grey@3x.png");
             background-repeat: no-repeat;
-            //margin: auto auto;
-            background-size : contain; //png 비율 알맞게
+            background-size: contain; //png 비율 알맞게
             display: inline-block;
-            //vertical-align: middle;
+            vertical-align: middle;
         }
-        .dm-delivery-body-element-right-text{
+
+        .dm-delivery-body-element-right-text {
             color: $color-grey-4;
-            font-family: 'SpoqaHanSans';
             font-size: 0.9rem;
-            letter-spacing: -0.05em;
             word-spacing: 0.01em;
             height: auto;
-            text-shadow: 0 0 1px rgba(0,0,0, 0.2);
-
-
+            text-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
         }
     }
-    .dm-hr,.dm-hr-clone{
+
+    .dm-hr,
+    .dm-hr-clone {
         border-top: 1px solid rgba(0, 0, 0, 0.1);
     }
-    .dm-hr{
+
+    .dm-hr {
         display: none;
     }
 }
 
-.dm-delivery-body-element-gyeonggi,.dm-delivery-body-element-gyeonggi-clone{
-    .dm-gyeonggi-title{
+.dm-delivery-body-element-gyeonggi,
+.dm-delivery-body-element-gyeonggi-clone {
+    .dm-gyeonggi-title {
         color: $color-grey-3;
         font-size: 1rem;
         font-weight: bold;
-        letter-spacing: -0.03em;
-        font-family: 'SpoqaHanSans';
-
     }
-    .dm-delivery-body-element-left,.dm-delivery-body-element-left-clone{
+
+    .dm-delivery-body-element-left,
+    .dm-delivery-body-element-left-clone {
         font-size: 0.9rem;
         letter-spacing: -0.05em;
         word-spacing: 0.01em;
-        font-family: 'SpoqaHanSans';
         font-weight: normal;
     }
 }
-.dm-delivery-modal-container{
+
+.dm-delivery-modal-container {
     display: none;
 }

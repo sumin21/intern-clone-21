@@ -1,21 +1,15 @@
-.clc-reserved-car-container{
+.clc-reserved-car-container {
     width: 100%;
     border-top: 1px solid $color-grey-7;
     display: none;
 }
 
-.clc-reserved-car{
+.clc-reserved-car {
     margin: 0 1rem;
     padding-top: 0.5rem;
 }
-.clc-reserved-car-text{
-    color: $color-grey-5;
-    font-size: 0.9rem;
-    line-height: 1.5;
-    letter-spacing: -0.5px;
-    word-spacing: 0.01em;
-    text-shadow: 0 0 1px rgba(0,0,0, 0.2);
-    font-family: 'SpoqaHanSans';
-    
-}
 
+.clc-reserved-car-text {
+    color: $color-grey-5;
+    text-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+}

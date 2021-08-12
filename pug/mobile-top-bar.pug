@@ -1,0 +1,69 @@
+div.mtb.d-lg-none
+    div.d-lg-none.container
+        div.container-inner
+            div.mtb-location-filter-header.dc-flex.align-items-center.justify-content-between.d-flex
+                
+                //-클릭 시 메뉴모달
+                div(data-toggle="modal",data-target="#menuModal").mtb-location-menu-bar-left.d-flex.align-items-center.clickable#js_mobile_menu_modal_open_btn
+                    div.mtb-menu-text.mb-0#js_mobile_menu_bar_text 제주국제공항
+                    div.mtb-location-icon.ml-2
+                div.mtb-location-menu-bar-right.d-flex.align-items-center
+                    div.mtb-car-kinds-dropdown.dropdown
+                        div(data-toggle='dropdown').mtb-dropdown-btn.btn.btn-sm.btn-pill.btn-white.mr-2.dropdown-toggle#js_mobile_dropdown_title 차종순
+                        //-
+                        div.dropdown-menu
+                            a.mtb-sort-type.dropdown-item.js-vsl-btn-sort.mtb-dropdown-active#js_type_mobile 차종순
+                            a.mtb-sort-type.dropdown-item.js-vsl-btn-sort#js_popular_mobile 인기순
+                            a.mtb-sort-type.dropdown-item.js-vsl-btn-sort#js_price_mobile 가격순
+                    div.mtb-filter.btn.btn-sm
+                        div.mtb-filter-icon.mr-1
+                        span 필터
+            div.mtb-calendar-bar-container.clickable.mb-2
+                div(data-toggle="modal",data-target="#calendarModal").mtb-calendar-bar.d-flex.justify-content-between#js_mobile_calendar_bar
+                    div.mtb-calendar-bar-left.flex-grow-1.d-flex.align-items-center
+                        div.mtb-calendar-time-icon
+
+                        div.d-flex.flex-grow-1.justify-content-start
+                            div.mtb-date-wrapper
+                                //-얘네 js에서 그냥 class로 뽑고 모두 돌리는걸로 (js대신 class로 수정)
+                                //-여기부터!!!
+                                span.mtb-txt-rent-start-date.mr-1#js_mobile_calendar_bar_start_date 8/5/목
+                                span.mtb-txt-rent-start-time#js_mobile_calendar_bar_start_time 10:00
+                            div.mtb-date-wrapper
+                                div.mtb-calendar-direction-icon.mx-1
+                            div.mtb-date-wrapper
+                                span.mtb-txt-rent-end-date.mr-1#js_mobile_calendar_bar_end_date 8/6/금
+                                span.mtb-txt-rent-end-time#js_mobile_calendar_bar_end_time 10:00
+
+                    div.mtb-calendar-bar-right.d-flex.align-items-center
+                        p.mb-0.d-flex
+                            strong.mtb-calendar-bar-time-num#js_mobile_calendar_bar_all_time_days_num 1
+                            span.mtb-calendar-bar-time-text.mr-1#js_mobile_calendar_bar_all_time_days_text 일
+                            strong.mtb-calendar-bar-time-num#js_mobile_calendar_bar_all_time_hours_num 24
+                            span.mtb-calendar-bar-time-text#js_mobile_calendar_bar_all_time_hours_text 시간
+
+    div.mtb-car-kinds-container-box
+        div.mtb-car-kinds-container.container
+            ul.mtb-car-kinds.nav.nav-pills
+                li.nav-item.m-0
+                    a.mtb-c-type.clickable.nav-link.mtb-car-kinds-active#js_all_mobile 전체
+                li.nav-item.m-0
+                    a.mtb-c-type.clickable.nav-link#js_elec_mobile 전기
+                li.nav-item.m-0
+                    a.mtb-c-type.clickable.nav-link#js_small_mobile 경소형
+                li.nav-item.m-0
+                    a.mtb-c-type.clickable.nav-link#js_middle_mobile 준중형
+                li.nav-item.m-0
+                    a.mtb-c-type.clickable.nav-link#js_big_mobile 중대형
+                li.nav-item.m-0
+                    a.mtb-c-type.clickable.nav-link#js_suv_mobile SUV
+                li.nav-item.m-0
+                    a.mtb-c-type.clickable.nav-link#js_rv_mobile 승합
+                li.nav-item.m-0
+                    a.mtb-c-type.clickable.nav-link#js_import_mobile 수입
+    div.mtb-car-detail-container-box#js_car_detail
+        div.mtb-car-detail-container.py-1.px-2.d-lg-none
+            div.mtb-car-detail.container.d-flex.justify-content-between
+                span#js_car_detail_c_name 레이
+                span#js_car_detail_c_price 100원
+

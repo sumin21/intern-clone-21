@@ -1,3 +1,9 @@
-.bodys{
+.bodys {
     padding-top: 5rem;
+}
+
+@media screen and (max-width: 992px) {
+    .bodys {
+        padding-top: 0px;
+    }
 }

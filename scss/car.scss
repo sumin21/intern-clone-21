@@ -1,224 +1,168 @@
-.clc-car-box{
-    padding: 1rem;
-}
-
-.clc-car-list-component-car{
-    //width: 19.010625rem;
+.clc-car-list-component-car {
     flex-grow: 0;
     padding: 0;
 }
 
-
-.clc-real-car{
-    width: 100%;
-    //height: 18.245rem;
-}
-
-.clc-car-picture{
-    padding-bottom: 1rem;
+.clc-car-picture {
     text-align: center;
-    //height: 10.1156rem;
-    //높이는 flex로 조절
-    //flex-grow: 0;
 }
 
-.clc-picture{
-    margin: 0 1.939875rem 0.5rem;
-    padding: 1rem;
-    width: 13.125rem;
-    //max-width: 210px;
-    height: 7.375rem;
-    background-image: url("../caricon/car.png");
-    background-repeat: no-repeat;
-    //margin: auto auto;
-    background-size : contain; //png 비율 알맞게
-    display: inline-block;
-    vertical-align: middle;
-    
+.clc-picture {
+    display: flex;
+    width: 100%;
+    max-width: 210px;
+    margin-right: auto;
+    margin-left: auto;
 }
 
-
-.clc-discount{
-    //font-family: 'SpoqaHanSans';
-  color: $color-primary;
-  font-size: 0.84rem;
-  letter-spacing: -0.05em;
+.clc-discount {
+    color: $color-primary;
+    font-size: 0.84rem;
+    letter-spacing: -0.05em;
     word-spacing: 0.01em;
-    text-shadow: 0 0 1px rgba(0,0,0, 0.2);
+    text-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
     padding: 0.2rem 0.5rem;
     background-color: rgba(13, 111, 252, 0.1);
-    
 }
 
+@media screen and (max-width: 992px) {
+    .clc-discount {
+        font-size: 0.625rem;
+    }
+}
 
-
-.clc-car-text{
-    //height: 8.1275rem;
+.clc-car-text {
     width: 100%;
     flex-grow: 0;
 }
 
-.clc-car-text-box{
-    border-top: 0.99px;
-    padding-top: 1rem;
+@media screen and (min-width: 992px) {
+    .clc-car-text-box {
+        border-top: 1px solid #f3f3f3;
+    }
 }
 
-.clc-car-text-kinds-box{
-    width:100%;
-    //height:1.68125rem;
+.clc-car-text-kinds-box {
+    width: 100%;
 }
 
-.clc-car-text-kinds{
+.clc-car-text-kinds {
     padding: 0.25rem 0.5rem;
     border-radius: 12px;
     background-color: $time-color;
-    height:auto;
+    height: auto;
     align-items: center;
     width: auto;
-
 }
 
-.clc-car-text-kinds-icon{
+.clc-car-text-kinds-icon {
     width: 16px;
     height: 16px;
     background-image: url("../car-kinds/car-kinds.png");
     background-repeat: no-repeat;
-    //margin: auto auto;
-    background-size : contain; //png 비율 알맞게
+    background-size: contain;
     display: inline-block;
     vertical-align: middle;
 }
 
-.clc-car-text-kinds-text{
+.clc-car-text-kinds-text {
     display: inline-block;
     width: auto;
     margin-left: 0.25rem;
     font-size: 12px;
-    font-family: 'SpoqaHanSans';
     letter-spacing: -0.6px;
     color: $color-car-text-kinds;
-    text-shadow: 0 0 1px rgba(0,0,0, 0.2);
+    text-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
 
-}   
+}
 
-.clc-car-text-name{
-    //height: 1.875rem;
+.clc-car-text-name {
     margin-bottom: 0.25rem;
     font-weight: bolder;
     font-size: 1.25rem;
     letter-spacing: -0.05em;
     word-spacing: 0.01em;
-    font-family: 'SpoqaHanSans';
     color: $color-grey-1;
-    -webkit-font-smoothing: antialiased;
-    word-wrap: break-word;
-    word-break: keep-all;
 }
 
-.clc-car-text-explan{
-    //height: 1.333125rem;
+.clc-car-text-explan {
     color: $color-grey-5;
-    font-size: 0.9rem;
-    line-height: 1.5;
-    letter-spacing: -0.5px;
-    word-spacing: 0.01em;
-    font-weight: 400;
-    font-family: 'SpoqaHanSans';
 }
 
-.clc-car-text-money{
-    //height: 1.5rem;
+.clc-car-text-money {
     margin-top: 0.5rem;
     font-size: 1rem;
     color: $color-primary;
-    letter-spacing: -0.03em;
-    word-wrap: break-word;
-    word-break: keep-all;
-    -webkit-font-smoothing: antialiased;
-    font-weight: 400;
-    line-height: 1.5;
-    font-family: 'SpoqaHanSans';
-
 }
 
-.clc-car-option{
+.clc-car-option {
     width: 100%;
 }
 
-.clc-person .clc-icon{
+.clc-person .clc-icon {
     width: 17px;
     height: 16px;
     background-image: url("../option-icon/person.png");
     background-repeat: no-repeat;
-    //margin: auto auto;
-    background-size : contain; //png 비율 알맞게
+    background-size: contain; //png 비율 알맞게
     display: inline-block;
     vertical-align: middle;
 }
 
-.clc-auto .clc-icon{
+.clc-auto .clc-icon {
     width: 16px;
     height: 17px;
     background-image: url("../option-icon/auto.png");
     background-repeat: no-repeat;
-    //margin: auto auto;
-    background-size : contain; //png 비율 알맞게
+    background-size: contain; //png 비율 알맞게
     display: inline-block;
     vertical-align: middle;
 }
-.clc-baggage .clc-icon{
+
+.clc-baggage .clc-icon {
     width: 16px;
     height: 17px;
     background-image: url("../option-icon/baggage.png");
     background-repeat: no-repeat;
-    //margin: auto auto;
-    background-size : contain; //png 비율 알맞게
+    background-size: contain; //png 비율 알맞게
     display: inline-block;
     vertical-align: middle;
 }
-.clc-door .clc-icon{
+
+.clc-door .clc-icon {
     width: 16px;
     height: 17px;
     background-image: url("../option-icon/door.png");
     background-repeat: no-repeat;
-    //margin: auto auto;
-    background-size : contain; //png 비율 알맞게
+    background-size: contain; //png 비율 알맞게
     display: inline-block;
     vertical-align: middle;
 }
-.clc-aircon .clc-icon{
+
+.clc-aircon .clc-icon {
     width: 16px;
     height: 17px;
     background-image: url("../option-icon/aircon.png");
     background-repeat: no-repeat;
-    //margin: auto auto;
-    background-size : contain; //png 비율 알맞게
+    background-size: contain; //png 비율 알맞게
     display: inline-block;
     vertical-align: middle;
 }
 
-.clc-car-option{
+.clc-car-option {
     width: auto;
 }
 
-.clc-car-option{
+.clc-car-option {
 
-    .clc-aircon-box{
+    .clc-aircon-box {
         display: none;
     }
-    .clc-text{
+
+    .clc-text {
         margin-left: 0.25rem;
         width: auto;
         text-shadow: 0 0 0.15px $color-car-option-text;
-        font-family: 'SpoqaHanSans';
-        font-size: 0.9rem;
-        line-height: 1.5;
-        letter-spacing: -0.5px;
-        letter-spacing: -0.05em;
-        word-spacing: 0.01em;
-        -webkit-font-smoothing: antialiased;
-        font-weight: 400;
         color: $color-car-option-text;
-        //height: 1.333125rem;
     }
 }

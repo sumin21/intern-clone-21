@@ -1,16 +1,18 @@
-.ck-car-kinds-container-box{
+.ck-car-kinds-container-box {
   width: 100%;
-  .ck-car-kinds{
+
+  .ck-car-kinds {
     border-radius: 0.35rem;
     background-color: $color-white;
     margin-bottom: 2rem;
-    
-    .ck-car-kinds-car{
+
+    .ck-car-kinds-car {
       background-color: $color-white;
       border-color: $color-white;
       border: 1px solid transparent;
       padding: 0.6125rem 0.75rem;
-      .ck-label{
+
+      .ck-label {
         -webkit-text-stroke: 0 #333333;
         font-size: 1rem;
         letter-spacing: -0.8px;
@@ -18,20 +20,22 @@
         color: $color-grey-2;
       }
     }
-    
-    .ck-all-car{
+
+    .ck-all-car {
       border-top-left-radius: 0.25rem;
       border-bottom-left-radius: 0.25rem;
     }
-    .ck-foreign{
-    border-top-right-radius: 0.25rem;
+
+    .ck-foreign {
+      border-top-right-radius: 0.25rem;
       border-bottom-right-radius: 0.25rem;
     }
 
-    .ck-car-kinds-active{
+    .ck-car-kinds-active {
       background-color: $color-primary;
       border-color: $color-primary;
-      .ck-label{
+
+      .ck-label {
         color: $color-white;
       }
     }
@@ -39,7 +43,3 @@
   }
 
 }
-
-
-
-

@@ -58,8 +58,11 @@ div(tabindex="-1",aria-labelledby="calendarModalLabel",aria-hidden="true").cm-ca
                         div.cm-friday 금
                         div.cm-saturday 토
                     div.cm-calendar#js_calendar
-                    include calendar-dateover-modal.pug
+                    
                         
             div.modal-footer
                 button(type="button",data-dismiss="modal").border-0.btn.cm-back-btn#js_calendar_back_btn 뒤로
                 button(type="button").btn.btn-lg.cm-apply-btn#js_calendar_apply_btn 적용하기
+include calendar-one-more-toast.pug
+include calendar-start-time-change-toast.pug
+include calendar-end-time-change-toast.pug

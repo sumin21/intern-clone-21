@@ -1,12 +1,21 @@
-.crt-car-result-title{
+@media screen and (max-width: 992px) {
+  .crt-car-result-title {
+    display: none !important;
+  }
+}
+
+.crt-car-result-title {
+  display: flex;
   width: 100%;
   margin-top: 2rem;
-  .crt-car-search-result-container{
+
+  .crt-car-search-result-container {
     flex-grow: 1;
     max-width: 100%;
     position: relative;
     padding-right: 15px;
-    .crt-car-search-result{
+
+    .crt-car-search-result {
       font-weight: bold;
       font-size: 1.25rem;
       letter-spacing: -0.05em;
@@ -14,12 +23,12 @@
       color: #212529;
       margin-bottom: 0.5rem;
       line-height: 1.2;
-      text-shadow: 0 0 1px rgba(0,0,0, 0.2);
-  
+      text-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+
     }
   }
 
-  .crt-check-box{
+  .crt-check-box {
     align-items: center;
     //margin: 0 0 0 30.5rem;
     padding: 0.3125rem 0.625rem;
@@ -27,14 +36,14 @@
     border: solid 1px $color-grey-7;
     background-color: $color-white;
 
-    .crt-check-box-component{
+    .crt-check-box-component {
       display: flex;
       flex-direction: row;
       justify-content: flex-end; //!important;
       //letter-spacing: -0.03em;
       align-items: center;
-      
-      .crt-circle{
+
+      .crt-circle {
         width: 0.5rem;
         height: 0.5rem;
         border-radius: 75px;
@@ -44,21 +53,23 @@
         margin: 0.3125rem 0.1875rem 0.3125rem 0;
       }
 
-      .crt-text{
-      font-size: 0.75rem;
-      letter-spacing: -0.6px;
-      color: $color-grey-5;
+      .crt-text {
+        font-size: 0.75rem;
+        letter-spacing: -0.6px;
+        color: $color-grey-5;
       }
 
-      .crt-popularity,.crt-price{
+      .crt-popularity,
+      .crt-price {
         margin-left: 0.625rem;
       }
 
-      .crt-check-box-active{
-        .crt-text{
+      .crt-check-box-active {
+        .crt-text {
           color: $color-primary;
         }
-        .crt-circle{
+
+        .crt-circle {
           border-color: $color-primary;
           background-color: $color-primary;
         }
@@ -67,7 +78,3 @@
     }
   }
 }
-
-
-
-

@@ -1,19 +1,17 @@
-.cl-car-list{
+.cl-car-list {
     width: 100%;
-    //height: 10rem;
-    //margin: 2rem 4.8rem 0.063rem 0;
 }
 
-.clc-car-list-component,.clc-car-list-component-clone{//height:차 or 렌트카업체 길이 따라
+.clc-car-list-component,
+.clc-car-list-component-clone {
     margin-bottom: 1rem;
-    background-color: $color-white;//렌트카 부분은 color-rentcar
+    background-color: $color-white;
 
 }
-.clc-car-list-component,.clc-rent,.clc-rent-option-container,.clc-rent-option-text-plus{
+
+.clc-car-list-component,
+.clc-rent,
+.clc-rent-option-container,
+.clc-rent-option-text-plus {
     display: none !important;
 }
-
-//line-height?
-//word-wrap?
-//word-break?
-//-webkit-font-smoothing?

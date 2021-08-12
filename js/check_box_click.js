@@ -1,39 +1,65 @@
-import {f_car_list_condition} from './car_list_condition.js';
+let mcrtCheckActive;
+let mmtbCheckActive;
 
-//check-box 클릭
+export function checkBoxClick() {
+    let webSortTypes = document.getElementsByClassName('crt-sort-type');
+    let mobileSortTypes = document.getElementsByClassName('mtb-sort-type');
+    const webSortTypeLen = webSortTypes.length;
+    const mobileSortTypeLen = mobileSortTypes.length;
 
-var js_type = document.getElementById('js_type');
-var js_popular = document.getElementById('js_popular');
-var js_price = document.getElementById('js_price');
+    //웹
+    for (let i = 0; i < webSortTypeLen; i++) {
+        webSortTypes[i].addEventListener('click', function () {
+            CheckChangeAreaDomainWeb(this);
+        })
+    }
+    //모바일
+    for (let j = 0; j < mobileSortTypeLen; j++) {
+        mobileSortTypes[j].addEventListener('click', function () {
+            CheckChangeAreaDomainMobile(this);
+        })
+    }
 
-var crt_check_box_active;
+}
 
-function CheckChangeAreaDomain(crt_check_element){
-    var isExist = crt_check_element.classList.contains("crt-check-box-active");
+//웹 (여기부터 혀 웹/모바일 방식 달라서 좀 다르게)
+function CheckChangeAreaDomainWeb(_crtCheck) {
+    let isExist = _crtCheck.classList.contains("crt-check-box-active");
     console.log(isExist);
     //선택 안되어 있을때만
     //선택된 element active로 (색 파란색)
-    if(!isExist){
-        crt_check_box_active = document.getElementsByClassName("crt-check-box-active");
-        crt_check_box_active[0].classList.remove("crt-check-box-active");
-        crt_check_element.classList.add("crt-check-box-active");
+    if (!isExist) {
+        mcrtCheckActive = document.getElementsByClassName("crt-check-box-active");
+        mcrtCheckActive[0].classList.remove("crt-check-box-active");
+        _crtCheck.classList.add("crt-check-box-active");
+
+        let mtbCheck = document.getElementById(_crtCheck.id + '_mobile');
+        mmtbCheckActive = document.getElementsByClassName("mtb-dropdown-active");
+        mmtbCheckActive[0].classList.remove("mtb-dropdown-active");
+        mtbCheck.classList.add("mtb-dropdown-active");
+
+        document.getElementById('js_mobile_dropdown_title').textContent = mtbCheck.textContent;
     }
 }
+//모바일
+function CheckChangeAreaDomainMobile(_mtbCheck) {
+    let isExist = _mtbCheck.classList.contains("mtb-dropdown-active");
+    console.log(isExist);
+    //선택 안되어 있을때만
+    //선택된 element active로 (색 파란색)
+    if (!isExist) {
+        mmtbCheckActive = document.getElementsByClassName("mtb-dropdown-active");
+        mmtbCheckActive[0].classList.remove("mtb-dropdown-active");
+        _mtbCheck.classList.add("mtb-dropdown-active");
 
+        let crtCheckId = _mtbCheck.id.replace('_mobile', '');
+        console.log('crtCheckId', crtCheckId);
 
-export function f_check_box_click(){
+        let crtCheck = document.getElementById(crtCheckId);
+        mcrtCheckActive = document.getElementsByClassName("crt-check-box-active");
+        mcrtCheckActive[0].classList.remove("crt-check-box-active");
+        crtCheck.classList.add("crt-check-box-active");
 
-
-    js_type.addEventListener('click', function(){
-        CheckChangeAreaDomain(js_type);
-        f_car_list_condition('js_type',0,0,0,0,0,0,0);
-    });
-    js_popular.addEventListener('click', function(){
-        CheckChangeAreaDomain(js_popular);
-        f_car_list_condition('js_popular',0,0,0,0,0,0,0);
-    });
-    js_price.addEventListener('click', function(){
-        CheckChangeAreaDomain(js_price);
-        f_car_list_condition('js_price',0,0,0,0,0,0,0);
-    });
+        document.getElementById('js_mobile_dropdown_title').textContent = _mtbCheck.textContent;
+    }
 }

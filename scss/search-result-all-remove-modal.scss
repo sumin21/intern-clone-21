@@ -1,38 +1,40 @@
-.srarm-allremove-modal{
+.srarm-allremove-modal {
     z-index: 1060;
-    .modal-dialog-centered::before{
+
+    .modal-dialog-centered::before {
         height: min-content;
     }
-    .modal-header{
-        
+
+    .modal-header {
         align-items: center;
         border-width: 0;
         padding-bottom: 0;
         height: auto;
     }
-    .modal-body{
+
+    .modal-body {
         height: auto;
         padding: 1.2rem;
 
-        .srarm-search-result-all-remove-text{
+        .srarm-search-result-all-remove-text {
             color: $color-grey-4;
             font-size: 0.9rem;
             letter-spacing: -0.05em;
             word-spacing: 0.01em;
         }
     }
-    .modal-footer{
+
+    .modal-footer {
         padding: 0 1.2rem 0.9rem 1.2rem;
         border-top: 0;
 
-        .cansel-btn{
+        .cansel-btn {
             margin: 0 0.25rem;
             background-color: $color-white;
-           
             padding: 0.6125rem 0.75rem;
-
         }
-        .delete-btn{
+
+        .delete-btn {
             background-color: $color-primary;
             cursor: pointer;
             margin-top: 0;
@@ -42,13 +44,11 @@
             padding-right: 2.5rem;
             font-size: 1.00625rem;
             color: $color-white;
-
             border: 1px solid $color-primary;
         }
-        
     }
 }
 
-.modal-sm{
+.modal-sm {
     max-width: 310px;
 }

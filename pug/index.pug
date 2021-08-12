@@ -2,21 +2,23 @@ doctype html
 html
     include head.pug
     body
-        header
+        nav.d-none.d-lg-block.fixed-top.navbar
             include header-headers.pug
             
         div.bodys
             include menu-calendar-bar.pug
+            include mobile-top-bar.pug
+
             div.main-container.container
                 div.main.d-flex.flex-row
-                    div.left.align-self-stretch.col-lg-4
+                    div.filter-container.left.align-self-stretch.col-lg-4.d-none.d-lg-block
                         div.filter
                     div.right.align-self-stretch.col-lg-8
-                        div.banner
+                        div.banner-container
+                            div.banner
                         include car-result-title.pug
                         include car-kinds.pug
                         include car-list.pug
-            include mobile-top-bar.pug
-        footer
+        footer.d-none.d-lg-block
             include footer.pug
         

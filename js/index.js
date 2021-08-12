@@ -1,26 +1,29 @@
 
 import 'bootstrap';
 
-import {f_location_list} from './location_list.js';
+import {locationList} from './location_list.js';
 
-import {f_location_kinds} from './location_kinds.js';
-import {f_location_search_bar_click} from './location_search_bar_event.js';
-import {f_location_search_bar_search} from './location_search_bar_event.js';
-import {f_location_search_back_btn_click} from './location_search_back_btn_click.js';
-import {f_location_search_result_delete} from './location_search_result_delete.js';
-import {f_location_search_result_all_delete} from './location_search_result_delete.js';
-import {f_location_menu_event} from './location_menu_event.js';
-import {f_my_location_toast} from './my_location_toast.js';
-import {f_check_box_click} from './check_box_click.js';
-import {f_car_type_event} from './car_type_event.js';
-import {f_car_list_condition} from './car_list_condition.js';
+import {locationKinds} from './location_kinds.js';
+import {locationSearchBarClick} from './location_search_bar_event.js';
+import {locationSearchBarSearch} from './location_search_bar_event.js';
+import {locationSearchBackBtnClick} from './location_search_back_btn_click.js';
+import {locationSearchResultDelete} from './location_search_result_delete.js';
+import {locationSearchResultAllDelete} from './location_search_result_delete.js';
+import {locationMenuEvent} from './location_menu_event.js';
+import {toastEvent} from './toast_event.js';
+import {myLocationClick} from './my_location_click.js';
+import {checkBoxClick} from './check_box_click.js';
+import {carTypeEvent} from './car_type_event.js';
+import {carListCondition} from './car_list_condition.js';
+import {menuCalendarBar} from './menu_calendar_bar.js';
 
 
-import {f_drow_calendar} from './drow_calendar.js';
-import {f_calendar_event} from './event_calendar.js';
-import {f_date_change} from './date_change.js';
-import {f_calendar_bar_event} from './calendar_bar_event.js';
-import {f_calendar_bar_default} from './calendar_bar_event.js';
+
+import {drowCalendar} from './drow_calendar.js';
+import {calendarEvent} from './event_calendar.js';
+import {dateChange} from './date_change.js';
+import {calendarBarEvent} from './calendar_bar_event.js';
+import {calendarBarChange} from './calendar_bar_event.js';
 
 import '../scss/style.scss';
 import '../node_modules/bootstrap/dist/js/bootstrap.js';
@@ -28,26 +31,26 @@ import 'bootstrap/js/dist/util';
 import 'bootstrap/js/dist/dropdown';
 
 
-f_location_kinds();
-f_location_search_bar_click();
-f_location_search_bar_search();//
-f_location_search_back_btn_click();
-f_location_search_result_delete();
-f_location_search_result_all_delete();
-f_location_menu_event();
-f_my_location_toast();
-f_check_box_click();
-f_car_type_event();
-
-
-f_location_list();
-
-
-f_drow_calendar();
-f_calendar_event();
-f_date_change();
-f_calendar_bar_event();
-f_calendar_bar_default();
+locationKinds();
+locationSearchBarClick();
+locationSearchBarSearch();//
+locationSearchBackBtnClick();
+locationSearchResultDelete();
+locationSearchResultAllDelete();
+locationMenuEvent();
+toastEvent();
+myLocationClick();
+checkBoxClick();
+carTypeEvent();
+locationList();
+menuCalendarBar();
+drowCalendar();
+calendarEvent();
+dateChange();
+calendarBarEvent();
+calendarBarChange();
 
 //처음 로드되는 차량 리스트
-f_car_list_condition(0,0,0,0,0,0,0,0);
+carListCondition(0,0,0,0,0);
+
+

@@ -1,33 +1,37 @@
-.lt-location-toasts{
+.lt-location-toasts,
+.comt-calendar-one-more-toasts,
+.cstct-calendar-start-time-change-toasts,
+.cetct-calendar-end-time-change-toasts {
     z-index: 9999;
     margin-left: 12px;
     margin-bottom: 18px;
-    left: 0; 
+    left: 0;
     bottom: 0;
     max-width: 300px;
-    //background-color: $color-primary;
-    //color: $color-white;
-    .toast{
+
+    .toast {
         background-color: $color-primary;
         color: $color-white;
         opacity: 0.8;
-        box-shadow: 0 0.25rem 0.75rem rgba(255,255,255, 0.2);
-        
+        box-shadow: 0 0.25rem 0.75rem rgba(255, 255, 255, 0.2);
     }
-    .toast-body{
+
+    .toast-body {
         padding: 15px;
     }
-    .lt-location-toasts-icon{
+
+    .toast-icon {
         background-image: url("../icon/location-toasts-icon.png");
         width: 24px;
         height: 24px;
         background-repeat: no-repeat;
-        background-size : contain; //png 비율 알맞게
+        background-size: contain; //png 비율 알맞게
         display: inline-block;
         vertical-align: middle;
         margin-right: 12px;
     }
-    .lt-toast-text{
+
+    .toast-text {
         text-align: left;
     }
 }
