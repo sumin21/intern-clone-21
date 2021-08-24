@@ -3,16 +3,14 @@ html
     include head.pug
     body
         nav.d-none.d-lg-block.fixed-top.navbar
-            include header-headers.pug
-            
+            include header-headers.pug    
         div.bodys
             include menu-calendar-bar.pug
             include mobile-top-bar.pug
-
             div.main-container.container
                 div.main.d-flex.flex-row
                     div.filter-container.left.align-self-stretch.col-lg-4.d-none.d-lg-block
-                        div.filter
+                        include filter.pug
                     div.right.align-self-stretch.col-lg-8
                         div.banner-container
                             div.banner

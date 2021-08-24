@@ -1,0 +1,30 @@
+div.doc#js_driver_old_calcul
+    div.doc-title.text-14
+        span 차량 대여일&nbsp;
+        span.doc-title-highlight#js_driver_old_calcul_start_date
+        span &nbsp;기준으로 만나이 계산
+    div.position-relative
+        input(placeholder="생년월일 6자리 예) 950609" type='tel' maxlength='6' autocomplete='off').doc-driver-old-calcul-input.form-control.form-control-sm.mt-2#js_driver_old_calcul_input
+        div.doc-driver-old-calcul-delete-btn.clickable
+            div.delete-btn-img
+    div.doc-input-err.text-14#js_driver_old_calcul_input_err_text 생년월일이 형식에 맞지 않습니다
+    //-생년월 6자리를 다 입력해주세요
+    div.doc-calcul-result-container.mt-2#js_driver_old_calcul_result
+        div.doc-calcul-result-box.w-100.p-3.text-center
+            div.doc-calcul-result#js_driver_old_calcul_result_old 만 20세
+            div#js_driver_old_calcul_result_normal
+                div.d-flex.justify-content-center.align-items-start.mt-2
+                    div.doc-calcul-result-icon.mt-1
+                    div.doc-calcul-result-normal-text.ml-1
+                        span.doc-text-left#js_driver_old_calcul_result_normal_old 만 21세
+                        span.doc-text-right &nbsp;이상 차량 운전가능
+            div#js_driver_old_calcul_result_err
+                div.d-flex.justify-content-center.align-items-start.mt-2
+                    div.doc-calcul-result-icon.mt-1
+                    div.doc-calcul-result-err-text 해당 조건에 맞는 차량이 조회되지 않습니다T_T
+            button.doc-result-filter-apply-btn.py-3.px-6.mt-2.btn.btn-primary#js_driver_old_calcul_result_filter_apply_btn 필터에 적용
+            
+        div.doc-calcul-result-err-detail.mt-3.text-center#js_driver_old_calcul_result_err_detail
+            div.doc-detail-text.text-14.mt-3 카모아는 보험 조건이 만 21세 미만인 렌트카를 국내에서 판매하지 않습니다.
+            div.doc-detail-btn-box.text-center
+                button.doc-detail-btn.mt-2 자세히 알아보기

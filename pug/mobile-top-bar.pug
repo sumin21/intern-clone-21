@@ -15,7 +15,7 @@ div.mtb.d-lg-none
                             a.mtb-sort-type.dropdown-item.js-vsl-btn-sort.mtb-dropdown-active#js_type_mobile 차종순
                             a.mtb-sort-type.dropdown-item.js-vsl-btn-sort#js_popular_mobile 인기순
                             a.mtb-sort-type.dropdown-item.js-vsl-btn-sort#js_price_mobile 가격순
-                    div.mtb-filter.btn.btn-sm
+                    div(data-toggle="modal",data-target="#mobileFilterModal").mtb-filter.btn.btn-sm#js_mobile_filter_btn
                         div.mtb-filter-icon.mr-1
                         span 필터
             div.mtb-calendar-bar-container.clickable.mb-2
@@ -66,4 +66,4 @@ div.mtb.d-lg-none
             div.mtb-car-detail.container.d-flex.justify-content-between
                 span#js_car_detail_c_name 레이
                 span#js_car_detail_c_price 100원
-
+include mobile-filter.pug

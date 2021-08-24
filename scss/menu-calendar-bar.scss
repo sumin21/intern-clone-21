@@ -9,12 +9,12 @@ $time-color: #F1F4F9;
     z-index: 1022;
 }
 
-.mcb-up {
-    top: -80px;
+.mcb-down {
+    top: 0px;
     transition: 1s;
 }
 
-.mcb-down {
+.mcb-up {
     top: 80px;
     transition: 0.4s;
 }

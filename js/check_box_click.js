@@ -10,20 +10,20 @@ export function checkBoxClick() {
     //웹
     for (let i = 0; i < webSortTypeLen; i++) {
         webSortTypes[i].addEventListener('click', function () {
-            CheckChangeAreaDomainWeb(this);
+            checkChangeAreaDomainWeb(this);
         })
     }
     //모바일
     for (let j = 0; j < mobileSortTypeLen; j++) {
         mobileSortTypes[j].addEventListener('click', function () {
-            CheckChangeAreaDomainMobile(this);
+            checkChangeAreaDomainMobile(this);
         })
     }
 
 }
 
 //웹 (여기부터 혀 웹/모바일 방식 달라서 좀 다르게)
-function CheckChangeAreaDomainWeb(_crtCheck) {
+function checkChangeAreaDomainWeb(_crtCheck) {
     let isExist = _crtCheck.classList.contains("crt-check-box-active");
     console.log(isExist);
     //선택 안되어 있을때만
@@ -42,7 +42,7 @@ function CheckChangeAreaDomainWeb(_crtCheck) {
     }
 }
 //모바일
-function CheckChangeAreaDomainMobile(_mtbCheck) {
+function checkChangeAreaDomainMobile(_mtbCheck) {
     let isExist = _mtbCheck.classList.contains("mtb-dropdown-active");
     console.log(isExist);
     //선택 안되어 있을때만

@@ -1,4 +1,5 @@
 import $ from "jquery";
+
 let mlocationBtn = document.getElementById("liveToastBtn");
 
 export function myLocationClick() {

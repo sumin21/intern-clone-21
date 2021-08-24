@@ -25,7 +25,6 @@ export function locationSearchResultDelete() {
             }
         });
     }
-
 }
 
 //기록 전체 삭제 버튼 (모든 기록)

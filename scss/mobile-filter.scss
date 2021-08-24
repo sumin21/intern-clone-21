@@ -1,0 +1,53 @@
+
+.mf-mobile-filter-modal {
+    z-index: 1050;
+    .modal-body{
+        padding: 0;
+    }
+    .modal-footer{
+        padding: 0.4rem 1.2rem 0.9rem;
+        border-top: 0;
+        .mf-reset-btn{
+            background: none;
+            color: #adb5bd;
+            border-color: #adb5bd;
+            border-radius: 6.1875rem;
+            margin-top: 0;
+            margin-bottom: 0;
+            padding: 0.6125rem 0.75rem;
+
+        }
+        .mf-apply-btn{
+            background-color: #0d6ffc;
+            border-color: #0d6ffc;
+            color: #fff;
+            border-radius: 6.1875rem;
+            margin-top: 0;
+            margin-bottom: 0;
+            padding: 0.6125rem 0.75rem;
+        }
+    }
+}
+
+@media screen and (max-width: 575.98px) {
+    .mf-mobile-filter-modal .modal-dialog {
+        height: 100%;
+        max-height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 575.98px) {
+    .mf-mobile-filter-modal .modal-content {
+        box-sizing: unset;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        border-radius: 0;
+    }
+}
+
+.mf-mobile-filter-modal .modal-content {
+    min-height: 100%;
+}

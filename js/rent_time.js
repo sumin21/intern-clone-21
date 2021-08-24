@@ -27,6 +27,7 @@ export function rentTodayTime() {
     return [newHours, newMinutes];
 
 }
+
 //'11:00'
 export function rentTimeSelect(_startStr, _defaultStr, _idName) {
     let fragment = document.createDocumentFragment();
@@ -38,10 +39,6 @@ export function rentTimeSelect(_startStr, _defaultStr, _idName) {
         startStr = '07:00';
         arr = startStr.split(':');
     }
-
-    console.log(arr);
-    console.log(Number(arr[0]));
-    console.log(Number(arr[1]));
 
     let check = false;
     if (bigTime(_defaultStr, _startStr)) {

@@ -1,11 +1,35 @@
 import axios from 'axios';
 import {deliveryModalMake} from './delivery_modal.js';
-import {emptyElmtChild} from './common.js';
+import {emptyElmtChild, classCheck} from './common.js';
+import {carKindsChangeAreaDomainWeb} from './car_type_event.js';
+import {filterCarModel} from './filter_car_model.js';
+import {oldTwentyOneBottomEvent} from './old_twentyone_bottom.js';
+import {noOldTwentyOneBottomEvent} from './old_twentyone_bottom.js';
+import {driverOldClick} from './filter_driver_old.js';
+import {filterDriverOldCalculReset} from './filter_driver_old_calcul.js';
 
 
 //차량 리스트에서 보일 수 있는 최대 차종 수
 const MAX_CAR_NUM = 5;
 
+const TYPE_MATCH = {
+    '경형': 'light',
+    '소형': 'tiny',
+    '준중형': 'middle',
+    '중형': 'medium',
+    '대형': 'large',
+    'SUV': 'suv',
+    'RV': 'rv',
+    '수입': 'import'
+}
+const Oil_MATCH = {
+    'gasoline': '휘발유',
+    'diesel': '경유',
+    'lpg': 'LPG',
+    'elec': '전기',
+    'hybrid': '하이브리드',
+    'hydrogen': '수소'
+}
 //전역변수
 let mcarTypes = {};
 let mcarFinal;
@@ -17,6 +41,10 @@ let mlocation;
 let mstartTime;
 let mendTime;
 let carsHieghts = [];
+
+let mcarRankArr = [];
+let moilArr = [];
+let mdriverOldArr = [];
 
 //차량 리스트 서버로부터 받아와서 조건별로 리스트 생성함수 불러오기
 export function carListCar(_location, _startTime, _endTime) {
@@ -38,24 +66,34 @@ export function carListCar(_location, _startTime, _endTime) {
         console.log(Response.data);
         const carArr = Response.data;
 
+        //필터 - 자동차모델 elements
+        carModelElements(carArr);
         mcarTypes['elec'] = typeElecCarArray(carArr); //전기
-        mcarTypes['small'] = typeCarArray('경형 소형', carArr); //경소
-        mcarTypes['big'] = typeCarArray('중형 대형', carArr); //중대
+        mcarTypes['light'] = typeCarArray('경형', carArr); //경소
+        mcarTypes['tiny'] = typeCarArray('소형', carArr); //승합
+        mcarTypes['medium'] = typeCarArray('중형', carArr); //승합
+        mcarTypes['large'] = typeCarArray('대형', carArr); //승합
         mcarTypes['rv'] = typeCarArray('RV', carArr); //승합
-        mcarTypes['all'] = typeCarArray('전체', carArr); //전체
-        mcarTypes['middle'] = typeCarArray('준중형', carArr); //준중
-        mcarTypes['suv'] = typeCarArray('SUV', carArr); //suv
-        mcarTypes['import'] = typeCarArray('수입', carArr); //수입
+        mcarTypes['all'] = typeCarArray('전체', carArr); //승합
+        mcarTypes['middle'] = typeCarArray('준중형', carArr); //승합
+        mcarTypes['suv'] = typeCarArray('SUV', carArr); //승합
+        mcarTypes['import'] = typeCarArray('수입', carArr); //승합
 
-        //선택되어있는 차종에 차량이 없을때 -> 전체 클릭
-        let type = document.getElementsByClassName("ck-car-kinds-active")[0].id.split('_')[1];
-        if (mcarTypes[type].length == 0) {
-            document.getElementById('js_all').click();
+        console.log('mcarTypes', mcarTypes);
+
+        //21세 미만이 선택되어 있는 경우 -> 전체 나이 선택되게
+        if (classCheck(document.getElementById('js_driver_old_no'), 'f-driver-old-active')) {
+            document.getElementById('js_driver_old_all').click();
         }
         //차량 타입
         carType(carArr);
-        document.getElementsByClassName("ck-car-kinds-active")[0].click();
 
+        //차량리스트에 있는 oil들만 보이게
+        filterOilResponse(carArr);
+        //차량리스트에 있는 보험나이만 보이게
+        filterDriverOldResponse(carArr);
+
+        filterRankCheck();
         //정렬 타입
         orderType(carArr);
 
@@ -64,6 +102,38 @@ export function carListCar(_location, _startTime, _endTime) {
     });
 }
 
+//자동차 모델 필터 elements 생성
+function carModelElements(_cars) {
+    let carModels = carPrices(_cars)[1];
+    let newCarModels = new Set(carModels);
+    newCarModels = [...newCarModels];
+    console.log('newCarModels', newCarModels);
+    const carModelsLen = newCarModels.length;
+
+    emptyElmtChild('js_car_model_dropdown');
+    emptyElmtChild('js_car_model_dropdown_mobile');
+    let fragment = document.createDocumentFragment();
+    let div;
+    for (let i = 0; i < carModelsLen; i++) {
+        div = document.createElement('div');
+        div.classList.add('f-dropdown-item', 'dropdown-item');
+        div.setAttribute('data-cmodel', newCarModels[i]);
+        div.textContent = `"${newCarModels[i]}" 전 모델 검색`;
+        fragment.appendChild(div);
+    }
+    document.getElementById('js_car_model_dropdown').appendChild(fragment);
+
+    fragment = document.createDocumentFragment();
+    for (let i = 0; i < carModelsLen; i++) {
+        div = document.createElement('div');
+        div.classList.add('f-dropdown-item', 'dropdown-item');
+        div.setAttribute('data-cmodel', newCarModels[i]);
+        div.textContent = `"${newCarModels[i]}" 전 모델 검색`;
+        fragment.appendChild(div);
+    }
+    document.getElementById('js_car_model_dropdown_mobile').appendChild(fragment);
+    filterCarModel();
+}
 
 //더 보기 버튼 클릭 이벤트
 document.getElementById('js_car_list_more_btn').addEventListener('click', function () {
@@ -98,38 +168,25 @@ function typeCarArray(_type, _carArr) {
         newCarArr = carArr;
     } else {
         const carTypes = carsTypeDivision(carArr);
-        let types = _type.split(' ');
 
-        //경소형, 중대형 경우
-        if (types.length > 1) {
-            //경형&소형 or 중형&대형 인 경우
-            if ((types[1] in carTypes) && (types[0] in carTypes)) {
-                const typesArr1 = carArr.slice(carTypes[types[1]][0], carTypes[types[1]][1] + 1); //소형
-                const typesArr2 = carArr.slice(carTypes[types[0]][0], carTypes[types[0]][1] + 1); //경형
-                //merge
-                for (const item of typesArr1) {
-                    typesArr2.push(item);
-                }
-                newCarArr = typesArr2;
-            }
-            //경소형에서 한종류(경형) or 중대형에서 한종류(대형) 있는 경우
-            else if (types[1] in carTypes) {
-                newCarArr = carArr.slice(carTypes[types[1]][0], carTypes[types[1]][1] + 1);
+        //차량 리스트 있는 경우
+        if (_type in carTypes) {
+            newCarArr = carArr.slice(carTypes[_type][0], carTypes[_type][1] + 1);
+            let addType = TYPE_MATCH[_type];
+            let addElement = document.getElementById(`js_car_rank_${addType}`).parentNode;
+            addElement.style.display = 'inline-block';
+            let addElementMobile = document.getElementById(`js_car_rank_${addType}_mobile`).parentNode;
+            addElementMobile.style.display = 'inline-block';
+        } else {
+            let removeType = TYPE_MATCH[_type];
+            let removeElement = document.getElementById(`js_car_rank_${removeType}`).parentNode;
+            removeElement.style.display = 'none';
+            let removeElementMobile = document.getElementById(`js_car_rank_${removeType}_mobile`).parentNode;
+            removeElementMobile.style.display = 'none';
+        }
 
-            }
-            //경소형에서 한종류(소형) or 중대형에서 한종류(중형) 있는 경우 (위와 반대)
-            else if (types[0] in carTypes) {
-                newCarArr = carArr.slice(carTypes[types[0]][0], carTypes[types[0]][1] + 1);
-            }
-        }
-        //준중형, suv, 승합, 수입 경우
-        else {
-            //차량 리스트 있는 경우
-            if (types[0] in carTypes) {
-                newCarArr = carArr.slice(carTypes[types[0]][0], carTypes[types[0]][1] + 1);
-            }
-        }
     }
+
     return newCarArr;
 }
 
@@ -138,14 +195,9 @@ function carsTypeDivision(_cars) {
     let cars = _cars === null ? [] : _cars;
 
     let carTypes = {};
-    console.log(cars);
     if (cars.length) {
 
         let carTypeName = '';
-
-        // cars.map(car => {
-
-        // });
 
         const carsLen = cars.length;
         for (let i = 0; i < carsLen; i++) {
@@ -165,40 +217,120 @@ function carsTypeDivision(_cars) {
 
         console.log("cars_type_division: ", carTypes);
     }
+    console.log('carTypes', carTypes);
     return carTypes;
 }
 
 
 
-//차종 버튼 클릭이벤트
+//차종 버튼 이벤트
 function carType() {
 
     //이미 차량 리스트가 나열되어 있으면 다 지우고
     emptyElmtChild('js_car_list');
 
     for (const key in mcarTypes) {
-        if (mcarTypes[key].length == 0) {
-            if (key != 'all') {
-                document.getElementById(`js_${key}`).style.display = 'none';
-                console.log(`js_${key} 없어`);
+        if (key == 'light' || key == 'tiny') {
+            if (mcarTypes['light'].length || mcarTypes['tiny'].length) {
+                document.getElementById('js_small').style.display = 'block';
             } else {
-                console.log(`js_${key} 없어`);
-                //carMoreBtn(0);
-                document.getElementById('js_no_cars').style.display = 'block';
-                document.getElementById(`js_${key}`).click();
+                document.getElementById('js_small').style.display = 'none';
             }
-            document.getElementById('js_car_list_more_btn').style.display = 'none';
+        } else if (key == 'medium' || key == 'large') {
+            if (mcarTypes['medium'].length || mcarTypes['large'].length) {
+                document.getElementById('js_big').style.display = 'block';
+            } else {
+                document.getElementById('js_big').style.display = 'none';
+            }
         } else {
-            document.getElementById(`js_${key}`).style.display = 'block';
-            console.log(`js_${key} 있어`);
+            if (mcarTypes[key].length == 0) {
+                if (key != 'all') {
+                    document.getElementById(`js_${key}`).style.display = 'none';
+                    console.log(`js_${key} 없어`);
+                } else {
+                    console.log(`js_${key} 없어`);
+                    //carMoreBtn(0);
+
+                    document.getElementById(`js_${key}`).click();
+                }
+            } else {
+                document.getElementById(`js_${key}`).style.display = 'block';
+                console.log(`js_${key} 있어`);
+            }
         }
     }
+}
+
+function filterOilResponse(_cars) {
+    //필터-연료 반응형
+    const originalOilLabels = ['전체', '휘발유', '경유', 'LPG', '전기', '하이브리드', '수소'];
+    let meaningfulLabels = filterOilObj(_cars, originalOilLabels).oilLabels;
+    console.log('meaningfulLabels', meaningfulLabels);
+    //웹
+    let oils = document.getElementsByClassName('f-car-oil-check');
+    let oilsLen = oils.length;
+    for (let i = 0; i < oilsLen; i++) {
+        if (meaningfulLabels.indexOf(Oil_MATCH[oils[i].dataset.oil]) === -1 && oils[i].id != 'js_car_oil_all') {
+            oils[i].parentNode.style.display = 'none';
+        } else {
+            oils[i].parentNode.style.display = 'inline-block';
+        }
+    }
+
+    //모바일
+    let mobileOils = document.getElementsByClassName('mf-car-oil-check');
+    let mobileOilsLen = mobileOils.length;
+    for (let i = 0; i < mobileOilsLen; i++) {
+        if (meaningfulLabels.indexOf(Oil_MATCH[mobileOils[i].dataset.oil]) === -1 && mobileOils[i].id != 'js_car_oil_all_mobile') {
+            mobileOils[i].parentNode.style.display = 'none';
+        } else {
+            mobileOils[i].parentNode.style.display = 'inline-block';
+        }
+    }
+}
+
+//필터-연료 반응형
+function filterDriverOldResponse(_cars) {
+    let driverOldLabels = ['all', 'no'];
+    const carsLen = _cars.length;
+
+    for (let i = 0; i < carsLen; i++) {
+        if (driverOldLabels.indexOf(String(_cars[i]['c_driver_age'])) === -1) {
+            driverOldLabels.push(String(_cars[i]['c_driver_age']));
+        }
+    }
+
+    let driverOlds = document.getElementsByClassName('f-driver-old');
+    let driverOldsLen = driverOlds.length;
+
+    for (let j = 0; j < driverOldsLen; j++) {
+        if (driverOldLabels.indexOf(driverOlds[j].dataset.old) === -1) {
+            driverOlds[j].style.display = 'none';
+            driverOlds[j].classList.remove('f-driver-old-block');
+        } else {
+            driverOlds[j].style.display = 'inline-block';
+            driverOlds[j].classList.add('f-driver-old-block');
+        }
+    }
+    //모바일
+    let driverOldsMobile = document.getElementsByClassName('mf-driver-old');
+    let driverOldsMobileLen = driverOldsMobile.length;
+
+    for (let k = 0; k < driverOldsMobileLen; k++) {
+        if (driverOldLabels.indexOf(driverOldsMobile[k].dataset.old) === -1) {
+            driverOldsMobile[k].style.display = 'none';
+            driverOldsMobile[k].classList.remove('mf-driver-old-block');
+        } else {
+            driverOldsMobile[k].style.display = 'inline-block';
+            driverOldsMobile[k].classList.add('mf-driver-old-block');
+        }
+    }
+
 }
 
 carTypeClick();
 //차종 버튼 클릭이벤트 (웹+모바일)
 function carTypeClick() {
-
     let typesWeb = document.getElementsByClassName('ck-c-type');
     let typesMobile = document.getElementsByClassName('mtb-c-type');
 
@@ -216,8 +348,6 @@ function typesWebMobileClick(_types, _web) {
             mcarStart = 0;
             mcarEnd = MAX_CAR_NUM;
 
-
-
             if (mcarTypes['all'].length) {
                 let typeName;
 
@@ -228,29 +358,47 @@ function typesWebMobileClick(_types, _web) {
 
                 switch (typeName) {
                     case '전기':
+                        filterCheckAllRemove();
                         //차종 필터 적용
-                        carArrMake(mcarTypes['elec']);
+                        let allCheck = filterCheckControl(this, 'rank');
+                        filterRankCheckEvent(allCheck);
+                        document.getElementById('js_car_oil_elec').click();
                         break;
                     case '경소형':
-                        carArrMake(mcarTypes['small']);
+                        filterCheckAllRemove();
+                        document.getElementById('js_car_rank_light').click();
+                        document.getElementById('js_car_rank_tiny').click();
                         break;
                     case '중대형':
-                        carArrMake(mcarTypes['big']);
+                        filterCheckAllRemove();
+                        document.getElementById('js_car_rank_medium').click();
+                        document.getElementById('js_car_rank_large').click();
                         break;
                     case '승합':
-                        carArrMake(mcarTypes['rv']);
+                        filterCheckAllRemove();
+
+                        document.getElementById('js_car_rank_rv').click();
                         break;
                     case '전체':
-                        carArrMake(mcarTypes['all']);
+                        filterCheckAllRemove();
+
+                        filterRankCheckEvent(true);
                         break;
                     case '준중형':
-                        carArrMake(mcarTypes['middle']);
+                        filterCheckAllRemove();
+
+                        document.getElementById('js_car_rank_middle').click();
                         break;
                     case 'SUV':
-                        carArrMake(mcarTypes['suv']);
+                        filterCheckAllRemove();
+
+                        document.getElementById('js_car_rank_suv').click();
                         break;
                     case '수입':
-                        carArrMake(mcarTypes['import']);
+                        filterCheckAllRemove();
+
+                        document.getElementById('js_car_rank_import').click();
+                        // carModelFiltering(mcarTypes['import']);
                         break;
                 }
             }
@@ -258,76 +406,321 @@ function typesWebMobileClick(_types, _web) {
     }
 }
 
+//차량등급 체크박스 모두 해제
+function filterCheckAllRemove() {
+    let ranks = document.getElementsByClassName('f-car-rank-check');
+    const ranksLen = ranks.length;
+    let oils = document.getElementsByClassName('f-car-oil-check');
+    const oilsLen = oils.length;
 
-//모바일 - 차량 리스트 스크롤 이벤트
-export function carListScroll() {
-    carsHieghts = [];
-    let cars = document.getElementsByClassName('clc-car-list-component-clone');
-    const carsLen = cars.length;
-
-    for (let i = 0; i < carsLen; i++) {
-        console.log('cars[i]', cars[i]);
-        let relativeTop = cars[i].getBoundingClientRect().top;
-        let scrolledTopLength = window.pageYOffset;
-        let absoluteTop = scrolledTopLength + relativeTop;
-        carsHieghts.push([absoluteTop, cars[i]]);
+    for (let i = 0; i < ranksLen; i++) {
+        ranks[i].checked = false;
     }
-    console.log('carsHieghts', carsHieghts);
-
-
+    for (let j = 0; j < oilsLen; j++) {
+        oils[j].checked = false;
+    }
 }
-//스크롤 이벤트
-carListScrollEvent();
 
-function carListScrollEvent() {
-    window.addEventListener('scroll', () => {
-        let scrollLocation = document.documentElement.scrollTop + 100; // 현재 스크롤바 위치
-        const carsHieghtsLen = carsHieghts.length;
-        for (let j = 0; j < carsHieghtsLen - 1; j++) {
-            if (scrollLocation >= carsHieghts[j][0] && scrollLocation < carsHieghts[j + 1][0]) {
 
-                document.getElementById('js_car_detail').style.display = 'block';
-                document.getElementById('js_car_detail_c_name').textContent = carsHieghts[j][1].getAttribute('c_name');
-                document.getElementById('js_car_detail_c_price').textContent = carsHieghts[j][1].getAttribute('c_price');
+//필터 - 차량등급 클릭이벤트
+let mranks = document.getElementsByClassName('f-car-rank-check');
+let mranksLen = mranks.length;
 
-            } else if (scrollLocation < carsHieghts[0][0]) {
-                document.getElementById('js_car_detail').style.display = 'none';
+for (let i = 0; i < mranksLen; i++) {
+    mranks[i].addEventListener('click', function () {
+        let allCheck = filterCheckControl(this, 'rank');
+        filterRankCheckEvent(allCheck);
+    });
+}
+
+//필터 - 차량등급 클릭
+function filterRankCheck() {
+    filterRankCheckEvent(false);
+}
+
+function filterRankCheckEvent(_allCheck) {
+    let ranksArr = [];
+    let ranksElements = [];
+    //초기화
+    mcarStart = 0;
+    mcarEnd = MAX_CAR_NUM;
+
+    let ranks = document.getElementsByClassName('f-car-rank-check');
+    let ranksLen = ranks.length;
+
+    //arr 생성
+    if (document.getElementById('js_car_rank_all').checked || _allCheck || document.querySelectorAll('.f-car-rank-check:checked').length == 0) {
+        mcarRankArr = mcarTypes['all'];
+        carKindsChangeAreaDomainWeb(document.getElementById('js_all'));
+    } else {
+        for (let j = 0; j < ranksLen; j++) {
+            //체크된 차량등급들
+            if (ranks[j].checked == true) {
+                ranksArr = ranksArr.concat(mcarTypes[ranks[j].dataset.rank]);
+                ranksElements.push(ranks[j].dataset.rank);
             }
         }
+        //차 type 버튼 클릭하게
+        filterRankTypeClick(ranksElements);
+        //자동차 모델 필터링
+        mcarRankArr = ranksArr;
+    }
+    console.log('mcarRankArr', mcarRankArr);
+    filterOilCheck();
+}
+
+function filterRankTypeClick(_ranksElements) {
+    if (_ranksElements.length == 2 && _ranksElements[0] == 'light' && _ranksElements[1] == 'tiny') {
+        console.log('small!');
+        carKindsChangeAreaDomainWeb(document.getElementById('js_small'));
+    } else if (_ranksElements.length == 2 && _ranksElements[0] == 'medium' && _ranksElements[1] == 'large') {
+        carKindsChangeAreaDomainWeb(document.getElementById('js_big'));
+    } else if (_ranksElements.length == 1) {
+        if (_ranksElements[0] == 'middle' || _ranksElements[0] == 'suv' || _ranksElements[0] == 'rv' || _ranksElements[0] == 'import') {
+            carKindsChangeAreaDomainWeb(document.getElementById(`js_${_ranksElements[0]}`));
+            console.log(`js_${_ranksElements[0]}`);
+        } else {
+            console.log('??');
+            if (document.getElementsByClassName("ck-car-kinds-active")[0]) {
+                document.getElementsByClassName("ck-car-kinds-active")[0].classList.remove("ck-car-kinds-active");
+                document.getElementsByClassName("mtb-car-kinds-active")[0].classList.remove("mtb-car-kinds-active");
+            }
+        }
+    } else {
+        console.log('??');
+        if (document.getElementsByClassName("ck-car-kinds-active")[0]) {
+            document.getElementsByClassName("ck-car-kinds-active")[0].classList.remove("ck-car-kinds-active");
+            document.getElementsByClassName("mtb-car-kinds-active")[0].classList.remove("mtb-car-kinds-active");
+        }
+    }
+    console.log('zz');
+}
+
+function filterCheckControl(_rank, _filterName) { //_filterName : rank / oil
+    let ranks = document.getElementsByClassName(`f-car-${_filterName}-check`);
+    let ranksLen = ranks.length;
+
+    if (_rank.id == `js_car_${_filterName}_all`) {
+        //전체 체크
+        if (_rank.checked) {
+            for (let q = 0; q < ranksLen; q++) {
+                ranks[q].checked = true;
+            }
+        }
+        //전체 취소
+        else {
+            for (let k = 0; k < ranksLen; k++) {
+                ranks[k].checked = false;
+            }
+            return true;
+        }
+    } else if (document.getElementById(`js_car_${_filterName}_all`).checked) {
+        document.getElementById(`js_car_${_filterName}_all`).checked = false;
+    } else {
+        if (document.querySelectorAll(`.f-car-${_filterName}-check:checked`).length == ranksLen - 1) {
+            document.getElementById(`js_car_${_filterName}_all`).click();
+        }
+    }
+    return false;
+}
+
+//필터 - 연료 클릭이벤트
+let moils = document.getElementsByClassName('f-car-oil-check');
+let moilsLen = moils.length;
+
+for (let i = 0; i < moilsLen; i++) {
+    moils[i].addEventListener('click', function () {
+        let allCheck = filterCheckControl(this, 'oil');
+        filterOilCheckEvent(allCheck);
+    });
+}
+
+//필터 - 연료 클릭
+function filterOilCheck() {
+    filterOilCheckEvent(false);
+}
+
+//오일별 arr 생성
+function filterOilObj(_cars, _oilNames) {
+    console.log('oil cararr', _cars, _oilNames);
+    let carsLen = _cars.length;
+    let oilDivision = [];
+    let oilLabels = [];
+    for (let i = 0; i < carsLen; i++) {
+        //해당 오일이 맞다면
+        console.log('oil cararr', _cars, _oilNames);
+        if (_oilNames.indexOf(_cars[i]['c_fuel']) > -1) {
+            console.log('oil cararr', _cars, _oilNames);
+            oilDivision.push(_cars[i]);
+            if (oilLabels.indexOf(_cars[i]['c_fuel']) === -1) oilLabels.push(_cars[i]['c_fuel']);
+        }
+    }
+    console.log('oilDivision', oilDivision);
+    return {
+        oilDivision: oilDivision,
+        oilLabels: oilLabels
+    };
+}
+
+//주 함수
+function filterOilCheckEvent(_allCheck) {
+    //초기화
+    mcarStart = 0;
+    mcarEnd = MAX_CAR_NUM;
+
+    //전체 오일
+    if (document.getElementById('js_car_oil_all').checked || _allCheck || document.querySelectorAll('.f-car-oil-check:checked').length == 0) {
+        moilArr = mcarRankArr;
+        if (document.getElementsByClassName("ck-car-kinds-active-no-block")[0]) {
+            document.getElementsByClassName("ck-car-kinds-active-no-block")[0].classList.remove("ck-car-kinds-active-no-block");
+            // document.getElementsByClassName("mtb-car-kinds-active")[0].classList.remove("mtb-car-kinds-active");//모바일
+        }
+        if (document.querySelectorAll('.f-car-rank-check:checked').length == 0) {
+            carKindsChangeAreaDomainWeb(document.getElementById('js_all'));
+        }
+
+    } else {
+        let oils = document.getElementsByClassName('f-car-oil-check');
+        let oilsLen = oils.length;
+        let oilsElements = [];
+        let oilNames = [];
+
+        for (let j = 0; j < oilsLen; j++) {
+            //체크된 차량등급들
+            if (oils[j].checked == true) {
+                oilNames.push(Oil_MATCH[oils[j].dataset.oil]);
+                oilsElements.push(oils[j].id);
+            }
+        }
+
+        if (classCheck(document.getElementById('js_all'), 'ck-car-kinds-active') && oilsElements.length == 1 && oilsElements[0] == 'js_car_oil_elec') {
+            carKindsChangeAreaDomainWeb(document.getElementById('js_elec'));
+
+        } else if (document.getElementsByClassName("ck-car-kinds-active")[0]) {
+            document.getElementsByClassName("ck-car-kinds-active")[0].classList.add("ck-car-kinds-active-no-block");
+        }
+        moilArr = filterOilObj(mcarRankArr, oilNames).oilDivision;
+
+    }
+    console.log('moilArr', moilArr);
+    //carModelFiltering();
+    filterDriverOldCheck();
+}
+
+//moilArr -> mdriverOldArr
+//필터 - 자동차보험나이 클릭이벤트
+let mdriverolds = document.getElementsByClassName('f-driver-old');
+let mdriveroldLen = mdriverolds.length;
+
+for (let i = 0; i < mdriveroldLen; i++) {
+    mdriverolds[i].addEventListener('click', function () {
+        filterDriverOldCalculReset();
+        document.getElementsByClassName("f-driver-old-active")[0].classList.remove('f-driver-old-active-no-color');
+        document.getElementsByClassName("mf-driver-old-active")[0].classList.remove('mf-driver-old-active-no-color');
+
+        driverOldClick(this);
+        //mobileDriverOldClick
+        filterDriverOldCheckEvent();
 
     });
 }
 
+//필터 - 자동차보험나이 클릭
+function filterDriverOldCheck() {
+    filterDriverOldCheckEvent();
+}
+//주 함수
+function filterDriverOldCheckEvent() {
+    //초기화
+    mcarStart = 0;
+    mcarEnd = MAX_CAR_NUM;
+
+    let moilArrLen = moilArr.length;
+    let checked = document.getElementsByClassName('f-driver-old-active')[0].dataset.old;
+    console.log('check', checked);
+    mdriverOldArr = [];
+
+    if (checked == 'all') {
+        mdriverOldArr = moilArr;
+        noOldTwentyOneBottomEvent();
+    } else if (checked == 'no') {
+        oldTwentyOneBottomEvent();
+    } else {
+        console.log('check', Number(checked));
+        for (let i = 0; i < moilArrLen; i++) {
+            if (moilArr[i]['c_driver_age'] <= Number(checked)) {
+                mdriverOldArr.push(moilArr[i]);
+            }
+        }
+        noOldTwentyOneBottomEvent();
+    }
+
+    console.log('mdriverOldArr', mdriverOldArr);
+    carModelFiltering();
+}
+
+//자동차 모델명 필터 버튼클릭
+document.getElementById('js_car_model_search_btn').addEventListener('click', function () {
+    carModelFiltering();
+});
+
+//자동차 모델명 필터링
+function carModelFiltering() {
+    let cars = [];
+    const carModelName = document.getElementById('js_car_model_dropdown_btn').value;
+    console.log('carModelName', carModelName);
+
+    if (carModelName) {
+        const carsLen = mdriverOldArr.length;
+
+        for (let i = 0; i < carsLen; i++) {
+            //있다면
+            let originalName = mdriverOldArr[i]['c_name'].toLowerCase();
+            let searchName = carModelName.toLowerCase();
+            if (originalName.indexOf(searchName) != -1) {
+                cars.push(mdriverOldArr[i]);
+            }
+        }
+        carArrMake(cars);
+    } else {
+        carArrMake(mdriverOldArr);
+    }
+}
 
 //필터된 array 받아서 차량리스트 로드
 function carArrMake(_cars) {
-    let cars = _cars === null ? [] : _cars;
-    //초기화
-    mcarFinal = [];
+    if (!classCheck(document.getElementById('js_driver_old_no'), 'f-driver-old-active')) {
+        let cars = _cars === null ? [] : _cars;
+        //초기화
+        mcarFinal = [];
 
-    //이미 차량 리스트가 나열되어 있으면 다 지우고
-    emptyElmtChild('js_car_list');
+        //이미 차량 리스트가 나열되어 있으면 다 지우고
+        emptyElmtChild('js_car_list');
 
-    if (cars.length == 0) document.getElementById('js_no_cars').style.display = 'block';
+        if (cars.length == 0) {
+            document.getElementById('js_no_cars').style.display = 'block';
+            document.getElementById('js_car_list_more_btn').style.display = 'none';
 
-    else {
-        document.getElementById('js_no_cars').style.display = 'none';
+        } else {
+            console.log('dkdeod');
+            document.getElementById('js_no_cars').style.display = 'none';
 
-        //차종순 or 가격순
-        const rentOrder = document.getElementsByClassName('crt-check-box-active')[0].id; //js_type
-        const order = rentOrder.split('_')[1];
+            //차종순 or 가격순
+            const rentOrder = document.getElementsByClassName('crt-check-box-active')[0].id; //js_type
+            const order = rentOrder.split('_')[1];
 
-        //가격순
-        if (order == 'price') {
-            mcarFinal = priceSort(cars);
+            //가격순
+            if (order == 'price') {
+                mcarFinal = priceSort(cars);
+            }
+
+            //차종순
+            else {
+                mcarFinal = cars;
+            }
+            carListSlice();
+
         }
-
-        //차종순
-        else {
-            mcarFinal = cars;
-        }
-        carListSlice();
-
     }
 }
 
@@ -407,24 +800,25 @@ function carsNameDivision(_cars) {
 }
 
 
-
 //차종별로 price 정렬
 function carPrices(_cars) {
     let cars = _cars === null ? [] : _cars;
 
     let carPriceSortObj = {};
     let carName = '';
-
+    let carModels = [];
     const carsLen = cars.length;
     for (let i = 0; i < carsLen; i++) {
         if (cars[i]['c_name'] != carName) {
             carPriceSortObj[cars[i]['c_name']] = [];
+            carModels.push(cars[i]['c_name'].split(' ')[0]);
         }
         carPriceSortObj[cars[i]['c_name']].push(cars[i]['car_price']);
         carName = cars[i]['c_name'];
 
     }
-    console.log(carPriceSortObj);
+
+    console.log('carModels', carModels);
     for (let key in carPriceSortObj) {
         carPriceSortObj[key].sort(function (a, b) { // 오름차순
             return a - b;
@@ -432,11 +826,11 @@ function carPrices(_cars) {
     }
     console.log('mon test', carPriceSortObj);
 
-    return carPriceSortObj;
+    return [carPriceSortObj, carModels];
 }
 
 function carPriceSort(_cars) {
-    let carPriceSortObj = carPrices(_cars);
+    let carPriceSortObj = carPrices(_cars)[0];
     let newCarPriceSortArr = [];
 
     for (let key in carPriceSortObj) {
@@ -541,7 +935,7 @@ function aRentPriceSort(_aCarPriceSortObj) {
 function carListSlice() {
 
     console.log('mcarFinal', mcarFinal);
-    let carPricesObj = carPrices(mcarFinal);
+    let carPricesObj = carPrices(mcarFinal)[0];
     let cars = [];
     let carNames = carsNameDivision(mcarFinal);
     let carNamesArr = [];
@@ -577,6 +971,8 @@ function carListSlice() {
     //스크롤이벤트
     carListScroll();
 }
+
+
 
 
 //차량 리스트 생성
@@ -817,7 +1213,43 @@ function reservedCars(_carName, _location, _startTime, _endTime, _reservedCar, _
     });
 }
 
+//모바일 - 차량 리스트 스크롤 이벤트
+export function carListScroll() {
+    carsHieghts = [];
+    let cars = document.getElementsByClassName('clc-car-list-component-clone');
+    const carsLen = cars.length;
 
+    for (let i = 0; i < carsLen; i++) {
+        console.log('cars[i]', cars[i]);
+        let relativeTop = cars[i].getBoundingClientRect().top;
+        let scrolledTopLength = window.pageYOffset;
+        let absoluteTop = scrolledTopLength + relativeTop;
+        carsHieghts.push([absoluteTop, cars[i]]);
+    }
+    console.log('carsHieghts', carsHieghts);
+}
+
+//스크롤 이벤트
+carListScrollEvent();
+
+function carListScrollEvent() {
+    window.addEventListener('scroll', () => {
+        let scrollLocation = document.documentElement.scrollTop + 100; // 현재 스크롤바 위치
+        const carsHieghtsLen = carsHieghts.length;
+        for (let j = 0; j < carsHieghtsLen - 1; j++) {
+            if (scrollLocation >= carsHieghts[j][0] && scrollLocation < carsHieghts[j + 1][0]) {
+
+                document.getElementById('js_car_detail').style.display = 'block';
+                document.getElementById('js_car_detail_c_name').textContent = carsHieghts[j][1].getAttribute('c_name');
+                document.getElementById('js_car_detail_c_price').textContent = carsHieghts[j][1].getAttribute('c_price');
+
+            } else if (scrollLocation < carsHieghts[0][0]) {
+                document.getElementById('js_car_detail').style.display = 'none';
+            }
+        }
+
+    });
+}
 
 //정렬순 클릭이벤트
 function orderType() {

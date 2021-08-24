@@ -1,0 +1,90 @@
+.doc{
+    display: none;
+    .doc-title{
+        color: $color-grey-3;
+        .doc-title-highlight{
+            color: $color-primary;
+            font-weight: bold;
+            text-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+        }
+    }
+    .doc-driver-old-calcul-input{
+        height: calc(1.5em + 0.8rem + 2px);
+    }
+    .doc-driver-old-calcul-delete-btn{
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        padding: 7px;
+        .delete-btn-img{
+            width: 1rem;
+            height: 1rem;
+            background-image: url("../icon/car-model-search-delete-btn.png");
+            background-repeat: no-repeat;
+            background-size: contain; //png 비율 알맞게
+            display: inline-block;
+            vertical-align: middle
+        }
+    }
+    .doc-input-err{
+        display: none;
+        color: $color-red;
+    }
+    .doc-calcul-result-container{
+        display: none;
+        .doc-calcul-result-box{
+            margin: 0 0.5px 16px;
+            border-radius: 12px;
+            box-shadow: 0 4px 14px rgba(177, 177, 177, 0.2);
+            background-color: $color-white;
+        }
+    }
+    
+    .doc-calcul-result{
+        color: $color-grey-3;
+        font-size: 32px;
+        font-weight: bold;
+
+    }
+    .doc-calcul-result-icon{
+        width: 1rem;
+        height: 1rem;
+        background-image: url("../renticon/shield.png");
+        background-repeat: no-repeat;
+        background-size: contain; //png 비율 알맞게
+        display: inline-block;
+        vertical-align: middle
+    }
+    .doc-calcul-result-err-text{
+        color: $color-grey-4;
+        font-size: 1rem;
+        word-break: break-word;
+    }
+    .doc-detail-text{
+        color: $color-grey-4;
+    }
+    .doc-detail-btn{
+        font-size: 1rem;
+        color: #007bff;
+        border: 0;
+        background-color: transparent;
+        padding: 0.6125rem 0.75rem;
+    }
+    .doc-detail-btn:hover{
+        text-decoration: underline;
+    }
+    .doc-result-filter-apply-btn{
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+        border-radius: 42px;
+        margin: 0;
+    }
+    .doc-calcul-result-normal-text{
+        font-size: 1rem;
+        .doc-text-left{
+            font-weight: bold;
+            text-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+        }
+    }
+}

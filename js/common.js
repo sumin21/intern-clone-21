@@ -42,7 +42,7 @@ export function StrToDate(_str) {
 }
 
 //해당 요소element 자식중에 특정클래스class_name을 가진 요소가 있는지 
-export function classCheck(_element, _className) {
+export function childClassCheck(_element, _className) {
     if (_element.firstChild.nextSibling) {
         let sib = _element.firstChild.nextSibling;
         const sibClassNum = sib.classList.length;
@@ -54,6 +54,18 @@ export function classCheck(_element, _className) {
     }
     return false;
 }
+
+//해당 요소element 자식중에 특정클래스class_name을 가진 요소가 있는지 
+export function classCheck(_element, _className) {
+    const classNum = _element.classList.length;
+    for (let i = 0; i < classNum; i++) {
+        if (_element.classList[i] == _className) {
+            return true;
+        }
+    }
+    return false;
+}
+
 
 //해당 클래스 이름 가진 요소들 모두 삭제
 export function classElementRemove(_className) {

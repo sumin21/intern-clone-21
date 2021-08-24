@@ -1,0 +1,125 @@
+div.f-filter-box.sticky-top#js_filter_box
+    //-window y 길이 변하면 height 변환
+    div.f-filter.f-filter-up#js_filter
+        div.f-filter-element.px-3.pt-4
+            div.f-car-models-box
+                div.f-car-models.mb-0
+                    div.f-titles.mb-2 자동차 모델
+                    div.f-elements.d-flex
+                        div.f-car-model-search-bar-box.w-100
+                            div.position-relative
+                                input(placeholder="자동차 모델명으로 검색할 수 있습니다", type="text", maxlength='20', size="1", max="9" autocomplete='off').f-car-model-search-input.form-control.form-control-sm#js_car_model_dropdown_btn
+                                div.f-car-model-search-delete-btn.clickable
+                                    div.delete-btn-img
+                                div(aria-labelleby="js_car_model_dropdown_btn").dropdown-menu#js_car_model_dropdown
+                                
+                        button.f-car-model-search-btn.px-3.ml-1#js_car_model_search_btn 검색
+                hr
+            div.f-car-kinds-box
+                div.f-car-kinds
+                    div.f-titles.mb-2 차량등급
+                    div.f-elements
+                        label.f-checkbox-container.mr-2
+                            input(type='checkbox' data-rank='all').f-car-rank-check#js_car_rank_all
+                            span(for="all_check").f-check-box.mb-0
+                            span.f-checkbox-label 전체
+                        label.f-checkbox-container.mr-2
+                            input(type='checkbox' data-rank='light').f-car-rank-check#js_car_rank_light
+                            span(for="all_check").f-check-box.mb-0
+                            span.f-checkbox-label 경형
+                        label.f-checkbox-container.mr-2
+                            input(type='checkbox' data-rank='tiny').f-car-rank-check#js_car_rank_tiny
+                            span(for="all_check").f-check-box.mb-0
+                            span.f-checkbox-label 소형
+                        label.f-checkbox-container.mr-2
+                            input(type='checkbox' data-rank='middle').f-car-rank-check#js_car_rank_middle
+                            span(for="all_check").f-check-box.mb-0
+                            span.f-checkbox-label 준중형
+                        label.f-checkbox-container.mr-2
+                            input(type='checkbox' data-rank='medium').f-car-rank-check#js_car_rank_medium
+                            span(for="all_check").f-check-box.mb-0
+                            span.f-checkbox-label 중형
+                        label.f-checkbox-container.mr-2
+                            input(type='checkbox' data-rank='large').f-car-rank-check#js_car_rank_large
+                            span(for="all_check").f-check-box.mb-0
+                            span.f-checkbox-label 대형
+                        label.f-checkbox-container.mr-2
+                            input(type='checkbox' data-rank='suv').f-car-rank-check#js_car_rank_suv
+                            span(for="all_check").f-check-box.mb-0
+                            span.f-checkbox-label SUV
+                        label.f-checkbox-container.mr-2
+                            input(type='checkbox' data-rank='rv').f-car-rank-check#js_car_rank_rv
+                            span(for="all_check").f-check-box.mb-0
+                            span.f-checkbox-label 승합RV
+                        label.f-checkbox-container.mr-2
+                            input(type='checkbox' data-rank='import').f-car-rank-check#js_car_rank_import
+                            span(for="all_check").f-check-box.mb-0
+                            span.f-checkbox-label 수입
+                hr
+            div.f-fuel-kinds-box
+                div.f-fuel-kinds.mb-0
+                    div.f-titles.mb-2 연료
+                    div.f-elements
+                        label.f-checkbox-container.mr-2
+                            input(type='checkbox' data-oil='all').f-car-oil-check#js_car_oil_all
+                            span(for="all_check").f-check-box.mb-0
+                            span.f-checkbox-label 전체
+                        label.f-checkbox-container.mr-2
+                            input(type='checkbox' data-oil='gasoline').f-car-oil-check#js_car_oil_gasoline
+                            span(for="all_check").f-check-box.mb-0
+                            span.f-checkbox-label 휘발유
+                        label.f-checkbox-container.mr-2
+                            input(type='checkbox' data-oil='diesel').f-car-oil-check#js_car_oil_diesel
+                            span(for="all_check").f-check-box.mb-0
+                            span.f-checkbox-label 경유
+                        label.f-checkbox-container.mr-2
+                            input(type='checkbox' data-oil='lpg').f-car-oil-check#js_car_oil_lpg
+                            span(for="all_check").f-check-box.mb-0
+                            span.f-checkbox-label LPG
+                        label.f-checkbox-container.mr-2
+                            input(type='checkbox' data-oil='elec').f-car-oil-check#js_car_oil_elec
+                            span(for="all_check").f-check-box.mb-0
+                            span.f-checkbox-label 전기
+                        label.f-checkbox-container.mr-2
+                            input(type='checkbox' data-oil='hybrid').f-car-oil-check#js_car_oil_hybrid
+                            span(for="all_check").f-check-box.mb-0
+                            span.f-checkbox-label 하이브리드
+                        label.f-checkbox-container.mr-2
+                            input(type='checkbox' data-oil='hydrogen').f-car-oil-check#js_car_oil_hydrogen
+                            span(for="all_check").f-check-box.mb-0
+                            span.f-checkbox-label 수소
+                hr
+            div.f-rent-costs-box
+                div.f-rent-costs
+                    div.d-flex.justify-content-between.align-items-center
+                        div
+                            div.f-titles.mb-0 대여 가격 선택
+                        p.f-rent-cost-text.mb-0.text-12
+                            span 0만원
+                            span &nbsp; ~ &nbsp;
+                            span 50만원 이상
+                    div.f-elements.my-4.mx-2
+                        div.f-cost-bar
+                hr
+            div.f-driver-old-box.mb-0
+                div.f-driver-old-text.d-flex.justify-content-between
+                    div.align-items-center.justify-content-start.mb-2
+                        div.f-driver-old-text-top.text-14 자동차보험 나이
+                        div.f-driver-old-text-bottom.text-12 보험가입 운전자의 만 나이
+                div.f-elements.w-100.mb-2.text-14
+                    button(data-old = "all").f-driver-old.px-2.py-1.mr-1.mb-2.f-driver-old-active#js_driver_old_all 전체
+                    button(data-old = "no").f-driver-old.px-2.py-1.mr-1.mb-2#js_driver_old_no 21세 미만
+                    button(data-old = "21").f-driver-old.px-2.py-1.mr-1.mb-2#js_driver_old_21 21세 이상
+                    button(data-old = "23").f-driver-old.px-2.py-1.mr-1.mb-2#js_driver_old_23 23세 이상
+                    button(data-old = "24").f-driver-old.px-2.py-1.mr-1.mb-2#js_driver_old_24 24세 이상
+                    button(data-old = "26").f-driver-old.px-2.py-1.mr-1.mb-2#js_driver_old_26 26세 이상
+                    button(data-old = "30").f-driver-old.px-2.py-1.mr-1.mb-2#js_driver_old_30 30세 이상
+                button.f-old-calcul.text-16#js_driver_old_calcul_btn 내 만나이 계산하기
+                include driver-old-calcul.pug
+
+            
+        div.f-filter-initialization-btn-box.p-3
+            button.f-filter-initialization-btn.w-100#js_filter_reset_btn
+                div.f-elements.d-flex.justify-content-center
+                    div.f-img
+                    span.f-text.mb-0 필터 초기화

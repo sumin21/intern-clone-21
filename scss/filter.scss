@@ -1,0 +1,216 @@
+.f-filter-box{
+    width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 4px 14px 0 rgba(177, 177, 177, 0.2);
+    background-color: $color-white;
+}
+
+.f-filter,.mf-body-container{
+    overflow-y: auto;
+    .f-titles{
+        font-size: 0.9rem;
+        color: $color-grey-5;
+        letter-spacing: -0.05em;
+        word-spacing: 0.01em;
+        font-weight: bold;
+    }
+    .f-car-models{
+        .f-car-model-search-input{
+            height: calc(1.5em + 0.8rem + 2px);
+        }
+        .f-car-model-search-delete-btn{
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+            padding: 7px;
+            .delete-btn-img{
+                width: 1rem;
+                height: 1rem;
+                background-image: url("../icon/car-model-search-delete-btn.png");
+                background-repeat: no-repeat;
+                background-size: contain; //png 비율 알맞게
+                display: inline-block;
+                vertical-align: middle
+            }
+        }
+        .dropdown-menu{
+            max-height: 190px; 
+            overflow-y: scroll;
+            .dropdown-item{
+                margin-right: 60px;
+                color: $color-primary;
+            }
+            .dropdown-item:hover{
+                background-color: $color-grey-8;
+            }
+        }
+        .f-car-model-search-btn{
+            background-color: #0d6ffc;
+            border-color: #0d6ffc;
+            color: $color-white;
+            padding: 0.25rem 0.5rem;
+            font-size: 0.875rem;
+            line-height: 1.5;
+            border-radius: 0.2rem;
+            border: 0;
+        }
+    }
+    .f-car-kinds,.f-fuel-kinds{
+        margin-bottom: 1rem;
+        .f-checkbox-container{
+            position: relative;
+            padding-left: 16px;
+            font-size: 14px;
+            cursor: pointer;
+            user-select: none;
+        
+            input + .f-check-box {
+                position: absolute;
+                top: 2px;
+                left: 0;
+                width: 16px;
+                height: 16px;
+                background-color: $color-white;
+                border: solid 1px $color-grey-5;
+                transition: all 0.1s ease-in-out;
+            }
+            .f-check-box::after {
+                display: block;
+                top: 1px;
+                left: 5px;
+                width: 5px;
+                height: 10px;
+                border: solid #d4d4d4;
+                border-width: 0 2px 2px 0;
+                transform: rotate(45deg);
+                content:'';
+                position: absolute;
+            }
+            input:checked + .f-check-box {
+                background-color: #0d6ffc;
+                border: solid 1px #0d6ffc;
+                transition: all 0.1s ease-in-out;
+                
+            }
+            input:checked + .f-check-box::after {
+                display: block;
+                top: 1px;
+                left: 5px;
+                width: 5px;
+                height: 10px;
+                border: solid #fff;
+                border-width: 0 2px 2px 0;
+            }
+
+            input {
+                display: none;
+            }
+            .f-checkbox-label{
+                margin-left: 4px;
+                color: $color-grey-5;
+                text-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+            }
+        }
+    }
+    .f-rent-costs{
+        color: $color-primary;
+        text-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+        .f-rent-cost-text{
+            span{
+                text-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+            }
+        }
+        .f-cost-bar{
+            height: 6px;
+            position: relative;
+            box-sizing: border-box;
+            direction: ltr;
+            background: #fafafa;
+            border: 1px solid #e3e3e3;
+            border-radius: 4px;
+            box-shadow: 0 3px 6px -5px rgba(40, 48, 126, 0.69);
+            user-select: none;
+            touch-action: none;
+        }
+    }
+    .f-driver-old-box{
+        .f-driver-old-text{
+            .f-driver-old-text-top{
+                color: $color-grey-5;
+                font-weight: bold;
+            }
+            .f-driver-old-text-bottom{
+                color: $color-grey-5;
+            }
+        }
+        .f-elements{
+            word-break: break-word;
+            button{
+                background-color: #f3f3f3;
+                color: #666;
+                border-radius: 20px;
+                border: none;
+                font-size: 1rem;
+            }
+            .f-driver-old-active,.mf-driver-old-active{
+                background-color: #0d6ffc;
+                color: white;
+            }
+            .f-driver-old-active-no-color,.mf-driver-old-active-no-color{
+                background-color: #f3f3f3;
+                color: #666;
+            }
+        }
+        .f-old-calcul{
+            background: none;
+            color: #0d6ffc;
+            padding: 0.25rem 0.5rem;
+            line-height: 1.5;
+            border-radius: 0.2rem;
+            display: block;
+            width: 100%;
+            font-size: 1rem;
+            border: 1px solid #0d6ffc;
+        }
+    }
+    
+    .f-filter-initialization-btn{
+        background-color: #f8f9fa;
+        border-color: #f8f9fa;color: #212529;
+        border: 1px solid transparent;
+        border-radius: 0.25rem;
+        padding: 0.6125rem 0.75rem;
+        font-size: 1rem;
+        .f-img{
+            width: 25px;
+            height: 25px;
+            background-image: url("../icon/filter-initialization-icon.png");
+            background-repeat: no-repeat;
+            background-size: contain; //png 비율 알맞게
+            display: inline-block;
+            vertical-align: middle
+        }
+        .f-text{
+            color: $color-grey-4;
+            font-size: 1rem;
+        }
+    }
+}
+.f-filter-box-up {
+    top: 192px;
+    transition: 0.4s;
+}
+
+.f-filter-box-down {
+    top: 112px;
+    transition: 1s;
+}
+
+.f-filter-up{
+    height: 697px;
+}
+
+.f-filter-down{
+    height: 777px;
+}

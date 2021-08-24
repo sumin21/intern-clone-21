@@ -40,6 +40,16 @@
       }
     }
 
+    .ck-car-kinds-active-no-block {
+      background-color: $color-white;
+      border-color: $color-white;
+
+      .ck-label {
+        color: #333333;
+      }
+    }
+
+
   }
 
 }

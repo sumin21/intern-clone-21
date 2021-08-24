@@ -24,7 +24,11 @@ $danger: #F2F2F2;
 @import "location-toasts.scss";
 @import "calendar-dateover-modal.scss";
 @import "no-cars.scss";
+@import "no-old.scss";
 @import "mobile-top-bar.scss";
+@import "filter.scss";
+@import "driver-old-calcul.scss";
+@import "mobile-filter.scss";
 
 @font-face {
   font-family: 'SpoqaHanSans';
@@ -76,6 +80,18 @@ img {
 
 @media screen and (min-width: 992px) {
   .text-12 {
+    font-size: 0.9rem;
+  }
+}
+
+.text-14 {
+  letter-spacing: -0.05em;
+  word-spacing: 0.01em;
+  font-size: 0.875rem;
+}
+
+@media screen and (min-width: 992px) {
+  .text-14 {
     font-size: 0.9rem;
   }
 }

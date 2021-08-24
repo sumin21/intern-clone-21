@@ -32,9 +32,6 @@ export function locationList() {
     }).catch((Error) => {
         console.log(Error);
     });
-
-
-    //f_region();
 }
 
 function popularLocationCheck(_locations) {
@@ -99,10 +96,7 @@ function locationsSeparate(_locations, _airports, _ktxs, _srts, _buss, _regions,
 
 }
 
-
 export function locationsMake(_locationsArr, _location) {
-
-
     let fragment = document.createDocumentFragment();
 
     const locationsArrLen = _locationsArr.length;

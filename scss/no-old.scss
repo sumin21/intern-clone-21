@@ -1,0 +1,37 @@
+.no-container {
+    display: none;
+    margin-top: 30px;
+
+    .no-icon {
+        width: 400px;
+        height: 160px;
+        background-image: url("../icon/no-old-icon.png");
+        background-repeat: no-repeat;
+        background-size: contain; //png 비율 알맞게
+        display: inline-block;
+        vertical-align: middle;
+        max-width: 25rem;
+    }
+
+    .no-text{
+        color: $color-grey-3;
+
+    }
+
+    button {
+        border-radius: 6.1875rem;
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+
+    .no-detail-btn{
+        font-size: 1rem;
+        color: #007bff;
+        border: 0;
+        background-color: transparent;
+        padding: 0.6125rem 0.75rem;
+    }
+    .no-detail-btn:hover{
+        text-decoration: underline;
+    }
+}

@@ -1,8 +1,10 @@
 import $ from "jquery";
-import {DateToStr, StrToDate, classCheck, emptyElmtChild, classElementRemove, allTimeCalcular, selected} from './common.js';
+import {DateToStr, StrToDate, childClassCheck, emptyElmtChild, classElementRemove, allTimeCalcular, selected} from './common.js';
 import {rentTimeSelect} from './rent_time.js';
 import {rentTodayTime} from './rent_time.js';
 import {bigTime} from './rent_time.js';
+import {filterDriverOldCalculStartDate} from './filter_driver_old_calcul.js';
+
 
 
 //캘린더 이벤트 생성
@@ -24,7 +26,7 @@ export function calendarEvent() {
                         //클릭된 date보다 뒷날짜 클릭
                         if (d1 < d2) {
                             //15일 이후 (선택 불가능)
-                            if (!classCheck(this, 'cm-rent-possible-bg')) {
+                            if (!childClassCheck(this, 'cm-rent-possible-bg')) {
                                 $('#dateoverModal').modal('show');
                             }
                             //15일 내 (선택 가능)(푸른 배경)
@@ -177,6 +179,9 @@ function beforeDateClick(_date, _fragment) {
         rentTimeSelect('07:00', selectedDefaultStart, 'js_rent_start_time');
     }
     document.getElementById('js_rent_start_date_text1').innerHTML = elementDateToText(_date);
+    document.getElementById('js_rent_start_date_text1').setAttribute('data-startdate', _date.id);
+    filterDriverOldCalculStartDate();
+    console.log('datedate', _date);
 }
 
 
@@ -250,6 +255,8 @@ function thirdDateClick(_date, _fragment) {
     document.getElementById('js_rent_end_time').disabled = true;
 
     document.getElementById('js_rent_start_date_text1').innerHTML = elementDateToText(_date);
+    document.getElementById('js_rent_start_date_text1').setAttribute('data-startdate', _date.id);
+    filterDriverOldCalculStartDate();
     document.getElementById('js_rent_end_date_text').style.display = 'none';
     document.getElementById('js_rent_all_time').style.setProperty("display", "none", "important");
 
@@ -279,6 +286,8 @@ function firstDateClick(_date, _fragment) {
     document.getElementById('js_rent_end_time').disabled = true;
     console.log(elementDateToText(_date));
     document.getElementById('js_rent_start_date_text1').innerHTML = elementDateToText(_date);
+    document.getElementById('js_rent_start_date_text1').setAttribute('data-startdate', _date.id);
+    filterDriverOldCalculStartDate();
 }
 
 //처음에만
